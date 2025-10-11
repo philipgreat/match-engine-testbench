@@ -16,15 +16,31 @@
             />
 
  
-     <nodes
-        node_tag="nodename"
+     <node
+        tag="nodetag"
         product_id="100000"
         last_live="2110-10-10T10:10:10"
         last_match_order="1000123"
         order_book_size="100000000000"
         match_order_count="10000"
         platform="platform()"       
-     /> 
+     />
+
+    <training_type
+            _name="培训类型"
+            _module="培训发展"
+            id="id()"
+            name="string()"
+            code="string()"
+            node="node()"
+            _constant="true"
+            _identifier="code"
+    >
+        <_value id="1" name="入职培训" code="ONBOARDING"/>
+        <_value id="2" name="技能培训" code="SKILL"/>
+        <_value id="3" name="管理培训" code="MANAGEMENT"/>
+        <_value id="4" name="安全培训" code="SAFETY"/>
+    </training_type>
 
       <test_case
         name="nodename"
@@ -58,6 +74,7 @@
     <feed_test_case
         _name="test feed data"
         _desc="sample data to build feed a engine"
+        name="nameis1"
         count="1000000"
         platform="platform()" 
      />

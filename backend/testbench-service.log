@@ -922,3 +922,421 @@ Consider defining a bean of type 'org.redisson.api.RedissonClient' in your confi
 2025-10-06 17:30:30,333-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
 2025-10-06 17:30:30,365-[]---INFO -App:56- Started App in 7.443 seconds (process running for 8.193)
 2025-10-06 17:30:34,301-[]---WARN -DNSMonitor:112- Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-10-11 16:00:56,755-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 45142 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-11 16:00:56,762-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-11 16:00:58,885-[]---WARN -AnnotationConfigServletWebServerApplicationContext:624- Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalArgumentException: Could not find class [org.springframework.jdbc.core.simple.JdbcClient]
+2025-10-11 16:00:58,974-[]---ERROR-SpringApplication:839- Application run failed
+java.lang.IllegalArgumentException: Could not find class [org.springframework.jdbc.core.simple.JdbcClient]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:355)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:465)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:390)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:278)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:191)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:144)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:110)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:160)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:141)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:428)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:775)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:597)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.philipgreat.mcme.App.main(App.java:18)
+Caused by: java.lang.ClassNotFoundException: org.springframework.jdbc.core.simple.JdbcClient
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:304)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:345)
+	... 22 common frames omitted
+2025-10-11 16:01:50,739-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 45289 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-11 16:01:50,747-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-11 16:01:52,878-[]---WARN -AnnotationConfigServletWebServerApplicationContext:624- Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalArgumentException: Could not find class [org.springframework.jdbc.core.simple.JdbcClient]
+2025-10-11 16:01:52,963-[]---ERROR-SpringApplication:839- Application run failed
+java.lang.IllegalArgumentException: Could not find class [org.springframework.jdbc.core.simple.JdbcClient]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:355)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:465)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:390)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:278)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:191)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:144)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:110)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:160)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:141)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:428)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:775)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:597)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.philipgreat.mcme.App.main(App.java:18)
+Caused by: java.lang.ClassNotFoundException: org.springframework.jdbc.core.simple.JdbcClient
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:304)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:345)
+	... 22 common frames omitted
+2025-10-11 16:03:50,356-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 45617 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-11 16:03:50,364-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-11 16:03:53,804-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-11 16:03:53,816-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-11 16:03:53,816-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-11 16:03:53,893-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-11 16:03:53,894-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3420 ms
+2025-10-11 16:03:54,316-[]---INFO -Version:43- Redisson 3.31.0
+2025-10-11 16:03:54,389-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-11 16:03:54,425-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-11 16:03:54,617-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 16:03:54,618-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 16:03:56,426-[]---INFO -EndpointLinksResolver:58- Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-10-11 16:03:56,552-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-11 16:03:56,597-[]---INFO -App:56- Started App in 7.221 seconds (process running for 7.807)
+2025-10-11 16:04:14,489-[]---INFO -[/]:173- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-11 16:04:14,490-[]---INFO -DispatcherServlet:532- Initializing Servlet 'dispatcherServlet'
+2025-10-11 16:04:14,503-[]---INFO -DispatcherServlet:554- Completed initialization in 13 ms
+2025-10-11 16:04:15,461-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_platform ON platform_data(create_time)
+2025-10-11 16:04:15,467-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_update_time_of_platform ON platform_data(last_update_time)
+2025-10-11 16:04:15,469-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_platform ON platform_data(version)
+2025-10-11 16:04:15,477-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_test_case ON test_case_data(product_id)
+2025-10-11 16:04:15,479-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_test_case ON test_case_data(last_match_order)
+2025-10-11 16:04:15,480-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_case ON test_case_data(order_book_size)
+2025-10-11 16:04:15,482-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_test_case ON test_case_data(match_order_count)
+2025-10-11 16:04:15,482-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_case ON test_case_data(platform)
+2025-10-11 16:04:15,483-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_case ON test_case_data(version)
+2025-10-11 16:04:15,491-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_test_result ON test_result_data(create_time)
+2025-10-11 16:04:15,493-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_result ON test_result_data(order_book_size)
+2025-10-11 16:04:15,494-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_time_in_nano_seconds_of_test_result ON test_result_data(time_in_nano_seconds)
+2025-10-11 16:04:15,495-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_test_case_of_test_result ON test_result_data(test_case)
+2025-10-11 16:04:15,496-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_result ON test_result_data(platform)
+2025-10-11 16:04:15,497-[T1976921772534902784]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_result ON test_result_data(version)
+2025-10-11 16:04:15,505-[T1976921772534902784]---INFO -SQLRepository:1563- ALTER TABLE feed_test_case_data ADD COLUMN "count" INTEGER;
+2025-10-11 16:04:46,764-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_platform ON platform_data(create_time)
+2025-10-11 16:04:46,766-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_update_time_of_platform ON platform_data(last_update_time)
+2025-10-11 16:04:46,767-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_platform ON platform_data(version)
+2025-10-11 16:04:46,772-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_test_case ON test_case_data(product_id)
+2025-10-11 16:04:46,774-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_test_case ON test_case_data(last_match_order)
+2025-10-11 16:04:46,775-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_case ON test_case_data(order_book_size)
+2025-10-11 16:04:46,776-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_test_case ON test_case_data(match_order_count)
+2025-10-11 16:04:46,777-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_case ON test_case_data(platform)
+2025-10-11 16:04:46,778-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_case ON test_case_data(version)
+2025-10-11 16:04:46,785-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_test_result ON test_result_data(create_time)
+2025-10-11 16:04:46,791-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_result ON test_result_data(order_book_size)
+2025-10-11 16:04:46,792-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_time_in_nano_seconds_of_test_result ON test_result_data(time_in_nano_seconds)
+2025-10-11 16:04:46,795-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_test_case_of_test_result ON test_result_data(test_case)
+2025-10-11 16:04:46,796-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_result ON test_result_data(platform)
+2025-10-11 16:04:46,797-[T1976921907142701056]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_result ON test_result_data(version)
+2025-10-11 16:04:46,803-[T1976921907142701056]---INFO -SQLRepository:1563- ALTER TABLE feed_test_case_data ADD COLUMN "count" INTEGER;
+2025-10-11 16:10:44,118-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_platform ON platform_data(create_time)
+2025-10-11 16:10:44,121-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_update_time_of_platform ON platform_data(last_update_time)
+2025-10-11 16:10:44,122-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_platform ON platform_data(version)
+2025-10-11 16:10:44,127-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_test_case ON test_case_data(product_id)
+2025-10-11 16:10:44,128-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_test_case ON test_case_data(last_match_order)
+2025-10-11 16:10:44,129-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_case ON test_case_data(order_book_size)
+2025-10-11 16:10:44,130-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_test_case ON test_case_data(match_order_count)
+2025-10-11 16:10:44,131-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_case ON test_case_data(platform)
+2025-10-11 16:10:44,132-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_case ON test_case_data(version)
+2025-10-11 16:10:44,139-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_test_result ON test_result_data(create_time)
+2025-10-11 16:10:44,141-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_result ON test_result_data(order_book_size)
+2025-10-11 16:10:44,142-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_time_in_nano_seconds_of_test_result ON test_result_data(time_in_nano_seconds)
+2025-10-11 16:10:44,143-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_test_case_of_test_result ON test_result_data(test_case)
+2025-10-11 16:10:44,144-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_result ON test_result_data(platform)
+2025-10-11 16:10:44,145-[T1976923405989818368]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_result ON test_result_data(version)
+2025-10-11 16:10:44,150-[T1976923405989818368]---INFO -SQLRepository:1563- ALTER TABLE feed_test_case_data ADD COLUMN "count" INTEGER;
+2025-10-11 16:11:28,344-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 47253 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-11 16:11:28,352-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-11 16:11:31,731-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-11 16:11:31,742-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-11 16:11:31,743-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-11 16:11:31,826-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-11 16:11:31,826-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3381 ms
+2025-10-11 16:11:32,270-[]---INFO -Version:43- Redisson 3.31.0
+2025-10-11 16:11:32,332-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-11 16:11:32,367-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-11 16:11:32,544-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 16:11:32,546-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 16:11:34,370-[]---INFO -EndpointLinksResolver:58- Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-10-11 16:11:34,502-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-11 16:11:34,549-[]---INFO -App:56- Started App in 7.148 seconds (process running for 7.743)
+2025-10-11 16:11:42,516-[]---INFO -[/]:173- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-11 16:11:42,517-[]---INFO -DispatcherServlet:532- Initializing Servlet 'dispatcherServlet'
+2025-10-11 16:11:42,522-[]---INFO -DispatcherServlet:554- Completed initialization in 5 ms
+2025-10-11 16:11:46,551-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_platform ON platform_data(create_time)
+2025-10-11 16:11:46,556-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_update_time_of_platform ON platform_data(last_update_time)
+2025-10-11 16:11:46,557-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_platform ON platform_data(version)
+2025-10-11 16:11:46,564-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_test_case ON test_case_data(product_id)
+2025-10-11 16:11:46,567-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_test_case ON test_case_data(last_match_order)
+2025-10-11 16:11:46,567-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_case ON test_case_data(order_book_size)
+2025-10-11 16:11:46,568-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_test_case ON test_case_data(match_order_count)
+2025-10-11 16:11:46,569-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_case ON test_case_data(platform)
+2025-10-11 16:11:46,570-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_case ON test_case_data(version)
+2025-10-11 16:11:46,577-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_test_result ON test_result_data(create_time)
+2025-10-11 16:11:46,579-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_result ON test_result_data(order_book_size)
+2025-10-11 16:11:46,580-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_time_in_nano_seconds_of_test_result ON test_result_data(time_in_nano_seconds)
+2025-10-11 16:11:46,581-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_test_case_of_test_result ON test_result_data(test_case)
+2025-10-11 16:11:46,582-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_result ON test_result_data(platform)
+2025-10-11 16:11:46,583-[T1976923665239691264]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_result ON test_result_data(version)
+2025-10-11 16:11:46,590-[T1976923665239691264]---INFO -SQLRepository:1563- ALTER TABLE feed_test_case_data ADD COLUMN "count" INTEGER;
+2025-10-11 16:14:15,884-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 47792 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-11 16:14:15,891-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-11 16:14:19,588-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-11 16:14:19,603-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-11 16:14:19,603-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-11 16:14:19,705-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-11 16:14:19,706-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3724 ms
+2025-10-11 16:14:20,178-[]---INFO -Version:43- Redisson 3.31.0
+2025-10-11 16:14:20,255-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-11 16:14:20,295-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-11 16:14:20,488-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 16:14:20,489-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 16:14:22,505-[]---INFO -EndpointLinksResolver:58- Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-10-11 16:14:22,633-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-11 16:14:22,726-[]---INFO -App:56- Started App in 7.92 seconds (process running for 8.775)
+2025-10-11 16:14:30,981-[]---INFO -[/]:173- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-11 16:14:30,982-[]---INFO -DispatcherServlet:532- Initializing Servlet 'dispatcherServlet'
+2025-10-11 16:14:30,988-[]---INFO -DispatcherServlet:554- Completed initialization in 4 ms
+2025-10-11 16:14:34,807-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_platform ON platform_data(create_time)
+2025-10-11 16:14:34,814-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_update_time_of_platform ON platform_data(last_update_time)
+2025-10-11 16:14:34,817-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_platform ON platform_data(version)
+2025-10-11 16:14:34,825-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_test_case ON test_case_data(product_id)
+2025-10-11 16:14:34,826-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_test_case ON test_case_data(last_match_order)
+2025-10-11 16:14:34,827-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_case ON test_case_data(order_book_size)
+2025-10-11 16:14:34,829-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_test_case ON test_case_data(match_order_count)
+2025-10-11 16:14:34,829-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_case ON test_case_data(platform)
+2025-10-11 16:14:34,831-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_case ON test_case_data(version)
+2025-10-11 16:14:34,836-[T1976924371178803200]---INFO -SQLRepository:1603- CREATE TABLE node_data (
+id BIGINT PRIMARY KEY,
+tag VARCHAR(100),
+product_id INTEGER,
+last_live VARCHAR(100),
+last_match_order INTEGER,
+order_book_size INTEGER,
+match_order_count INTEGER,
+platform BIGINT,
+version BIGINT)
+;
+2025-10-11 16:14:34,841-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_node ON node_data(product_id)
+2025-10-11 16:14:34,843-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_node ON node_data(last_match_order)
+2025-10-11 16:14:34,844-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_node ON node_data(order_book_size)
+2025-10-11 16:14:34,845-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_node ON node_data(match_order_count)
+2025-10-11 16:14:34,846-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_node ON node_data(platform)
+2025-10-11 16:14:34,848-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_node ON node_data(version)
+2025-10-11 16:14:34,856-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_test_result ON test_result_data(create_time)
+2025-10-11 16:14:34,857-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_result ON test_result_data(order_book_size)
+2025-10-11 16:14:34,857-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_time_in_nano_seconds_of_test_result ON test_result_data(time_in_nano_seconds)
+2025-10-11 16:14:34,858-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_test_case_of_test_result ON test_result_data(test_case)
+2025-10-11 16:14:34,858-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_result ON test_result_data(platform)
+2025-10-11 16:14:34,859-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_result ON test_result_data(version)
+2025-10-11 16:14:34,863-[T1976924371178803200]---INFO -SQLRepository:1563- ALTER TABLE feed_test_case_data ADD COLUMN name VARCHAR(100);
+2025-10-11 16:14:34,866-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_feed_test_case ON feed_test_case_data(platform)
+2025-10-11 16:14:34,867-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_feed_test_case ON feed_test_case_data(version)
+2025-10-11 16:14:34,873-[T1976924371178803200]---INFO -SQLRepository:1603- CREATE TABLE training_type_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+node BIGINT,
+version BIGINT)
+;
+2025-10-11 16:14:34,886-[T1976924371178803200]---INFO -SQLRepository:1322- INSERT INTO training_type_data (id,name,code,node,version) VALUES ('1','入职培训','ONBOARDING','1','1');
+2025-10-11 16:14:34,895-[T1976924371178803200]---INFO -SQLRepository:1322- INSERT INTO training_type_data (id,name,code,node,version) VALUES ('2','技能培训','SKILL','1','1');
+2025-10-11 16:14:34,901-[T1976924371178803200]---INFO -SQLRepository:1322- INSERT INTO training_type_data (id,name,code,node,version) VALUES ('3','管理培训','MANAGEMENT','1','1');
+2025-10-11 16:14:34,905-[T1976924371178803200]---INFO -SQLRepository:1322- INSERT INTO training_type_data (id,name,code,node,version) VALUES ('4','安全培训','SAFETY','1','1');
+2025-10-11 16:14:34,908-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_code_of_training_type ON training_type_data(code)
+2025-10-11 16:14:34,910-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_node_of_training_type ON training_type_data(node)
+2025-10-11 16:14:34,911-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_training_type ON training_type_data(version)
+2025-10-11 16:14:34,918-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_test_feed_data ON test_feed_data_data(product_id)
+2025-10-11 16:14:34,921-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_id_of_test_feed_data ON test_feed_data_data(order_id)
+2025-10-11 16:14:34,922-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_command_of_test_feed_data ON test_feed_data_data(command)
+2025-10-11 16:14:34,922-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_expire_time_nano_seconds_of_test_feed_data ON test_feed_data_data(expire_time_nano_seconds)
+2025-10-11 16:14:34,923-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_feed_data ON test_feed_data_data(platform)
+2025-10-11 16:14:34,924-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_feed_data ON test_feed_data_data(version)
+2025-10-11 16:14:34,930-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_test_feed_result ON test_feed_result_data(create_time)
+2025-10-11 16:14:34,936-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_feed_test_case_of_test_feed_result ON test_feed_result_data(feed_test_case)
+2025-10-11 16:14:34,937-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_feed_result ON test_feed_result_data(platform)
+2025-10-11 16:14:34,938-[T1976924371178803200]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_feed_result ON test_feed_result_data(version)
+2025-10-11 16:15:56,773-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 48168 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-11 16:15:56,781-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-11 16:16:00,442-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-11 16:16:00,455-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-11 16:16:00,455-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-11 16:16:00,570-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-11 16:16:00,571-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3683 ms
+2025-10-11 16:16:00,984-[]---INFO -Version:43- Redisson 3.31.0
+2025-10-11 16:16:01,061-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-11 16:16:01,096-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-11 16:16:01,286-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 16:16:01,287-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 16:16:03,199-[]---INFO -EndpointLinksResolver:58- Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-10-11 16:16:03,319-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-11 16:16:03,370-[]---INFO -App:56- Started App in 7.637 seconds (process running for 8.418)
+2025-10-11 16:16:10,208-[]---INFO -[/]:173- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-11 16:16:10,209-[]---INFO -DispatcherServlet:532- Initializing Servlet 'dispatcherServlet'
+2025-10-11 16:16:10,217-[]---INFO -DispatcherServlet:554- Completed initialization in 6 ms
+2025-10-11 16:16:14,073-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_platform ON platform_data(create_time)
+2025-10-11 16:16:14,077-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_update_time_of_platform ON platform_data(last_update_time)
+2025-10-11 16:16:14,080-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_platform ON platform_data(version)
+2025-10-11 16:16:14,087-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_test_case ON test_case_data(product_id)
+2025-10-11 16:16:14,088-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_test_case ON test_case_data(last_match_order)
+2025-10-11 16:16:14,089-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_case ON test_case_data(order_book_size)
+2025-10-11 16:16:14,090-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_test_case ON test_case_data(match_order_count)
+2025-10-11 16:16:14,091-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_case ON test_case_data(platform)
+2025-10-11 16:16:14,092-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_case ON test_case_data(version)
+2025-10-11 16:16:14,099-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_node ON node_data(product_id)
+2025-10-11 16:16:14,101-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_node ON node_data(last_match_order)
+2025-10-11 16:16:14,101-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_node ON node_data(order_book_size)
+2025-10-11 16:16:14,102-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_node ON node_data(match_order_count)
+2025-10-11 16:16:14,103-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_node ON node_data(platform)
+2025-10-11 16:16:14,104-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_node ON node_data(version)
+2025-10-11 16:16:14,110-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_test_result ON test_result_data(create_time)
+2025-10-11 16:16:14,112-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_result ON test_result_data(order_book_size)
+2025-10-11 16:16:14,113-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_time_in_nano_seconds_of_test_result ON test_result_data(time_in_nano_seconds)
+2025-10-11 16:16:14,113-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_test_case_of_test_result ON test_result_data(test_case)
+2025-10-11 16:16:14,114-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_result ON test_result_data(platform)
+2025-10-11 16:16:14,114-[T1976924787484454912]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_result ON test_result_data(version)
+2025-10-11 16:16:14,120-[T1976924787484454912]---INFO -SQLRepository:1563- ALTER TABLE feed_test_case_data ADD COLUMN "count" INTEGER;
+2025-10-11 16:19:54,539-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_platform ON platform_data(create_time)
+2025-10-11 16:19:54,541-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_update_time_of_platform ON platform_data(last_update_time)
+2025-10-11 16:19:54,542-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_platform ON platform_data(version)
+2025-10-11 16:19:57,740-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_test_case ON test_case_data(product_id)
+2025-10-11 16:19:57,754-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_test_case ON test_case_data(last_match_order)
+2025-10-11 16:19:57,755-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_case ON test_case_data(order_book_size)
+2025-10-11 16:19:57,758-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_test_case ON test_case_data(match_order_count)
+2025-10-11 16:19:57,760-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_case ON test_case_data(platform)
+2025-10-11 16:19:57,761-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_case ON test_case_data(version)
+2025-10-11 16:19:59,136-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_node ON node_data(product_id)
+2025-10-11 16:19:59,142-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_node ON node_data(last_match_order)
+2025-10-11 16:19:59,145-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_node ON node_data(order_book_size)
+2025-10-11 16:19:59,147-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_node ON node_data(match_order_count)
+2025-10-11 16:19:59,151-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_node ON node_data(platform)
+2025-10-11 16:19:59,153-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_node ON node_data(version)
+2025-10-11 16:20:00,572-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_test_result ON test_result_data(create_time)
+2025-10-11 16:20:00,580-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_result ON test_result_data(order_book_size)
+2025-10-11 16:20:00,583-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_time_in_nano_seconds_of_test_result ON test_result_data(time_in_nano_seconds)
+2025-10-11 16:20:00,585-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_test_case_of_test_result ON test_result_data(test_case)
+2025-10-11 16:20:00,586-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_result ON test_result_data(platform)
+2025-10-11 16:20:00,588-[T1976925628505321472]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_result ON test_result_data(version)
+2025-10-11 16:21:54,366-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 49094 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-11 16:21:54,372-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-11 16:21:57,857-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-11 16:21:57,873-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-11 16:21:57,874-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-11 16:21:57,988-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-11 16:21:57,988-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3526 ms
+2025-10-11 16:21:58,462-[]---INFO -Version:43- Redisson 3.31.0
+2025-10-11 16:21:58,530-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-11 16:21:58,566-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-11 16:21:58,753-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 16:21:58,757-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 16:22:00,698-[]---INFO -EndpointLinksResolver:58- Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-10-11 16:22:00,814-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-11 16:22:00,852-[]---INFO -App:56- Started App in 7.5 seconds (process running for 8.255)
+2025-10-11 16:22:35,390-[]---ERROR-NioEndpoint:175- Error setting socket options
+java.net.SocketException: Invalid argument
+	at java.base/sun.nio.ch.Net.setIntOption0(Native Method)
+	at java.base/sun.nio.ch.Net.setSocketOption(Net.java:455)
+	at java.base/sun.nio.ch.Net.setSocketOption(Net.java:393)
+	at java.base/sun.nio.ch.SocketChannelImpl.setOption(SocketChannelImpl.java:280)
+	at java.base/sun.nio.ch.SocketAdaptor.setIntOption(SocketAdaptor.java:247)
+	at java.base/sun.nio.ch.SocketAdaptor.setSoLinger(SocketAdaptor.java:285)
+	at org.apache.tomcat.util.net.SocketProperties.setProperties(SocketProperties.java:208)
+	at org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(NioEndpoint.java:476)
+	at org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(NioEndpoint.java:79)
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:148)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-11 16:22:35,401-[]---ERROR-NioEndpoint:175- Error setting socket options
+java.net.SocketException: Invalid argument
+	at java.base/sun.nio.ch.Net.setIntOption0(Native Method)
+	at java.base/sun.nio.ch.Net.setSocketOption(Net.java:455)
+	at java.base/sun.nio.ch.Net.setSocketOption(Net.java:393)
+	at java.base/sun.nio.ch.SocketChannelImpl.setOption(SocketChannelImpl.java:280)
+	at java.base/sun.nio.ch.SocketAdaptor.setIntOption(SocketAdaptor.java:247)
+	at java.base/sun.nio.ch.SocketAdaptor.setSoLinger(SocketAdaptor.java:285)
+	at org.apache.tomcat.util.net.SocketProperties.setProperties(SocketProperties.java:208)
+	at org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(NioEndpoint.java:476)
+	at org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(NioEndpoint.java:79)
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:148)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-11 16:22:35,493-[]---INFO -[/]:173- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-11 16:22:35,494-[]---INFO -DispatcherServlet:532- Initializing Servlet 'dispatcherServlet'
+2025-10-11 16:22:35,501-[]---INFO -DispatcherServlet:554- Completed initialization in 6 ms
+2025-10-11 16:56:45,426-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 51094 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-11 16:56:45,438-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-11 16:56:49,005-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-11 16:56:49,018-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-11 16:56:49,019-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-11 16:56:49,141-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-11 16:56:49,142-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3617 ms
+2025-10-11 16:58:28,842-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 51557 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-11 16:58:28,849-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-11 16:58:32,400-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-11 16:58:32,413-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-11 16:58:32,414-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-11 16:58:32,518-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-11 16:58:32,519-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3575 ms
+2025-10-11 16:58:32,964-[]---INFO -Version:43- Redisson 3.31.0
+2025-10-11 16:58:33,033-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-11 16:58:33,074-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-11 16:58:33,333-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 16:58:33,338-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 16:58:35,178-[]---INFO -EndpointLinksResolver:58- Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-10-11 16:58:35,299-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-11 16:58:35,345-[]---INFO -App:56- Started App in 7.559 seconds (process running for 8.307)
+2025-10-11 16:58:40,659-[]---INFO -[/]:173- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-11 16:58:40,661-[]---INFO -DispatcherServlet:532- Initializing Servlet 'dispatcherServlet'
+2025-10-11 16:58:40,675-[]---INFO -DispatcherServlet:554- Completed initialization in 12 ms
+2025-10-11 16:59:19,478-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_platform ON platform_data(create_time)
+2025-10-11 16:59:19,486-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_update_time_of_platform ON platform_data(last_update_time)
+2025-10-11 16:59:19,495-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_platform ON platform_data(version)
+2025-10-11 17:00:18,341-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_test_case ON test_case_data(product_id)
+2025-10-11 17:00:18,364-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_test_case ON test_case_data(last_match_order)
+2025-10-11 17:00:18,367-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_case ON test_case_data(order_book_size)
+2025-10-11 17:00:18,370-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_test_case ON test_case_data(match_order_count)
+2025-10-11 17:00:18,372-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_case ON test_case_data(platform)
+2025-10-11 17:00:18,375-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_case ON test_case_data(version)
+2025-10-11 17:00:33,834-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_node ON node_data(product_id)
+2025-10-11 17:00:33,861-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_node ON node_data(last_match_order)
+2025-10-11 17:00:33,864-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_node ON node_data(order_book_size)
+2025-10-11 17:00:33,867-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_node ON node_data(match_order_count)
+2025-10-11 17:00:33,868-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_node ON node_data(platform)
+2025-10-11 17:00:33,871-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_node ON node_data(version)
+2025-10-11 17:00:55,398-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_test_result ON test_result_data(create_time)
+2025-10-11 17:00:55,401-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_result ON test_result_data(order_book_size)
+2025-10-11 17:00:55,405-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_time_in_nano_seconds_of_test_result ON test_result_data(time_in_nano_seconds)
+2025-10-11 17:00:55,408-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_test_case_of_test_result ON test_result_data(test_case)
+2025-10-11 17:00:55,413-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_result ON test_result_data(platform)
+2025-10-11 17:00:55,414-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_result ON test_result_data(version)
+2025-10-11 17:01:20,748-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_count_of_feed_test_case ON feed_test_case_data(count)
+2025-10-11 17:01:20,756-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_feed_test_case ON feed_test_case_data(platform)
+2025-10-11 17:01:20,766-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_feed_test_case ON feed_test_case_data(version)
+2025-10-11 17:01:27,899-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_code_of_training_type ON training_type_data(code)
+2025-10-11 17:01:27,901-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_node_of_training_type ON training_type_data(node)
+2025-10-11 17:01:27,902-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_training_type ON training_type_data(version)
+2025-10-11 17:01:32,497-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_test_feed_data ON test_feed_data_data(product_id)
+2025-10-11 17:01:32,500-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_id_of_test_feed_data ON test_feed_data_data(order_id)
+2025-10-11 17:01:32,501-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_command_of_test_feed_data ON test_feed_data_data(command)
+2025-10-11 17:01:32,502-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_expire_time_nano_seconds_of_test_feed_data ON test_feed_data_data(expire_time_nano_seconds)
+2025-10-11 17:01:32,503-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_feed_data ON test_feed_data_data(platform)
+2025-10-11 17:01:32,505-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_feed_data ON test_feed_data_data(version)
+2025-10-11 17:01:32,516-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_test_feed_result ON test_feed_result_data(create_time)
+2025-10-11 17:01:32,518-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_feed_test_case_of_test_feed_result ON test_feed_result_data(feed_test_case)
+2025-10-11 17:01:32,520-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_feed_result ON test_feed_result_data(platform)
+2025-10-11 17:01:32,521-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_feed_result ON test_feed_result_data(version)
