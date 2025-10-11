@@ -1,0 +1,924 @@
+2025-10-06 11:03:59,263-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 86421 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 11:03:59,268-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 11:04:00,753-[]---INFO -RepositoryConfigurationDelegate:292- Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-06 11:04:00,757-[]---INFO -RepositoryConfigurationDelegate:139- Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-06 11:04:00,839-[]---INFO -RepositoryConfigurationDelegate:208- Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
+2025-10-06 11:04:02,312-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 11:04:02,324-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 11:04:02,324-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 11:04:02,460-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 11:04:02,460-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3111 ms
+2025-10-06 11:04:03,570-[]---INFO -Version:43- Redisson 3.43.0
+2025-10-06 11:04:03,600-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-06 11:04:03,649-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-06 11:04:03,843-[]---INFO -ConnectionsHolder:132- 1 connections initialized for localhost/127.0.0.1:6379
+2025-10-06 11:04:03,957-[]---INFO -ConnectionsHolder:132- 24 connections initialized for localhost/127.0.0.1:6379
+2025-10-06 11:04:05,095-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-06 11:04:05,130-[]---INFO -App:56- Started App in 6.895 seconds (process running for 8.105)
+2025-10-06 11:04:09,082-[]---WARN -DNSMonitor:112- Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-10-06 11:13:27,850-[]---INFO -[/]:173- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-06 11:13:27,852-[]---INFO -DispatcherServlet:532- Initializing Servlet 'dispatcherServlet'
+2025-10-06 11:13:27,861-[]---INFO -DispatcherServlet:554- Completed initialization in 8 ms
+2025-10-06 11:13:37,155-[T1975036692006785024]---INFO -SQLRepository:1603- CREATE TABLE platform_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+create_time TIMESTAMP,
+last_update_time TIMESTAMP,
+version BIGINT)
+;
+2025-10-06 11:13:37,169-[T1975036692006785024]---INFO -SQLRepository:1426- INSERT INTO platform_data (id,name,create_time,last_update_time,version) VALUES ('1','Match Engine Test Bench','2025-10-06T11:13:37.168238','2025-10-06T11:13:37.168409','1')
+;
+2025-10-06 11:13:37,175-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_platform ON platform_data(create_time)
+2025-10-06 11:13:37,176-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_update_time_of_platform ON platform_data(last_update_time)
+2025-10-06 11:13:37,178-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_platform ON platform_data(version)
+2025-10-06 11:13:37,180-[T1975036692006785024]---INFO -SQLRepository:1047- CREATE TABLE teaql_id_space (
+type_name varchar(100) PRIMARY KEY,
+current_level bigint)
+;
+2025-10-06 11:13:37,183-[T1975036692006785024]---INFO -SQLRepository:1603- CREATE TABLE test_case_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+product_id INTEGER,
+last_live VARCHAR(100),
+last_match_order INTEGER,
+order_book_size INTEGER,
+match_order_count INTEGER,
+platform BIGINT,
+version BIGINT)
+;
+2025-10-06 11:13:37,187-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_test_case ON test_case_data(product_id)
+2025-10-06 11:13:37,189-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_test_case ON test_case_data(last_match_order)
+2025-10-06 11:13:37,191-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_case ON test_case_data(order_book_size)
+2025-10-06 11:13:37,192-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_test_case ON test_case_data(match_order_count)
+2025-10-06 11:13:37,194-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_case ON test_case_data(platform)
+2025-10-06 11:13:37,195-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_case ON test_case_data(version)
+2025-10-06 11:13:37,200-[T1975036692006785024]---INFO -SQLRepository:1603- CREATE TABLE test_result_data (
+id BIGINT PRIMARY KEY,
+create_time TIMESTAMP,
+name VARCHAR(100),
+order_book_size INTEGER,
+time_in_nano_seconds INTEGER,
+test_case BIGINT,
+platform BIGINT,
+version BIGINT)
+;
+2025-10-06 11:13:37,202-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_test_result ON test_result_data(create_time)
+2025-10-06 11:13:37,203-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_test_result ON test_result_data(order_book_size)
+2025-10-06 11:13:37,204-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_time_in_nano_seconds_of_test_result ON test_result_data(time_in_nano_seconds)
+2025-10-06 11:13:37,205-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_test_case_of_test_result ON test_result_data(test_case)
+2025-10-06 11:13:37,207-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_result ON test_result_data(platform)
+2025-10-06 11:13:37,208-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_result ON test_result_data(version)
+2025-10-06 11:13:37,211-[T1975036692006785024]---INFO -SQLRepository:1603- CREATE TABLE feed_test_case_data (
+id BIGINT PRIMARY KEY,
+"count" INTEGER,
+platform BIGINT,
+version BIGINT)
+;
+2025-10-06 11:13:37,212-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_count_of_feed_test_case ON feed_test_case_data(count)
+2025-10-06 11:13:37,213-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_feed_test_case ON feed_test_case_data(platform)
+2025-10-06 11:13:37,215-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_feed_test_case ON feed_test_case_data(version)
+2025-10-06 11:13:37,219-[T1975036692006785024]---INFO -SQLRepository:1603- CREATE TABLE test_feed_data_data (
+id BIGINT PRIMARY KEY,
+product_id INTEGER,
+order_id INTEGER,
+command INTEGER,
+price_type VARCHAR(100),
+expire_time_nano_seconds INTEGER,
+platform BIGINT,
+version BIGINT)
+;
+2025-10-06 11:13:37,221-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_test_feed_data ON test_feed_data_data(product_id)
+2025-10-06 11:13:37,223-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_id_of_test_feed_data ON test_feed_data_data(order_id)
+2025-10-06 11:13:37,224-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_command_of_test_feed_data ON test_feed_data_data(command)
+2025-10-06 11:13:37,225-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_expire_time_nano_seconds_of_test_feed_data ON test_feed_data_data(expire_time_nano_seconds)
+2025-10-06 11:13:37,226-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_feed_data ON test_feed_data_data(platform)
+2025-10-06 11:13:37,228-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_feed_data ON test_feed_data_data(version)
+2025-10-06 11:13:37,231-[T1975036692006785024]---INFO -SQLRepository:1603- CREATE TABLE nodes_data (
+id BIGINT PRIMARY KEY,
+node_tag VARCHAR(100),
+product_id INTEGER,
+last_live VARCHAR(100),
+last_match_order INTEGER,
+order_book_size INTEGER,
+match_order_count INTEGER,
+platform BIGINT,
+version BIGINT)
+;
+2025-10-06 11:13:37,233-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_product_id_of_nodes ON nodes_data(product_id)
+2025-10-06 11:13:37,235-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_match_order_of_nodes ON nodes_data(last_match_order)
+2025-10-06 11:13:37,236-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_order_book_size_of_nodes ON nodes_data(order_book_size)
+2025-10-06 11:13:37,237-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_match_order_count_of_nodes ON nodes_data(match_order_count)
+2025-10-06 11:13:37,238-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_nodes ON nodes_data(platform)
+2025-10-06 11:13:37,240-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_nodes ON nodes_data(version)
+2025-10-06 11:13:37,243-[T1975036692006785024]---INFO -SQLRepository:1603- CREATE TABLE test_feed_result_data (
+id BIGINT PRIMARY KEY,
+create_time TIMESTAMP,
+feed_test_case BIGINT,
+platform BIGINT,
+version BIGINT)
+;
+2025-10-06 11:13:37,245-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_test_feed_result ON test_feed_result_data(create_time)
+2025-10-06 11:13:37,247-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_feed_test_case_of_test_feed_result ON test_feed_result_data(feed_test_case)
+2025-10-06 11:13:37,248-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_feed_result ON test_feed_result_data(platform)
+2025-10-06 11:13:37,248-[T1975036692006785024]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_feed_result ON test_feed_result_data(version)
+2025-10-06 11:20:46,760-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 88347 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 11:20:46,765-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 11:20:48,249-[]---INFO -RepositoryConfigurationDelegate:292- Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-06 11:20:48,252-[]---INFO -RepositoryConfigurationDelegate:139- Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-06 11:20:48,334-[]---INFO -RepositoryConfigurationDelegate:208- Finished Spring Data repository scanning in 53 ms. Found 0 Redis repository interfaces.
+2025-10-06 11:20:49,893-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 11:20:49,907-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 11:20:49,908-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 11:20:50,005-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 11:20:50,005-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3156 ms
+2025-10-06 11:20:51,169-[]---INFO -Version:43- Redisson 3.43.0
+2025-10-06 11:20:51,216-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-06 11:20:51,257-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-06 11:20:51,565-[]---INFO -ConnectionsHolder:132- 1 connections initialized for localhost/127.0.0.1:6379
+2025-10-06 11:20:51,675-[]---INFO -ConnectionsHolder:132- 24 connections initialized for localhost/127.0.0.1:6379
+2025-10-06 11:20:52,699-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-06 11:20:52,723-[]---INFO -App:56- Started App in 6.957 seconds (process running for 7.669)
+2025-10-06 11:20:56,757-[]---WARN -DNSMonitor:112- Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-10-06 11:29:50,646-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 89807 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 11:29:50,653-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 11:29:52,137-[]---INFO -RepositoryConfigurationDelegate:292- Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-06 11:29:52,141-[]---INFO -RepositoryConfigurationDelegate:139- Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-06 11:29:52,250-[]---INFO -RepositoryConfigurationDelegate:208- Finished Spring Data repository scanning in 43 ms. Found 0 Redis repository interfaces.
+2025-10-06 11:29:53,713-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 11:29:53,724-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 11:29:53,725-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 11:29:53,844-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 11:29:53,844-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3097 ms
+2025-10-06 11:29:54,930-[]---INFO -Version:43- Redisson 3.43.0
+2025-10-06 11:29:54,962-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-06 11:29:54,996-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-06 11:29:55,164-[]---INFO -ConnectionsHolder:132- 1 connections initialized for localhost/127.0.0.1:6379
+2025-10-06 11:29:55,286-[]---INFO -ConnectionsHolder:132- 24 connections initialized for localhost/127.0.0.1:6379
+2025-10-06 11:29:56,496-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-06 11:29:56,528-[]---INFO -App:56- Started App in 6.879 seconds (process running for 7.605)
+2025-10-06 11:30:00,365-[]---WARN -DNSMonitor:112- Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-10-06 17:16:04,457-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 17739 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 17:16:04,463-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 17:16:06,146-[]---INFO -RepositoryConfigurationDelegate:292- Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-06 17:16:06,150-[]---INFO -RepositoryConfigurationDelegate:139- Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-06 17:16:06,257-[]---INFO -RepositoryConfigurationDelegate:208- Finished Spring Data repository scanning in 49 ms. Found 0 Redis repository interfaces.
+2025-10-06 17:16:07,924-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 17:16:07,938-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 17:16:07,938-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 17:16:08,053-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 17:16:08,054-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3485 ms
+2025-10-06 17:16:09,266-[]---INFO -Version:43- Redisson 3.43.0
+2025-10-06 17:16:09,305-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-06 17:16:09,346-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-06 17:16:09,711-[]---INFO -ConnectionsHolder:132- 1 connections initialized for localhost/127.0.0.1:6379
+2025-10-06 17:16:09,819-[]---INFO -ConnectionsHolder:132- 24 connections initialized for localhost/127.0.0.1:6379
+2025-10-06 17:16:10,904-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-06 17:16:10,976-[]---INFO -App:56- Started App in 7.621 seconds (process running for 8.522)
+2025-10-06 17:16:14,952-[]---WARN -DNSMonitor:112- Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-10-06 17:16:22,646-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 17798 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 17:16:22,651-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 17:16:24,245-[]---INFO -RepositoryConfigurationDelegate:292- Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-06 17:16:24,249-[]---INFO -RepositoryConfigurationDelegate:139- Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-06 17:16:24,406-[]---INFO -RepositoryConfigurationDelegate:208- Finished Spring Data repository scanning in 87 ms. Found 0 Redis repository interfaces.
+2025-10-06 17:16:25,937-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 17:16:25,949-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 17:16:25,950-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 17:16:26,039-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 17:16:26,040-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3294 ms
+2025-10-06 17:16:27,246-[]---INFO -Version:43- Redisson 3.43.0
+2025-10-06 17:16:27,285-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-06 17:16:27,325-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-06 17:16:27,671-[]---INFO -ConnectionsHolder:132- 1 connections initialized for localhost/127.0.0.1:6379
+2025-10-06 17:16:27,795-[]---INFO -ConnectionsHolder:132- 24 connections initialized for localhost/127.0.0.1:6379
+2025-10-06 17:16:28,835-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-06 17:16:28,869-[]---INFO -App:56- Started App in 7.308 seconds (process running for 8.161)
+2025-10-06 17:16:32,902-[]---WARN -DNSMonitor:112- Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379
+2025-10-06 17:17:13,653-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 17943 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 17:17:13,657-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 17:17:15,407-[]---INFO -RepositoryConfigurationDelegate:292- Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-06 17:17:15,411-[]---INFO -RepositoryConfigurationDelegate:139- Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-06 17:17:15,532-[]---INFO -RepositoryConfigurationDelegate:208- Finished Spring Data repository scanning in 75 ms. Found 0 Redis repository interfaces.
+2025-10-06 17:17:17,165-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 17:17:17,177-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 17:17:17,177-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 17:17:17,277-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 17:17:17,278-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3527 ms
+2025-10-06 17:17:18,420-[]---INFO -Version:43- Redisson 3.43.0
+2025-10-06 17:17:18,494-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-06 17:17:18,593-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-06 17:17:23,402-[]---WARN -AnnotationConfigServletWebServerApplicationContext:624- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+2025-10-06 17:17:23,414-[]---INFO -StandardService:173- Stopping service [Tomcat]
+2025-10-06 17:17:23,495-[]---ERROR-SpringApplication:839- Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:946)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.philipgreat.mcme.App.main(App.java:18)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1441)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1348)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 33 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:227)
+	at org.redisson.connection.MasterSlaveConnectionManager.connect(MasterSlaveConnectionManager.java:187)
+	at org.redisson.connection.ConnectionManager.create(ConnectionManager.java:98)
+	at org.redisson.Redisson.<init>(Redisson.java:66)
+	at org.redisson.Redisson.create(Redisson.java:111)
+	at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:329)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 34 common frames omitted
+Caused by: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:222)
+	... 44 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$2(ConnectionsHolder.java:167)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$5(ConnectionsHolder.java:181)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at org.redisson.client.RedisClient$1$2.run(RedisClient.java:304)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.CompletionException: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+	at java.base/java.util.concurrent.CompletableFuture.encodeRelay(CompletableFuture.java:368)
+	at java.base/java.util.concurrent.CompletableFuture.completeRelay(CompletableFuture.java:377)
+	at java.base/java.util.concurrent.CompletableFuture$UniRelay.tryFire(CompletableFuture.java:1097)
+	... 12 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-06 17:18:31,303-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 18175 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 17:18:31,309-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 17:18:34,462-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 17:18:34,477-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 17:18:34,478-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 17:18:34,655-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 17:18:34,656-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3251 ms
+2025-10-06 17:18:36,013-[]---INFO -Version:43- Redisson 3.43.0
+2025-10-06 17:18:36,055-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-06 17:18:36,106-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-06 17:18:41,036-[]---WARN -AnnotationConfigServletWebServerApplicationContext:624- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+2025-10-06 17:18:41,056-[]---INFO -StandardService:173- Stopping service [Tomcat]
+2025-10-06 17:18:41,147-[]---ERROR-SpringApplication:839- Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:946)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.philipgreat.mcme.App.main(App.java:18)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1441)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1348)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 33 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:227)
+	at org.redisson.connection.MasterSlaveConnectionManager.connect(MasterSlaveConnectionManager.java:187)
+	at org.redisson.connection.ConnectionManager.create(ConnectionManager.java:98)
+	at org.redisson.Redisson.<init>(Redisson.java:66)
+	at org.redisson.Redisson.create(Redisson.java:111)
+	at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:329)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 34 common frames omitted
+Caused by: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:222)
+	... 44 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$2(ConnectionsHolder.java:167)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$5(ConnectionsHolder.java:181)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at org.redisson.client.RedisClient$1$2.run(RedisClient.java:304)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.CompletionException: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+	at java.base/java.util.concurrent.CompletableFuture.encodeRelay(CompletableFuture.java:368)
+	at java.base/java.util.concurrent.CompletableFuture.completeRelay(CompletableFuture.java:377)
+	at java.base/java.util.concurrent.CompletableFuture$UniRelay.tryFire(CompletableFuture.java:1097)
+	... 12 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-06 17:19:12,081-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 18283 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 17:19:12,087-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 17:19:15,073-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 17:19:15,083-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 17:19:15,084-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 17:19:15,256-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 17:19:15,257-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3083 ms
+2025-10-06 17:19:16,377-[]---INFO -Version:43- Redisson 3.43.0
+2025-10-06 17:19:16,414-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-06 17:19:16,449-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-06 17:19:21,324-[]---WARN -AnnotationConfigServletWebServerApplicationContext:624- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+2025-10-06 17:19:21,342-[]---INFO -StandardService:173- Stopping service [Tomcat]
+2025-10-06 17:19:21,438-[]---ERROR-SpringApplication:839- Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:946)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.philipgreat.mcme.App.main(App.java:18)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1441)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1348)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 33 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:227)
+	at org.redisson.connection.MasterSlaveConnectionManager.connect(MasterSlaveConnectionManager.java:187)
+	at org.redisson.connection.ConnectionManager.create(ConnectionManager.java:98)
+	at org.redisson.Redisson.<init>(Redisson.java:66)
+	at org.redisson.Redisson.create(Redisson.java:111)
+	at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:329)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 34 common frames omitted
+Caused by: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:222)
+	... 44 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$2(ConnectionsHolder.java:167)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$5(ConnectionsHolder.java:181)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at org.redisson.client.RedisClient$1$2.run(RedisClient.java:304)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.CompletionException: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+	at java.base/java.util.concurrent.CompletableFuture.encodeRelay(CompletableFuture.java:368)
+	at java.base/java.util.concurrent.CompletableFuture.completeRelay(CompletableFuture.java:377)
+	at java.base/java.util.concurrent.CompletableFuture$UniRelay.tryFire(CompletableFuture.java:1097)
+	... 12 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-06 17:21:19,114-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 18635 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 17:21:19,120-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 17:21:22,022-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 17:21:22,092-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 17:21:22,094-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 17:21:22,212-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 17:21:22,212-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3002 ms
+2025-10-06 17:21:23,377-[]---INFO -Version:43- Redisson 3.43.0
+2025-10-06 17:21:23,419-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-06 17:21:23,456-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-06 17:21:28,322-[]---WARN -AnnotationConfigServletWebServerApplicationContext:624- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+2025-10-06 17:21:28,339-[]---INFO -StandardService:173- Stopping service [Tomcat]
+2025-10-06 17:21:28,429-[]---ERROR-SpringApplication:839- Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:946)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.philipgreat.mcme.App.main(App.java:22)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1441)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1348)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 33 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:227)
+	at org.redisson.connection.MasterSlaveConnectionManager.connect(MasterSlaveConnectionManager.java:187)
+	at org.redisson.connection.ConnectionManager.create(ConnectionManager.java:98)
+	at org.redisson.Redisson.<init>(Redisson.java:66)
+	at org.redisson.Redisson.create(Redisson.java:111)
+	at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:329)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 34 common frames omitted
+Caused by: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:222)
+	... 44 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$2(ConnectionsHolder.java:167)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$5(ConnectionsHolder.java:181)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at org.redisson.client.RedisClient$1$2.run(RedisClient.java:304)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.CompletionException: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+	at java.base/java.util.concurrent.CompletableFuture.encodeRelay(CompletableFuture.java:368)
+	at java.base/java.util.concurrent.CompletableFuture.completeRelay(CompletableFuture.java:377)
+	at java.base/java.util.concurrent.CompletableFuture$UniRelay.tryFire(CompletableFuture.java:1097)
+	... 12 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-06 17:21:53,920-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 18745 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 17:21:53,926-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 17:21:56,788-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 17:21:56,803-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 17:21:56,803-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 17:21:56,978-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 17:21:56,980-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 2962 ms
+2025-10-06 17:21:58,122-[]---INFO -Version:43- Redisson 3.43.0
+2025-10-06 17:21:58,166-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-06 17:21:58,214-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-06 17:22:03,160-[]---WARN -AnnotationConfigServletWebServerApplicationContext:624- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+2025-10-06 17:22:03,182-[]---INFO -StandardService:173- Stopping service [Tomcat]
+2025-10-06 17:22:03,267-[]---ERROR-SpringApplication:839- Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:946)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.philipgreat.mcme.App.main(App.java:18)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1441)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1348)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 33 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:227)
+	at org.redisson.connection.MasterSlaveConnectionManager.connect(MasterSlaveConnectionManager.java:187)
+	at org.redisson.connection.ConnectionManager.create(ConnectionManager.java:98)
+	at org.redisson.Redisson.<init>(Redisson.java:66)
+	at org.redisson.Redisson.create(Redisson.java:111)
+	at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:329)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 34 common frames omitted
+Caused by: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:222)
+	... 44 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$2(ConnectionsHolder.java:167)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$5(ConnectionsHolder.java:181)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at org.redisson.client.RedisClient$1$2.run(RedisClient.java:304)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.CompletionException: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+	at java.base/java.util.concurrent.CompletableFuture.encodeRelay(CompletableFuture.java:368)
+	at java.base/java.util.concurrent.CompletableFuture.completeRelay(CompletableFuture.java:377)
+	at java.base/java.util.concurrent.CompletableFuture$UniRelay.tryFire(CompletableFuture.java:1097)
+	... 12 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-06 17:23:45,446-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 19069 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 17:23:45,455-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 17:23:48,691-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 17:23:48,762-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 17:23:48,764-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 17:23:48,885-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 17:23:48,886-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3332 ms
+2025-10-06 17:23:50,092-[]---INFO -Version:43- Redisson 3.43.0
+2025-10-06 17:23:50,127-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-06 17:23:50,169-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-06 17:23:55,102-[]---WARN -AnnotationConfigServletWebServerApplicationContext:624- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+2025-10-06 17:23:55,120-[]---INFO -StandardService:173- Stopping service [Tomcat]
+2025-10-06 17:23:55,208-[]---ERROR-SpringApplication:839- Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:946)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.philipgreat.mcme.App.main(App.java:18)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisson' defined in class path resource [org/redisson/spring/starter/RedissonAutoConfigurationV2.class]: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1441)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1348)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redisson' threw exception with message: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 33 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:227)
+	at org.redisson.connection.MasterSlaveConnectionManager.connect(MasterSlaveConnectionManager.java:187)
+	at org.redisson.connection.ConnectionManager.create(ConnectionManager.java:98)
+	at org.redisson.Redisson.<init>(Redisson.java:66)
+	at org.redisson.Redisson.create(Redisson.java:111)
+	at org.redisson.spring.starter.RedissonAutoConfiguration.redisson(RedissonAutoConfiguration.java:329)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 34 common frames omitted
+Caused by: java.util.concurrent.ExecutionException: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.redisson.connection.MasterSlaveConnectionManager.doConnect(MasterSlaveConnectionManager.java:222)
+	... 44 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: localhost/127.0.0.1:6379
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$2(ConnectionsHolder.java:167)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at org.redisson.connection.ConnectionsHolder.lambda$createConnection$5(ConnectionsHolder.java:181)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at org.redisson.client.RedisClient$1$2.run(RedisClient.java:304)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.CompletionException: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+	at java.base/java.util.concurrent.CompletableFuture.encodeRelay(CompletableFuture.java:368)
+	at java.base/java.util.concurrent.CompletableFuture.completeRelay(CompletableFuture.java:377)
+	at java.base/java.util.concurrent.CompletableFuture$UniRelay.tryFire(CompletableFuture.java:1097)
+	... 12 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-06 17:24:25,380-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 19184 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 17:24:25,385-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 17:24:28,429-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 17:24:28,440-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 17:24:28,441-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 17:24:28,624-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 17:24:28,626-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3148 ms
+2025-10-06 17:24:29,594-[]---WARN -AnnotationConfigServletWebServerApplicationContext:624- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataStore' defined in class path resource [io/teaql/data/TQLAutoConfiguration.class]: Unsatisfied dependency expressed through method 'dataStore' parameter 0: No qualifying bean of type 'org.redisson.api.RedissonClient' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-10-06 17:24:29,601-[]---INFO -StandardService:173- Stopping service [Tomcat]
+2025-10-06 17:24:29,660-[]---ERROR-LoggingFailureAnalysisReporter:40- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method dataStore in io.teaql.data.TQLAutoConfiguration required a bean of type 'org.redisson.api.RedissonClient' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.redisson.api.RedissonClient' in your configuration.
+
+2025-10-06 17:30:23,947-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 20140 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-06 17:30:23,952-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-06 17:30:25,658-[]---INFO -RepositoryConfigurationDelegate:292- Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-06 17:30:25,662-[]---INFO -RepositoryConfigurationDelegate:139- Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-10-06 17:30:25,754-[]---INFO -RepositoryConfigurationDelegate:208- Finished Spring Data repository scanning in 44 ms. Found 0 Redis repository interfaces.
+2025-10-06 17:30:27,373-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-06 17:30:27,386-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-06 17:30:27,386-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-06 17:30:27,498-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-06 17:30:27,498-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3410 ms
+2025-10-06 17:30:28,677-[]---INFO -Version:43- Redisson 3.43.0
+2025-10-06 17:30:28,709-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-06 17:30:28,748-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-06 17:30:28,997-[]---INFO -ConnectionsHolder:132- 1 connections initialized for localhost/127.0.0.1:6379
+2025-10-06 17:30:29,193-[]---INFO -ConnectionsHolder:132- 24 connections initialized for localhost/127.0.0.1:6379
+2025-10-06 17:30:30,333-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-06 17:30:30,365-[]---INFO -App:56- Started App in 7.443 seconds (process running for 8.193)
+2025-10-06 17:30:34,301-[]---WARN -DNSMonitor:112- Use Redisson PRO version (https://redisson.pro) with Proxy mode feature to utilize all ip addresses: [redis://127.0.0.1:6379, redis://0:0:0:0:0:0:0:1:6379] resolved by: redis://localhost:6379

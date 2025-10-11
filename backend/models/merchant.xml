@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root alias_model_name="match_engine_management_service"
+      cfg_mask_china_mobile="false"
+      chinese_name="Match Engine Management Console"
+      english_name="atch Engine Management Console"
+      data_service="sqlite"
+      name="match-engine-management-service"
+      org="philipgreat">
+
+
+    <platform
+            _features_delta="laboratory_function"
+            name="Match Engine Test Bench"
+            create_time="createTime()"
+            last_update_time="updateTime()"
+            />
+
+ 
+     <nodes
+        node_tag="nodename"
+        product_id="100000"
+        last_live="2110-10-10T10:10:10"
+        last_match_order="1000123"
+        order_book_size="100000000000"
+        match_order_count="10000"
+        platform="platform()"       
+     /> 
+
+      <test_case
+        name="nodename"
+        product_id="100000"
+        last_live="2110-10-10T10:10:10"
+        last_match_order="1000123"
+        order_book_size="100000000000"
+        match_order_count="10000"
+        platform="platform()"       
+     /> 
+
+     <test_result 
+        create_time="createTime()"
+        name="test result name" 
+        order_book_size="100000000000"
+        time_in_nano_seconds="100000000000"
+        test_case="test_case()"
+        platform="platform()" 
+     />
+     
+     <test_feed_data
+        _name="test feed data"
+        _desc="sample data to build feed a engine"
+        product_id="1000000000000"
+        order_id="1000000000000"
+        command="1000000000000"
+        price_type="price_type()"
+        expire_time_nano_seconds="1000000000000"
+        platform="platform()" 
+     />
+    <feed_test_case
+        _name="test feed data"
+        _desc="sample data to build feed a engine"
+        count="1000000"
+        platform="platform()" 
+     />
+      <test_feed_result
+        _name="test feed data"
+        _desc="sample data to build feed a engine"
+        create_time="createTime()"
+        feed_test_case="feed_test_case()"
+        platform="platform()" 
+     />
+
+
+     
+
+
+</root>

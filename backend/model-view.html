@@ -1,0 +1,1158 @@
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>testbench-service</title>
+    <style>
+
+        /* panel layout mechanics */
+        .panel-wrap {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          width: 25%;
+          transform: translateX(0%);
+          transition: .3s ease-out;
+          z-index:1000;
+          font-size: 12px;
+        }
+        .panel {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: #333;
+          color: #eee;
+          overflow: auto;
+          padding: 1em;
+        }
+
+        /* simulate panel state control --
+        this can also be triggered by a
+        class name added to the body tag.
+        Just using a checkbox sibling here
+        for simplicity
+        */
+        [type="checkbox"]:checked ~ .panel-wrap {
+          transform: translateX(0%);
+        }
+
+
+        /* demo display */
+        *,*:before, *:after {box-sizing: border-box;}
+
+        body {
+          font-family: sans-serif;
+          font-size: 18px;
+        }
+        h3 {
+          margin: 0;
+        }
+        p {
+          line-height: 1.4;
+          margin: 2em 0 0 0;
+        }
+        [type="checkbox"] {
+          font-size: 1em;
+        }
+
+
+    </style>
+</head>
+<body style="margin: 0px;">
+
+
+
+<div class="panel-wrap" >
+    <div class="panel" id="panel">
+        <h3>Schema</h3>
+    </div>
+</div>
+<div id="panel"  style="height: 20px"> Width：
+    <button onclick="setWidth('800')">800px</button>
+    <button onclick="setWidth('1200px')">1200px</button>
+    <button onclick="setWidth('1600px')">1600px</button>
+    <button onclick="setWidth('2400px')">2400px</button>
+    <button onclick="setWidth('3600px')">3600px</button>
+    testbench-service
+</div>
+<div id="left" style="position: absolute;top: 20px;bottom: 0px;width:75%;overflow:auto">
+    <!-- Prepare a Dom with size (width and height) for ECharts -->
+
+    <div id="main" style="height: 1000px;width:1400px"></div>
+
+</div>
+<!-- ECharts import -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"></script>
+<script type="text/javascript">
+    // configure for module loader
+    function showPresetData({id,name, meta,presetData}){
+      if(!presetData){
+        return "";
+      }
+      var content="<table style='width:100%'>";
+      content=content+"<tr><td colspan='2'>"+id+"("+name+")"+"常量表"+"<hr/></td></tr>"
+
+      presetData.forEach(item=>{
+          content=content+"<tr><td>"+item.code+"</td><td>"+item.name+"</td></tr>"
+      })
+      content=content+"<tr><td colspan='2'><hr/></td></tr></table>"
+      return content;
+
+
+    }
+    function showMeta({id,name, meta,presetData,depth}){
+
+      var content="<table style='width:100%'>";
+      content=content+"<tr><td colspan='3'>"+id+"("+depth+")"+"<hr/></td></tr>"
+      //content=content+"<tr><td colspan='3'>"+id +"<hr/></td></tr>"
+
+      meta.forEach(item=>{
+        var required=item.name
+        if(item.required==='true'){
+          required="<span style='color:red'>"+item.name+"</span>"
+        }
+        content=content+"<tr><td >"+required+"</td><td>"+item.localeName+"</td><td>"+item.type+"</td></tr>"
+      })
+      content=content+"<tr><td colspan='3'><hr/></td></tr></table>"
+      return content+showPresetData({id,name, meta,presetData});
+    }
+    var data = {
+        "nodes": [
+{
+  "count": 2,
+  "depth": 0,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "lastUpdateTime",
+      "localeName": "lastUpdateTime"
+    }
+  ],
+  "name": "Platform",
+  "id": "Platform"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "RequestType",
+      "required": "true",
+      "name": "actionType",
+      "localeName": "actionType"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "snapshot",
+      "localeName": "snapshot"
+    }
+  ],
+  "name": "ServiceRequest",
+  "id": "ServiceRequest"
+}
+,
+{
+  "count": 2,
+  "depth": 1,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "entranceView",
+      "localeName": "entranceView"
+    },{
+      "type": "Platform",
+      "required": "true",
+      "name": "platform",
+      "localeName": "platform"
+    }
+  ],
+  "name": "RequestType",
+  "id": "RequestType"
+}
+,
+{
+  "count": 2,
+  "depth": 1,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Platform",
+      "required": "true",
+      "name": "platform",
+      "localeName": "platform"
+    }
+  ],
+  "name": "PermissionType",
+  "id": "PermissionType"
+}
+,
+{
+  "count": 2,
+  "depth": 3,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "batchNumber",
+      "localeName": "batchNumber"
+    },{
+      "type": "ServiceRequest",
+      "required": "true",
+      "name": "serviceRequest",
+      "localeName": "serviceRequest"
+    }
+  ],
+  "name": "CreateTask",
+  "id": "CreateTask"
+}
+,
+{
+  "count": 2,
+  "depth": 1,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "externalId",
+      "localeName": "externalId"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "found",
+      "localeName": "found"
+    },{
+      "type": "Platform",
+      "required": "true",
+      "name": "platform",
+      "localeName": "platform"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "updateTime",
+      "localeName": "updateTime"
+    }
+  ],
+  "name": "Merchant",
+  "id": "Merchant"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "remark",
+      "localeName": "remark"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "JobType",
+  "id": "JobType"
+}
+,
+{
+  "count": 2,
+  "depth": 3,
+  "meta": [
+{
+      "type": "FeedbackMainType",
+      "required": "true",
+      "name": "mainType",
+      "localeName": "mainType"
+    },{
+      "type": "JobType",
+      "required": "true",
+      "name": "jobType",
+      "localeName": "jobType"
+    },{
+      "type": "PermissionType",
+      "required": "true",
+      "name": "permissionType",
+      "localeName": "permissionType"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "JobTypeWithMainType",
+  "id": "JobTypeWithMainType"
+}
+,
+{
+  "count": 2,
+  "depth": 3,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "externalId",
+      "localeName": "externalId"
+    },{
+      "type": "JobType",
+      "required": "true",
+      "name": "jobType",
+      "localeName": "jobType"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "Employee",
+  "id": "Employee"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "Long",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "Department",
+  "id": "Department"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "Long",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "FeedbackMainType",
+  "id": "FeedbackMainType"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "Long",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "RoleType",
+  "id": "RoleType"
+}
+,
+{
+  "count": 2,
+  "depth": 3,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "Long",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "FeedbackMainType",
+      "required": "true",
+      "name": "mainType",
+      "localeName": "mainType"
+    }
+  ],
+  "name": "FeedbackSubType",
+  "id": "FeedbackSubType"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "Long",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "FeedbackResultStatus",
+  "id": "FeedbackResultStatus"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "Long",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "color",
+      "localeName": "color"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "stepIndex",
+      "localeName": "stepIndex"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "progress",
+      "localeName": "progress"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "FeedbackResolveStatus",
+  "id": "FeedbackResolveStatus"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "title",
+      "localeName": "title"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "type",
+      "localeName": "type"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "content",
+      "localeName": "content"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "MerchantBackendLog",
+  "id": "MerchantBackendLog"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "feedbackNumber",
+      "localeName": "feedbackNumber"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "Boolean",
+      "required": "true",
+      "name": "realname",
+      "localeName": "realname"
+    },{
+      "type": "RoleType",
+      "required": "true",
+      "name": "roleType",
+      "localeName": "roleType"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "mobilePhone",
+      "localeName": "mobilePhone"
+    },{
+      "type": "Department",
+      "required": "true",
+      "name": "targetDepartment",
+      "localeName": "targetDepartment"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "targetName",
+      "localeName": "targetName"
+    },{
+      "type": "FeedbackMainType",
+      "required": "true",
+      "name": "mainType",
+      "localeName": "mainType"
+    },{
+      "type": "FeedbackSubType",
+      "required": "true",
+      "name": "detailType",
+      "localeName": "detailType"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "title",
+      "localeName": "title"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "content",
+      "localeName": "content"
+    },{
+      "type": "FeedbackResultStatus",
+      "required": "true",
+      "name": "feedbackResultStatus",
+      "localeName": "feedbackResultStatus"
+    },{
+      "type": "FeedbackResolveStatus",
+      "required": "true",
+      "name": "feedbackResolveStatus",
+      "localeName": "feedbackResolveStatus"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "remoteIp",
+      "localeName": "remoteIp"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "device",
+      "localeName": "device"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "network",
+      "localeName": "network"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "FeedbackItem",
+  "id": "FeedbackItem"
+}
+,
+{
+  "count": 2,
+  "depth": 5,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "comment",
+      "localeName": "comment"
+    },{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    },{
+      "type": "FeedbackItem",
+      "required": "true",
+      "name": "feedbackItem",
+      "localeName": "feedbackItem"
+    }
+  ],
+  "name": "ReadFlag",
+  "id": "ReadFlag"
+}
+,
+{
+  "count": 2,
+  "depth": 5,
+  "meta": [
+{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "title",
+      "localeName": "title"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "type",
+      "localeName": "type"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "content",
+      "localeName": "content"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "remoteIp",
+      "localeName": "remoteIp"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "device",
+      "localeName": "device"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "network",
+      "localeName": "network"
+    },{
+      "type": "FeedbackItem",
+      "required": "true",
+      "name": "feedbackItem",
+      "localeName": "feedbackItem"
+    }
+  ],
+  "name": "FeedbackItemLog",
+  "id": "FeedbackItemLog"
+}
+,
+{
+  "count": 2,
+  "depth": 5,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "fileName",
+      "localeName": "fileName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "mimeType",
+      "localeName": "mimeType"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "fileSize",
+      "localeName": "fileSize"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "resourceKey",
+      "localeName": "resourceKey"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "resourceUrl",
+      "localeName": "resourceUrl"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    },{
+      "type": "FeedbackItem",
+      "required": "true",
+      "name": "feedbackItem",
+      "localeName": "feedbackItem"
+    }
+  ],
+  "name": "FeedbackItemAttachment",
+  "id": "FeedbackItemAttachment"
+}
+,
+{
+  "count": 2,
+  "depth": 5,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "submitContent",
+      "localeName": "submitContent"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "responseContent",
+      "localeName": "responseContent"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "internalRemark",
+      "localeName": "internalRemark"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    },{
+      "type": "FeedbackItem",
+      "required": "true",
+      "name": "feedbackItem",
+      "localeName": "feedbackItem"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "remoteIp",
+      "localeName": "remoteIp"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "device",
+      "localeName": "device"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "network",
+      "localeName": "network"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "updateTime",
+      "localeName": "updateTime"
+    }
+  ],
+  "name": "SupplementContent",
+  "id": "SupplementContent"
+}
+],
+
+        "links": [{
+       "source": "Platform",
+       "type": "RequestType",
+       "target": "RequestType",
+       "value": 1,
+       "refBy": "requestTypeList"
+ },{
+       "source": "Platform",
+       "type": "PermissionType",
+       "target": "PermissionType",
+       "value": 1,
+       "refBy": "permissionTypeList"
+ },{
+       "source": "Platform",
+       "type": "Merchant",
+       "target": "Merchant",
+       "value": 1,
+       "refBy": "merchantList"
+ } ,{
+       "source": "ServiceRequest",
+       "type": "CreateTask",
+       "target": "CreateTask",
+       "value": 1,
+       "refBy": "createTaskList"
+ } ,{
+       "source": "RequestType",
+       "type": "ServiceRequest",
+       "target": "ServiceRequest",
+       "value": 1,
+       "refBy": "serviceRequestList"
+ } ,{
+       "source": "PermissionType",
+       "type": "JobTypeWithMainType",
+       "target": "JobTypeWithMainType",
+       "value": 1,
+       "refBy": "jobTypeWithMainTypeList"
+ } ,{
+       "source": "Merchant",
+       "type": "JobType",
+       "target": "JobType",
+       "value": 1,
+       "refBy": "jobTypeList"
+ },{
+       "source": "Merchant",
+       "type": "Employee",
+       "target": "Employee",
+       "value": 1,
+       "refBy": "employeeList"
+ },{
+       "source": "Merchant",
+       "type": "Department",
+       "target": "Department",
+       "value": 1,
+       "refBy": "departmentList"
+ },{
+       "source": "Merchant",
+       "type": "FeedbackMainType",
+       "target": "FeedbackMainType",
+       "value": 1,
+       "refBy": "feedbackMainTypeList"
+ },{
+       "source": "Merchant",
+       "type": "RoleType",
+       "target": "RoleType",
+       "value": 1,
+       "refBy": "roleTypeList"
+ },{
+       "source": "Merchant",
+       "type": "FeedbackResultStatus",
+       "target": "FeedbackResultStatus",
+       "value": 1,
+       "refBy": "feedbackResultStatusList"
+ },{
+       "source": "Merchant",
+       "type": "FeedbackResolveStatus",
+       "target": "FeedbackResolveStatus",
+       "value": 1,
+       "refBy": "feedbackResolveStatusList"
+ },{
+       "source": "Merchant",
+       "type": "MerchantBackendLog",
+       "target": "MerchantBackendLog",
+       "value": 1,
+       "refBy": "merchantBackendLogList"
+ },{
+       "source": "Merchant",
+       "type": "FeedbackItem",
+       "target": "FeedbackItem",
+       "value": 1,
+       "refBy": "feedbackItemList"
+ } ,{
+       "source": "JobType",
+       "type": "JobTypeWithMainType",
+       "target": "JobTypeWithMainType",
+       "value": 1,
+       "refBy": "jobTypeWithMainTypeList"
+ },{
+       "source": "JobType",
+       "type": "Employee",
+       "target": "Employee",
+       "value": 1,
+       "refBy": "employeeList"
+ } ,{
+       "source": "Employee",
+       "type": "ReadFlag",
+       "target": "ReadFlag",
+       "value": 1,
+       "refBy": "readFlagList"
+ } ,{
+       "source": "Department",
+       "type": "FeedbackItem",
+       "target": "FeedbackItem",
+       "value": 1,
+       "refBy": "feedbackItemList"
+ } ,{
+       "source": "FeedbackMainType",
+       "type": "JobTypeWithMainType",
+       "target": "JobTypeWithMainType",
+       "value": 1,
+       "refBy": "jobTypeWithMainTypeList"
+ },{
+       "source": "FeedbackMainType",
+       "type": "FeedbackSubType",
+       "target": "FeedbackSubType",
+       "value": 1,
+       "refBy": "feedbackSubTypeList"
+ },{
+       "source": "FeedbackMainType",
+       "type": "FeedbackItem",
+       "target": "FeedbackItem",
+       "value": 1,
+       "refBy": "feedbackItemList"
+ } ,{
+       "source": "RoleType",
+       "type": "FeedbackItem",
+       "target": "FeedbackItem",
+       "value": 1,
+       "refBy": "feedbackItemList"
+ } ,{
+       "source": "FeedbackSubType",
+       "type": "FeedbackItem",
+       "target": "FeedbackItem",
+       "value": 1,
+       "refBy": "feedbackItemList"
+ } ,{
+       "source": "FeedbackResultStatus",
+       "type": "FeedbackItem",
+       "target": "FeedbackItem",
+       "value": 1,
+       "refBy": "feedbackItemList"
+ } ,{
+       "source": "FeedbackResolveStatus",
+       "type": "FeedbackItem",
+       "target": "FeedbackItem",
+       "value": 1,
+       "refBy": "feedbackItemList"
+ } ,{
+       "source": "FeedbackItem",
+       "type": "ReadFlag",
+       "target": "ReadFlag",
+       "value": 1,
+       "refBy": "readFlagList"
+ },{
+       "source": "FeedbackItem",
+       "type": "FeedbackItemLog",
+       "target": "FeedbackItemLog",
+       "value": 1,
+       "refBy": "feedbackItemLogList"
+ },{
+       "source": "FeedbackItem",
+       "type": "FeedbackItemAttachment",
+       "target": "FeedbackItemAttachment",
+       "value": 1,
+       "refBy": "feedbackItemAttachmentList"
+ },{
+       "source": "FeedbackItem",
+       "type": "SupplementContent",
+       "target": "SupplementContent",
+       "value": 1,
+       "refBy": "supplementContentList"
+ } ]
+    }
+    var modelChart = echarts.init(document.getElementById('main'));
+
+    var option = {
+
+      label:{
+
+          show:true,
+          formatter:function(obj){
+              if(obj.data.presetData){
+                return obj.data.id+"("+obj.data.presetData.length+")"
+              }
+              return obj.data.name
+          }
+      },
+      title: {
+          text: '',
+          left: 'center'
+      },
+      tooltip: {
+          trigger: 'item',
+          triggerOn: 'mouseclick',
+
+          formatter:function({id,name, data, dataType}){
+
+              if(dataType==='edge') {
+                  //return obj.name+":"+obj.dataType+""+JSON.stringify(obj.data)
+                  var [src, target]=name.split(" > ")
+                  console.log("console ", src, target);
+                  return src+" &lt; <span style='color:red'>"+data.refBy+"</span> &gt; "+target;
+
+              }
+              if(dataType==='node') {
+                  //return obj.data.label+JSON.stringify(obj.data)
+                  //return showMeta({id:data.id,name:data.label, meta:data.meta})
+              }
+              //return "unknown"
+
+          },
+      },
+      series: [
+          {
+              type: 'sankey',
+              left: 50.0,
+              top: 20.0,
+              right: 150.0,
+              bottom: 25.0,
+              data: data.nodes,
+              links: data.links,
+              emphasis: {
+                  focus: 'adjacency'
+              },
+              lineStyle: {
+                  color: 'gradient',
+                  curveness: 0.5
+              }
+          }
+      ]
+}
+
+modelChart.setOption(option);
+
+modelChart.on('click', function (componentData) {
+
+
+  if(!componentData){
+    return
+  }
+  if(!componentData.dataType){
+    return
+  }
+  var {name, data, dataType}=componentData
+  var parent = document.getElementById("panel");
+
+  var theFirstChild = parent.firstChild;
+  if(componentData.dataType==='edge'){
+    var [src, target]=name.split(" > ")
+    //console.log("console ", src, target);
+    //return src+" &lt; <span style='color:red'>"+data.refBy+"</span> &gt; "+target;
+    var p = document.createElement("p");
+    p.innerHTML="<div>"+src+".<span style='color:red'>"+data.refBy+"</span> is a/an "+target;+"</div>"
+    parent.insertBefore(p, theFirstChild);
+    return
+  }
+
+  if(componentData.dataType==='node'){
+    console.log("get data", componentData)
+    var p = document.createElement("p");
+    p.innerHTML=showMeta({id:data.id,name:data.label, meta:data.meta,presetData:data.presetData,depth:data.depth})
+    if(theFirstChild){
+      parent.insertBefore(p, theFirstChild);
+      return
+    }
+
+
+    return
+  }
+
+
+});
+
+//document.getElementById("main").addEventListener("wheel", myFunction);
+
+function myFunction(event) {
+
+  if(parseInt(this.style.width<800)){
+    return;
+  }
+  var move=event.deltaY/8
+  document.title=(parseInt(this.style.width)+move*1.4) +"px";
+  this.style.width = (parseInt(this.style.width)+move*1.4) +"px";
+  this.style.height = (parseInt(this.style.height)+move)+"px";
+  modelChart.resize();
+}
+
+function setWidth(widthExpr){
+  var target = document.getElementById("main");
+  var width=parseInt(widthExpr);
+  target.style.width=width+"px";
+  target.style.height=width*0.7+"px";
+  modelChart.resize();
+}
+
+
+</script>
+</body>
+</html>

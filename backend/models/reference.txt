@@ -1,0 +1,15 @@
+   <permission_type
+            _name="权限类型"
+            _constant="true"
+            _identifier="code"
+            id="id()" name="xxx"
+            code="string(scenarioCode)"
+
+            platform="platform()">
+
+
+        <_value id="1" name="查看权限" code="VIEW"  />
+        <_value id="2" name="处置权限" code="PROCESS"  />
+
+
+    </permission_type>
