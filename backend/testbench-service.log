@@ -1340,3 +1340,350 @@ java.net.SocketException: Invalid argument
 2025-10-11 17:01:32,518-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_feed_test_case_of_test_feed_result ON test_feed_result_data(feed_test_case)
 2025-10-11 17:01:32,520-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_platform_of_test_feed_result ON test_feed_result_data(platform)
 2025-10-11 17:01:32,521-[T1976935471760912384]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_test_feed_result ON test_feed_result_data(version)
+2025-10-11 17:15:44,789-[]---INFO -App:50- Starting App using Java 17.0.3 with PID 54947 (/Users/Philip/githome/match-engine-testbench/backend/build/classes/java/main started by Philip in /Users/Philip/githome/match-engine-testbench/backend)
+2025-10-11 17:15:44,795-[]---INFO -App:653- No active profile set, falling back to 1 default profile: "default"
+2025-10-11 17:15:48,574-[]---INFO -TomcatWebServer:108- Tomcat initialized with port 9989 (http)
+2025-10-11 17:15:48,586-[]---INFO -StandardService:173- Starting service [Tomcat]
+2025-10-11 17:15:48,587-[]---INFO -StandardEngine:173- Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-11 17:15:48,698-[]---INFO -[/]:173- Initializing Spring embedded WebApplicationContext
+2025-10-11 17:15:48,699-[]---INFO -ServletWebServerApplicationContext:296- Root WebApplicationContext: initialization completed in 3814 ms
+2025-10-11 17:15:49,115-[]---INFO -Version:43- Redisson 3.31.0
+2025-10-11 17:15:49,182-[]---WARN -DnsServerAddressStreamProviders:70- Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-11 17:15:49,219-[]---WARN -SequentialDnsAddressResolverFactory:111- DNS TCP fallback on UDP query timeout disabled. Upgrade Netty to 4.1.105 or higher.
+2025-10-11 17:15:49,448-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 17:15:49,451-[]---INFO -ConnectionsHolder:130- 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-11 17:15:51,801-[]---INFO -EndpointLinksResolver:58- Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-10-11 17:15:51,932-[]---INFO -TomcatWebServer:221- Tomcat started on port 9989 (http) with context path ''
+2025-10-11 17:15:51,991-[]---INFO -App:56- Started App in 8.268 seconds (process running for 9.02)
+2025-10-11 17:15:58,394-[]---INFO -[/]:173- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-11 17:15:58,395-[]---INFO -DispatcherServlet:532- Initializing Servlet 'dispatcherServlet'
+2025-10-11 17:15:58,402-[]---INFO -DispatcherServlet:554- Completed initialization in 6 ms
+2025-10-11 17:15:59,321-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE merchant_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+tax_number VARCHAR(100),
+address VARCHAR(100),
+create_time TIMESTAMP,
+update_time TIMESTAMP,
+version BIGINT)
+;
+2025-10-11 17:15:59,334-[T1976939824106295296]---INFO -SQLRepository:1426- INSERT INTO merchant_data (id,name,tax_number,address,create_time,update_time,version) VALUES ('1','科技集团有限公司','91370100MA3C6B4A1X','北京市海淀区科技园区88号','2025-10-11T17:15:59.332350','2025-10-11T17:15:59.332464','1')
+;
+2025-10-11 17:15:59,347-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_merchant ON merchant_data(create_time)
+2025-10-11 17:15:59,353-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_update_time_of_merchant ON merchant_data(update_time)
+2025-10-11 17:15:59,355-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_merchant ON merchant_data(version)
+2025-10-11 17:15:59,366-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE gender_type_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+merchant BIGINT,
+version BIGINT)
+;
+2025-10-11 17:15:59,377-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO gender_type_data (id,name,code,merchant,version) VALUES ('1','男','MALE','1','1');
+2025-10-11 17:15:59,385-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO gender_type_data (id,name,code,merchant,version) VALUES ('2','女','FEMALE','1','1');
+2025-10-11 17:15:59,396-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO gender_type_data (id,name,code,merchant,version) VALUES ('3','其他','OTHER','1','1');
+2025-10-11 17:15:59,401-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_code_of_gender_type ON gender_type_data(code)
+2025-10-11 17:15:59,406-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_gender_type ON gender_type_data(merchant)
+2025-10-11 17:15:59,409-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_gender_type ON gender_type_data(version)
+2025-10-11 17:15:59,422-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE education_level_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+merchant BIGINT,
+version BIGINT)
+;
+2025-10-11 17:15:59,431-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO education_level_data (id,name,code,merchant,version) VALUES ('1','高中及以下','HighSchool','1','1');
+2025-10-11 17:15:59,439-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO education_level_data (id,name,code,merchant,version) VALUES ('2','大专','COLLEGE','1','1');
+2025-10-11 17:15:59,443-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO education_level_data (id,name,code,merchant,version) VALUES ('3','本科','BACHELOR','1','1');
+2025-10-11 17:15:59,448-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO education_level_data (id,name,code,merchant,version) VALUES ('4','硕士','MASTER','1','1');
+2025-10-11 17:15:59,453-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO education_level_data (id,name,code,merchant,version) VALUES ('5','博士','DOCTOR','1','1');
+2025-10-11 17:15:59,456-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_code_of_education_level ON education_level_data(code)
+2025-10-11 17:15:59,459-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_education_level ON education_level_data(merchant)
+2025-10-11 17:15:59,463-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_education_level ON education_level_data(version)
+2025-10-11 17:15:59,473-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE candidate_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+mobile_phone INTEGER,
+email VARCHAR(100),
+gender BIGINT,
+education BIGINT,
+merchant BIGINT,
+create_time TIMESTAMP,
+version BIGINT)
+;
+2025-10-11 17:15:59,474-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_mobile_phone_of_candidate ON candidate_data(mobile_phone)
+2025-10-11 17:15:59,476-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_gender_of_candidate ON candidate_data(gender)
+2025-10-11 17:15:59,477-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_education_of_candidate ON candidate_data(education)
+2025-10-11 17:15:59,479-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_candidate ON candidate_data(merchant)
+2025-10-11 17:15:59,481-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_candidate ON candidate_data(create_time)
+2025-10-11 17:15:59,484-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_candidate ON candidate_data(version)
+2025-10-11 17:15:59,490-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE termination_type_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+merchant BIGINT,
+version BIGINT)
+;
+2025-10-11 17:15:59,494-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO termination_type_data (id,name,code,merchant,version) VALUES ('1','辞职','RESIGNATION','1','1');
+2025-10-11 17:15:59,498-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO termination_type_data (id,name,code,merchant,version) VALUES ('2','辞退','DISMISSAL','1','1');
+2025-10-11 17:15:59,500-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO termination_type_data (id,name,code,merchant,version) VALUES ('3','合同到期','ContractEnd','1','1');
+2025-10-11 17:15:59,504-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO termination_type_data (id,name,code,merchant,version) VALUES ('4','退休','RETIREMENT','1','1');
+2025-10-11 17:15:59,506-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_code_of_termination_type ON termination_type_data(code)
+2025-10-11 17:15:59,510-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_termination_type ON termination_type_data(merchant)
+2025-10-11 17:15:59,511-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_termination_type ON termination_type_data(version)
+2025-10-11 17:15:59,540-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_platform ON platform_data(create_time)
+2025-10-11 17:15:59,541-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_last_update_time_of_platform ON platform_data(last_update_time)
+2025-10-11 17:15:59,542-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_platform ON platform_data(version)
+2025-10-11 17:15:59,545-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE department_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+"description" VARCHAR(100),
+merchant BIGINT,
+create_time TIMESTAMP,
+update_time TIMESTAMP,
+version BIGINT)
+;
+2025-10-11 17:15:59,547-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_department ON department_data(merchant)
+2025-10-11 17:15:59,549-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_department ON department_data(create_time)
+2025-10-11 17:15:59,551-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_update_time_of_department ON department_data(update_time)
+2025-10-11 17:15:59,552-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_department ON department_data(version)
+2025-10-11 17:15:59,557-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE position_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+department BIGINT,
+merchant BIGINT,
+create_time TIMESTAMP,
+version BIGINT)
+;
+2025-10-11 17:15:59,559-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_department_of_position ON position_data(department)
+2025-10-11 17:15:59,562-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_position ON position_data(merchant)
+2025-10-11 17:15:59,565-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_position ON position_data(create_time)
+2025-10-11 17:15:59,567-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_position ON position_data(version)
+2025-10-11 17:15:59,576-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE leave_type_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+merchant BIGINT,
+version BIGINT)
+;
+2025-10-11 17:15:59,581-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO leave_type_data (id,name,code,merchant,version) VALUES ('1','年假','ANNUAL','1','1');
+2025-10-11 17:15:59,586-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO leave_type_data (id,name,code,merchant,version) VALUES ('2','病假','SICK','1','1');
+2025-10-11 17:15:59,594-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO leave_type_data (id,name,code,merchant,version) VALUES ('3','事假','PERSONAL','1','1');
+2025-10-11 17:15:59,598-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO leave_type_data (id,name,code,merchant,version) VALUES ('4','婚假','MARRIAGE','1','1');
+2025-10-11 17:15:59,602-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO leave_type_data (id,name,code,merchant,version) VALUES ('5','产假','MATERNITY','1','1');
+2025-10-11 17:15:59,606-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO leave_type_data (id,name,code,merchant,version) VALUES ('6','陪产假','PATERNITY','1','1');
+2025-10-11 17:15:59,609-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_code_of_leave_type ON leave_type_data(code)
+2025-10-11 17:15:59,610-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_leave_type ON leave_type_data(merchant)
+2025-10-11 17:15:59,612-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_leave_type ON leave_type_data(version)
+2025-10-11 17:15:59,616-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE performance_level_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+merchant BIGINT,
+version BIGINT)
+;
+2025-10-11 17:15:59,630-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO performance_level_data (id,name,code,merchant,version) VALUES ('1','优秀','EXCELLENT','1','1');
+2025-10-11 17:15:59,635-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO performance_level_data (id,name,code,merchant,version) VALUES ('2','良好','GOOD','1','1');
+2025-10-11 17:15:59,640-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO performance_level_data (id,name,code,merchant,version) VALUES ('3','合格','SATISFACTORY','1','1');
+2025-10-11 17:15:59,647-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO performance_level_data (id,name,code,merchant,version) VALUES ('4','待改进','NeedsImprovement','1','1');
+2025-10-11 17:15:59,650-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO performance_level_data (id,name,code,merchant,version) VALUES ('5','不合格','UNSATISFACTORY','1','1');
+2025-10-11 17:15:59,652-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_code_of_performance_level ON performance_level_data(code)
+2025-10-11 17:15:59,653-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_performance_level ON performance_level_data(merchant)
+2025-10-11 17:15:59,654-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_performance_level ON performance_level_data(version)
+2025-10-11 17:15:59,659-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE interview_status_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+merchant BIGINT,
+version BIGINT)
+;
+2025-10-11 17:15:59,661-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO interview_status_data (id,name,code,merchant,version) VALUES ('1','待安排','PENDING','1','1');
+2025-10-11 17:15:59,664-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO interview_status_data (id,name,code,merchant,version) VALUES ('2','已安排','SCHEDULED','1','1');
+2025-10-11 17:15:59,666-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO interview_status_data (id,name,code,merchant,version) VALUES ('3','已完成','COMPLETED','1','1');
+2025-10-11 17:15:59,675-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO interview_status_data (id,name,code,merchant,version) VALUES ('4','已取消','CANCELLED','1','1');
+2025-10-11 17:15:59,678-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_code_of_interview_status ON interview_status_data(code)
+2025-10-11 17:15:59,679-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_interview_status ON interview_status_data(merchant)
+2025-10-11 17:15:59,682-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_interview_status ON interview_status_data(version)
+2025-10-11 17:15:59,685-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE interview_data (
+id BIGINT PRIMARY KEY,
+candidate BIGINT,
+interviewer VARCHAR(100),
+interview_time VARCHAR(100),
+interview_location VARCHAR(100),
+status BIGINT,
+merchant BIGINT,
+create_time TIMESTAMP,
+version BIGINT)
+;
+2025-10-11 17:15:59,688-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_candidate_of_interview ON interview_data(candidate)
+2025-10-11 17:15:59,689-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_status_of_interview ON interview_data(status)
+2025-10-11 17:15:59,691-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_interview ON interview_data(merchant)
+2025-10-11 17:15:59,693-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_interview ON interview_data(create_time)
+2025-10-11 17:15:59,695-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_interview ON interview_data(version)
+2025-10-11 17:15:59,700-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE interview_evaluation_data (
+id BIGINT PRIMARY KEY,
+interview BIGINT,
+technical_score INTEGER,
+communication_score INTEGER,
+overall_score INTEGER,
+recommendation VARCHAR(100),
+merchant BIGINT,
+create_time TIMESTAMP,
+version BIGINT)
+;
+2025-10-11 17:15:59,702-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_interview_of_interview_evaluation ON interview_evaluation_data(interview)
+2025-10-11 17:15:59,704-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_technical_score_of_interview_evaluation ON interview_evaluation_data(technical_score)
+2025-10-11 17:15:59,705-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_communication_score_of_interview_evaluation ON interview_evaluation_data(communication_score)
+2025-10-11 17:15:59,709-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_overall_score_of_interview_evaluation ON interview_evaluation_data(overall_score)
+2025-10-11 17:15:59,711-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_interview_evaluation ON interview_evaluation_data(merchant)
+2025-10-11 17:15:59,713-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_interview_evaluation ON interview_evaluation_data(create_time)
+2025-10-11 17:15:59,717-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_interview_evaluation ON interview_evaluation_data(version)
+2025-10-11 17:15:59,726-[T1976939824106295296]---INFO -SQLRepository:1563- ALTER TABLE training_type_data ADD COLUMN merchant BIGINT;
+2025-10-11 17:15:59,740-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_code_of_training_type ON training_type_data(code)
+2025-10-11 17:15:59,742-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_training_type ON training_type_data(merchant)
+2025-10-11 17:15:59,743-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_training_type ON training_type_data(version)
+2025-10-11 17:15:59,747-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE onboarding_status_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+merchant BIGINT,
+version BIGINT)
+;
+2025-10-11 17:15:59,752-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO onboarding_status_data (id,name,code,merchant,version) VALUES ('1','待入职','PENDING','1','1');
+2025-10-11 17:15:59,756-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO onboarding_status_data (id,name,code,merchant,version) VALUES ('2','已入职','ONBOARDED','1','1');
+2025-10-11 17:15:59,758-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO onboarding_status_data (id,name,code,merchant,version) VALUES ('3','入职失败','FAILED','1','1');
+2025-10-11 17:15:59,760-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_code_of_onboarding_status ON onboarding_status_data(code)
+2025-10-11 17:15:59,764-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_onboarding_status ON onboarding_status_data(merchant)
+2025-10-11 17:15:59,765-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_onboarding_status ON onboarding_status_data(version)
+2025-10-11 17:15:59,770-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE recruitment_plan_data (
+id BIGINT PRIMARY KEY,
+title VARCHAR(100),
+plan_number VARCHAR(100),
+department BIGINT,
+merchant BIGINT,
+plan_start_date DATE,
+plan_end_date DATE,
+create_time TIMESTAMP,
+version BIGINT)
+;
+2025-10-11 17:15:59,772-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_department_of_recruitment_plan ON recruitment_plan_data(department)
+2025-10-11 17:15:59,775-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_recruitment_plan ON recruitment_plan_data(merchant)
+2025-10-11 17:15:59,777-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_recruitment_plan ON recruitment_plan_data(create_time)
+2025-10-11 17:15:59,781-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_recruitment_plan ON recruitment_plan_data(version)
+2025-10-11 17:15:59,786-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE marital_status_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+merchant BIGINT,
+version BIGINT)
+;
+2025-10-11 17:15:59,792-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO marital_status_data (id,name,code,merchant,version) VALUES ('1','未婚','SINGLE','1','1');
+2025-10-11 17:15:59,796-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO marital_status_data (id,name,code,merchant,version) VALUES ('2','已婚','MARRIED','1','1');
+2025-10-11 17:15:59,808-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO marital_status_data (id,name,code,merchant,version) VALUES ('3','离异','DIVORCED','1','1');
+2025-10-11 17:15:59,813-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO marital_status_data (id,name,code,merchant,version) VALUES ('4','丧偶','WIDOWED','1','1');
+2025-10-11 17:15:59,817-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_code_of_marital_status ON marital_status_data(code)
+2025-10-11 17:15:59,822-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_marital_status ON marital_status_data(merchant)
+2025-10-11 17:15:59,825-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_marital_status ON marital_status_data(version)
+2025-10-11 17:15:59,835-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE recruitment_status_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+merchant BIGINT,
+version BIGINT)
+;
+2025-10-11 17:15:59,854-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO recruitment_status_data (id,name,code,merchant,version) VALUES ('1','待审核','PENDING','1','1');
+2025-10-11 17:15:59,868-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO recruitment_status_data (id,name,code,merchant,version) VALUES ('2','已发布','PUBLISHED','1','1');
+2025-10-11 17:15:59,873-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO recruitment_status_data (id,name,code,merchant,version) VALUES ('3','已结束','CLOSED','1','1');
+2025-10-11 17:15:59,876-[T1976939824106295296]---INFO -SQLRepository:1322- INSERT INTO recruitment_status_data (id,name,code,merchant,version) VALUES ('4','已取消','CANCELLED','1','1');
+2025-10-11 17:15:59,877-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_code_of_recruitment_status ON recruitment_status_data(code)
+2025-10-11 17:15:59,879-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_recruitment_status ON recruitment_status_data(merchant)
+2025-10-11 17:15:59,880-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_recruitment_status ON recruitment_status_data(version)
+2025-10-11 17:15:59,884-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE job_grade_data (
+id BIGINT PRIMARY KEY,
+name VARCHAR(100),
+code VARCHAR(100),
+min_salary INTEGER,
+max_salary INTEGER,
+merchant BIGINT,
+create_time TIMESTAMP,
+version BIGINT)
+;
+2025-10-11 17:15:59,886-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_min_salary_of_job_grade ON job_grade_data(min_salary)
+2025-10-11 17:15:59,888-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_max_salary_of_job_grade ON job_grade_data(max_salary)
+2025-10-11 17:15:59,889-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_job_grade ON job_grade_data(merchant)
+2025-10-11 17:15:59,890-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_job_grade ON job_grade_data(create_time)
+2025-10-11 17:15:59,892-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_job_grade ON job_grade_data(version)
+2025-10-11 17:15:59,898-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE job_position_data (
+id BIGINT PRIMARY KEY,
+title VARCHAR(100),
+department BIGINT,
+job_grade BIGINT,
+merchant BIGINT,
+required_education BIGINT,
+work_location VARCHAR(100),
+create_time TIMESTAMP,
+version BIGINT)
+;
+2025-10-11 17:15:59,900-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_department_of_job_position ON job_position_data(department)
+2025-10-11 17:15:59,905-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_job_grade_of_job_position ON job_position_data(job_grade)
+2025-10-11 17:15:59,910-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_job_position ON job_position_data(merchant)
+2025-10-11 17:15:59,912-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_required_education_of_job_position ON job_position_data(required_education)
+2025-10-11 17:15:59,914-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_job_position ON job_position_data(create_time)
+2025-10-11 17:15:59,915-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_job_position ON job_position_data(version)
+2025-10-11 17:15:59,923-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE recruitment_request_data (
+id BIGINT PRIMARY KEY,
+request_number VARCHAR(100),
+job_position BIGINT,
+required_count INTEGER,
+urgency_level VARCHAR(100),
+merchant BIGINT,
+create_time TIMESTAMP,
+version BIGINT)
+;
+2025-10-11 17:15:59,926-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_job_position_of_recruitment_request ON recruitment_request_data(job_position)
+2025-10-11 17:15:59,928-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_required_count_of_recruitment_request ON recruitment_request_data(required_count)
+2025-10-11 17:15:59,930-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_recruitment_request ON recruitment_request_data(merchant)
+2025-10-11 17:15:59,932-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_create_time_of_recruitment_request ON recruitment_request_data(create_time)
+2025-10-11 17:15:59,933-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_recruitment_request ON recruitment_request_data(version)
+2025-10-11 17:15:59,939-[T1976939824106295296]---INFO -SQLRepository:1603- CREATE TABLE resume_data (
+id BIGINT PRIMARY KEY,
+candidate BIGINT,
+file_name VARCHAR(100),
+file_size INTEGER,
+merchant BIGINT,
+upload_time TIMESTAMP,
+version BIGINT)
+;
+2025-10-11 17:15:59,942-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_candidate_of_resume ON resume_data(candidate)
+2025-10-11 17:15:59,944-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_file_size_of_resume ON resume_data(file_size)
+2025-10-11 17:15:59,946-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_merchant_of_resume ON resume_data(merchant)
+2025-10-11 17:15:59,950-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_upload_time_of_resume ON resume_data(upload_time)
+2025-10-11 17:15:59,951-[T1976939824106295296]---INFO -SQLRepository:106- executeUpdate: CREATE INDEX IF NOT EXISTS idx_version_of_resume ON resume_data(version)
+2025-10-11 17:54:00,559-[]---ERROR-NioEndpoint:175- Error setting socket options
+java.net.SocketException: Invalid argument
+	at java.base/sun.nio.ch.Net.setIntOption0(Native Method)
+	at java.base/sun.nio.ch.Net.setSocketOption(Net.java:455)
+	at java.base/sun.nio.ch.Net.setSocketOption(Net.java:393)
+	at java.base/sun.nio.ch.SocketChannelImpl.setOption(SocketChannelImpl.java:280)
+	at java.base/sun.nio.ch.SocketAdaptor.setIntOption(SocketAdaptor.java:247)
+	at java.base/sun.nio.ch.SocketAdaptor.setSoLinger(SocketAdaptor.java:285)
+	at org.apache.tomcat.util.net.SocketProperties.setProperties(SocketProperties.java:208)
+	at org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(NioEndpoint.java:476)
+	at org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(NioEndpoint.java:79)
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:148)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-11 17:54:00,588-[]---ERROR-NioEndpoint:175- Error setting socket options
+java.net.SocketException: Invalid argument
+	at java.base/sun.nio.ch.Net.setIntOption0(Native Method)
+	at java.base/sun.nio.ch.Net.setSocketOption(Net.java:455)
+	at java.base/sun.nio.ch.Net.setSocketOption(Net.java:393)
+	at java.base/sun.nio.ch.SocketChannelImpl.setOption(SocketChannelImpl.java:280)
+	at java.base/sun.nio.ch.SocketAdaptor.setIntOption(SocketAdaptor.java:247)
+	at java.base/sun.nio.ch.SocketAdaptor.setSoLinger(SocketAdaptor.java:285)
+	at org.apache.tomcat.util.net.SocketProperties.setProperties(SocketProperties.java:208)
+	at org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(NioEndpoint.java:476)
+	at org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(NioEndpoint.java:79)
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:148)
+	at java.base/java.lang.Thread.run(Thread.java:833)

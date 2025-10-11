@@ -35,7 +35,7 @@ dependencies {
     implementation 'org.springframework:spring-tx'
     implementation 'org.springframework:spring-jdbc:6.1.0'
 
-    implementation "com.philipgreat:match-engine-management-service-core:$libversion"
+    implementation "com.doublechaintech:employee-service-core:$libversion"
     //implementation 'org.beanshell:bsh:2.0b5'
     //implementation 'org.postgresql:postgresql'
     implementation 'org.xerial:sqlite-jdbc:3.36.0.3'

@@ -12,9 +12,10 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.philipgreat.matchenginemanagementservice.EntityMetaRegistry;
-import com.philipgreat.matchenginemanagementservice.MatchEngineManagementServiceUserContext;
-import com.philipgreat.matchenginemanagementservice.Repositories;
+import com.doublechaintech.employeeservice.EmployeeServiceUserContext;
+import com.doublechaintech.employeeservice.EntityMetaRegistry;
+import com.doublechaintech.employeeservice.Repositories;
+
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.codec.Base64;
@@ -30,7 +31,7 @@ import io.teaql.data.TQLAutoConfiguration;
 import io.teaql.data.TQLResolver;
 import io.teaql.data.lock.LockService;
 
-public class CustomUserContext extends MatchEngineManagementServiceUserContext {
+public class CustomUserContext extends EmployeeServiceUserContext {
 
 
 //    private static Map<String, Repository> repositoryMap;

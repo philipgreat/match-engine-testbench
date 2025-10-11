@@ -3,7 +3,7 @@ package com.philipgreat.mcme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.philipgreat.matchenginemanagementservice.Q;
+import com.doublechaintech.employeeservice.Q;
 
 import io.teaql.data.Entity;
 import io.teaql.data.EntityStatus;
