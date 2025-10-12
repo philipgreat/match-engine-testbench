@@ -47,7 +47,7 @@ public class RedissonConfig {
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
 
         dataSource.setDriverClass(org.sqlite.JDBC.class);
-        dataSource.setUrl("jdbc:sqlite:./match-engine-management-console.db");
+        dataSource.setUrl("jdbc:sqlite:./employe-service-001.db");
         dataSource.setUsername("");
         dataSource.setPassword("");
 

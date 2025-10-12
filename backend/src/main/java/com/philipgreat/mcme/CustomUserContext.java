@@ -1,5 +1,6 @@
 package com.philipgreat.mcme;
 
+import java.time.LocalDate;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -12,9 +13,14 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.doublechaintech.employeeservice.Constants;
 import com.doublechaintech.employeeservice.EmployeeServiceUserContext;
 import com.doublechaintech.employeeservice.EntityMetaRegistry;
+import com.doublechaintech.employeeservice.Q;
 import com.doublechaintech.employeeservice.Repositories;
+import com.doublechaintech.employeeservice.employee.Employee;
+import com.doublechaintech.employeeservice.gendertype.GenderType;
+import com.doublechaintech.employeeservice.merchant.Merchant;
 
 
 import cn.hutool.core.bean.BeanUtil;
@@ -101,128 +107,139 @@ public class CustomUserContext extends EmployeeServiceUserContext {
 
 
 
-//
-//    public static final String USER_CONTEXT = "User-Context";
-//    public static final String ID_SPACE = "ID_SPACE";
-//    public static final String CURRENT_FILL_STATION = "$$currentFillStation";
-//    public static final String EMPLOYEE = "employee";
-//    public static final String MERCHANT = "merchant";
-//    public static final String JOB = "job";
-//
-//    private Merchant merchant;
-//
-//    public Merchant getMerchant() {
-//        return merchant;
-//    }
-//
-//    public void setMerchant(Merchant merchant) {
-//        this.merchant = merchant;
-//    }
-//
-//
-//    //resolveEntityDescriptor
-//
-//    public DataConfigProperties config() {
-//
-//        DataConfigProperties dcp = new DataConfigProperties();
-//        dcp.setEnsureTable(true);
-//        return dcp;
-//    }
-//
+
+    public static final String USER_CONTEXT = "User-Context";
+    public static final String ID_SPACE = "ID_SPACE";
+    public static final String CURRENT_FILL_STATION = "$$currentFillStation";
+    public static final String EMPLOYEE = "employee";
+    public static final String MERCHANT = "merchant";
+    public static final String JOB = "job";
+
+    private Merchant merchant;
+
+    public Merchant getMerchant() {
+        return merchant;
+    }
+
+    public void setMerchant(Merchant merchant) {
+        this.merchant = merchant;
+    }
+
+
+    //resolveEntityDescriptor
+
+    public DataConfigProperties config() {
+
+        DataConfigProperties dcp = new DataConfigProperties();
+        dcp.setEnsureTable(true);
+        return dcp;
+    }
+
+    @Override
+    public <T> T getBean(String name) {
+        return super.getBean(name);
+
+    }
+
+
 //    @Override
-//    public <T> T getBean(String name) {
-//        return super.getBean(name);
-//
+//    public <T> T getBean(Class<T> clazz) {
+//        if(clazz== LogEntryChecker.class){
+//            return (T)new LogEntryChecker();
+//        }
+//        if(clazz== MerchantChecker.class){
+//            return (T)new MerchantChecker();
+//        }
+//        return super.getBean(clazz);
 //    }
-//
-//
-////    @Override
-////    public <T> T getBean(Class<T> clazz) {
-////        if(clazz== LogEntryChecker.class){
-////            return (T)new LogEntryChecker();
-////        }
-////        if(clazz== MerchantChecker.class){
-////            return (T)new MerchantChecker();
-////        }
-////        return super.getBean(clazz);
-////    }
-//
-//
-//    @Override
-//    public void init(Object request) {
-//        //this.info("inited");
-//        super.init(request);
-//
-//        String userContext = getHeader(USER_CONTEXT);
-//        if (ObjectUtil.isEmpty(userContext)) {
-//            return;
-//        }
-//
-//        String idSpace = getIdSpace();
-//        String ctx = Base64.decodeStr(userContext);
-//        Map data = JSONUtil.toBean(ctx, Map.class);
-//        String employeeId = BeanUtil.getProperty(data, "employeeId");
-//        if (employeeId == null) {
-//            return;
-//        }
-//        if (idSpace != null) {
-//            employeeId = employeeId + idSpace;
-//        }
-//        synchronized (employeeId.intern()) {
-//            ensureContextValues(data, idSpace, employeeId);
-//        }
-//
-//    }
-//
-//    private void ensureContextValues(Map data, String idSpace, String employeeId) {
-//        String employeeName = BeanUtil.getProperty(data, "employeeName");
-//        String merchantId = BeanUtil.getProperty(data, "merchantId");
-//        if (idSpace != null) {
-//            merchantId = merchantId + idSpace;
-//        }
-//
-//        String merchantName = BeanUtil.getProperty(data, "merchantName");
-//        Merchant dbMerchant = Q.merchants().filterByExternalId(merchantId).execute(this);
-//        if (dbMerchant == null) {
-//            dbMerchant = new Merchant().updateExternalId(merchantId).updatePlatform(Constants.PLATFORM);
-//        }
-//        dbMerchant.updateName(merchantName);
-//        dbMerchant.save(this);
-//
-//        Employee dbJob =
-//                Q.employees()
-//                        .filterByExternalId(employeeId)
-//                        //.selectEmployeePermissionList()
-//                        .selectMerchant()
-//                        .execute(this);
-//        if (dbJob == null) {
-//            info("没有找到 ID 为{}的雇员，新建一个", employeeId);
-//            dbJob = new Employee().updateExternalId(employeeId).updateMerchant(dbMerchant);
-//        }
-//
-//
-//        dbJob.updateName(employeeName);
-//        dbJob.save(this);
-//        setEmployee(dbJob);
-//        setMerchant(dbMerchant);
-//
-//        MDC.put(MERCHANT, dbMerchant.getName());
-//        MDC.put(JOB, dbJob.getName());
-//    }
-//
-//    private Employee employee;
-//
-//    public Employee getEmployee() {
-//        //Employee employee = this.get(EMPLOYEE, () -> FillStationUtil.user1(this));
-//        return employee;
-//    }
-//
-//    public void setEmployee(Employee dbJob) {
-//        employee=dbJob;
-//    }
-//
-//    public String getIdSpace() {
-//        return getHeader(ID_SPACE);
-//    }
+
+
+    @Override
+    public void init(Object request) {
+        //this.info("inited");
+        super.init(request);
+
+        String userContext = getHeader(USER_CONTEXT);
+        if (ObjectUtil.isEmpty(userContext)) {
+            return;
+        }
+
+        String idSpace = getIdSpace();
+        String ctx = Base64.decodeStr(userContext);
+        Map data = JSONUtil.toBean(ctx, Map.class);
+        String employeeId = BeanUtil.getProperty(data, "employeeId");
+        if (employeeId == null) {
+            return;
+        }
+        if (idSpace != null) {
+            employeeId = employeeId + idSpace;
+        }
+        synchronized (employeeId.intern()) {
+            ensureContextValues(data, idSpace, employeeId);
+        }
+
+    }
+
+    private void ensureContextValues(Map data, String idSpace, String employeeId) {
+        String employeeName = BeanUtil.getProperty(data, "employeeName");
+        String merchantId = BeanUtil.getProperty(data, "merchantId");
+        if (idSpace != null) {
+            merchantId = merchantId + idSpace;
+        }
+
+        String merchantName = BeanUtil.getProperty(data, "merchantName");
+        Merchant dbMerchant = Q.merchants().filterByExternalId(merchantId).execute(this);
+        if (dbMerchant == null) {
+            dbMerchant = new Merchant()
+                    .updateTaxNumber("TX0001")
+                    .updateAddress("北京海淀区")
+                    .updateExternalId(merchantId)
+                    .updatePlatform(Constants.PLATFORM);
+        }
+        dbMerchant.updateName(merchantName);
+        dbMerchant.save(this);
+
+        Employee dbJob =
+                Q.employees()
+                        .filterByExternalId(employeeId)
+                        //.selectEmployeePermissionList()
+                        .selectMerchant()
+                        .execute(this);
+        if (dbJob == null) {
+            info("没有找到 ID 为{}的雇员，新建一个", employeeId);
+            //The employee number is required;The gender is required;The birth date is required;The mobile phone is required;The email is required
+            dbJob = new Employee()
+                    .updateEmployeeNumber(employeeId)
+                    .updateGender(GenderType.refer(Constants.GENDER_TYPE_FEMALE_ID))
+                    .updateBirthDate(LocalDate.now())
+                    .updateMobilePhone(13800000)
+                    .updateEmail(employeeId+"@qq.com")
+                    .updateExternalId(employeeId).updateMerchant(dbMerchant);
+        }
+
+
+        dbJob.updateName(employeeName);
+        dbJob.save(this);
+        setEmployee(dbJob);
+        setMerchant(dbMerchant);
+
+        MDC.put(MERCHANT, dbMerchant.getName());
+        MDC.put(JOB, dbJob.getName());
+    }
+
+    private Employee employee;
+
+    public Employee getEmployee() {
+        //Employee employee = this.get(EMPLOYEE, () -> FillStationUtil.user1(this));
+        return employee;
+    }
+
+    public void setEmployee(Employee dbJob) {
+        employee=dbJob;
+    }
+
+    public String getIdSpace() {
+        return getHeader(ID_SPACE);
+    }
 
 }

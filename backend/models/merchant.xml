@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<root alias_model_name="employee_service"
+<root _module_key="root"
+      alias_model_name="employee_service"
       cfg_mask_china_mobile="false"
       chinese_name="Employee Service"
       english_name="Employee Service"
@@ -9,900 +10,956 @@
 
 
     <platform
+            _module_key="platform"
             _features_delta="laboratory_function"
             name="Employee"
             create_time="createTime()"
             last_update_time="updateTime()"
-            />
-
-
-        <!-- 根对象：公司 -->
-        <merchant
-                _name="公司"
-                _module="组织架构"
-                name="科技集团有限公司"
-                tax_number="91370100MA3C6B4A1X"
-                address="北京市海淀区科技园区88号"
-                platform="platform()"
-                create_time="createTime()"
-                update_time="updateTime()"
-        />
-
-        <!-- ========== 有限集对象 ========== -->
-        <gender_type
-                _name="性别类型"
-                _module="基础数据"
-                id="id()"
-                name="string()"
-                code="string()"
-                merchant="merchant(context)"
-                _constant="true"
-                _identifier="code"
-        >
-            <_value id="1" name="男" code="MALE"/>
-            <_value id="2" name="女" code="FEMALE"/>
-            <_value id="3" name="其他" code="OTHER"/>
-        </gender_type>
-
-        <marital_status
-                _name="婚姻状况"
-                _module="基础数据"
-                id="id()"
-                name="string()"
-                code="string()"
-                merchant="merchant(context)"
-                _constant="true"
-                _identifier="code"
-        >
-            <_value id="1" name="未婚" code="SINGLE"/>
-            <_value id="2" name="已婚" code="MARRIED"/>
-            <_value id="3" name="离异" code="DIVORCED"/>
-            <_value id="4" name="丧偶" code="WIDOWED"/>
-        </marital_status>
-
-        <education_level
-                _name="学历层次"
-                _module="基础数据"
-                id="id()"
-                name="string()"
-                code="string()"
-                merchant="merchant(context)"
-                _constant="true"
-                _identifier="code"
-        >
-            <_value id="1" name="高中及以下" code="HIGH_SCHOOL"/>
-            <_value id="2" name="大专" code="COLLEGE"/>
-            <_value id="3" name="本科" code="BACHELOR"/>
-            <_value id="4" name="硕士" code="MASTER"/>
-            <_value id="5" name="博士" code="DOCTOR"/>
-        </education_level>
-
-        <recruitment_status
-                _name="招聘状态"
-                _module="招聘管理"
-                id="id()"
-                name="string()"
-                code="string()"
-                merchant="merchant(context)"
-                _constant="true"
-                _identifier="code"
-        >
-            <_value id="1" name="待审核" code="PENDING"/>
-            <_value id="2" name="已发布" code="PUBLISHED"/>
-            <_value id="3" name="已结束" code="CLOSED"/>
-            <_value id="4" name="已取消" code="CANCELLED"/>
-        </recruitment_status>
-
-        <interview_status
-                _name="面试状态"
-                _module="招聘管理"
-                id="id()"
-                name="string()"
-                code="string()"
-                merchant="merchant(context)"
-                _constant="true"
-                _identifier="code"
-        >
-            <_value id="1" name="待安排" code="PENDING"/>
-            <_value id="2" name="已安排" code="SCHEDULED"/>
-            <_value id="3" name="已完成" code="COMPLETED"/>
-            <_value id="4" name="已取消" code="CANCELLED"/>
-        </interview_status>
-
-        <onboarding_status
-                _name="入职状态"
-                _module="入职管理"
-                id="id()"
-                name="string()"
-                code="string()"
-                merchant="merchant(context)"
-                _constant="true"
-                _identifier="code"
-        >
-            <_value id="1" name="待入职" code="PENDING"/>
-            <_value id="2" name="已入职" code="ONBOARDED"/>
-            <_value id="3" name="入职失败" code="FAILED"/>
-        </onboarding_status>
-
-        <leave_type
-                _name="请假类型"
-                _module="考勤管理"
-                id="id()"
-                name="string()"
-                code="string()"
-                merchant="merchant(context)"
-                _constant="true"
-                _identifier="code"
-        >
-            <_value id="1" name="年假" code="ANNUAL"/>
-            <_value id="2" name="病假" code="SICK"/>
-            <_value id="3" name="事假" code="PERSONAL"/>
-            <_value id="4" name="婚假" code="MARRIAGE"/>
-            <_value id="5" name="产假" code="MATERNITY"/>
-            <_value id="6" name="陪产假" code="PATERNITY"/>
-        </leave_type>
-
-        <performance_level
-                _name="绩效等级"
-                _module="绩效管理"
-                id="id()"
-                name="string()"
-                code="string()"
-                merchant="merchant(context)"
-                _constant="true"
-                _identifier="code"
-        >
-            <_value id="1" name="优秀" code="EXCELLENT"/>
-            <_value id="2" name="良好" code="GOOD"/>
-            <_value id="3" name="合格" code="SATISFACTORY"/>
-            <_value id="4" name="待改进" code="NEEDS_IMPROVEMENT"/>
-            <_value id="5" name="不合格" code="UNSATISFACTORY"/>
-        </performance_level>
-
-        <termination_type
-                _name="离职类型"
-                _module="离职管理"
-                id="id()"
-                name="string()"
-                code="string()"
-                merchant="merchant(context)"
-                _constant="true"
-                _identifier="code"
-        >
-            <_value id="1" name="辞职" code="RESIGNATION"/>
-            <_value id="2" name="辞退" code="DISMISSAL"/>
-            <_value id="3" name="合同到期" code="CONTRACT_END"/>
-            <_value id="4" name="退休" code="RETIREMENT"/>
-        </termination_type>
-
-        <training_type
-                _name="培训类型"
-                _module="培训发展"
-                id="id()"
-                name="string()"
-                code="string()"
-                merchant="merchant(context)"
-                _constant="true"
-                _identifier="code"
-        >
-            <_value id="1" name="入职培训" code="ONBOARDING"/>
-            <_value id="2" name="技能培训" code="SKILL"/>
-            <_value id="3" name="管理培训" code="MANAGEMENT"/>
-            <_value id="4" name="安全培训" code="SAFETY"/>
-        </training_type>
-
-        <!-- ========== 组织架构相关 ========== -->
-        <department
-                _name="部门"
-                _module="组织架构"
-                name="人力资源部"
-                code="HR"
-                description="负责公司人力资源管理工作"
-                merchant="merchant(context)"
-                create_time="createTime()"
-                update_time="updateTime()"
-        />
-
-        <position
-                _name="职位"
-                _module="组织架构"
-                name="人力资源经理"
-                code="HR_MANAGER"
-                department="department()"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <job_grade
-                _name="职级"
-                _module="组织架构"
-                name="P7技术专家"
-                code="P7"
-                min_salary="25000"
-                max_salary="40000"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <!-- ========== 招聘模块 ========== -->
-        <recruitment_plan
-                _name="招聘计划"
-                _module="招聘管理"
-                title="2024年Q2技术岗位招聘计划"
-                plan_number="RP2024Q2001"
-                department="department()"
-                merchant="merchant(context)"
-                plan_start_date="2024-04-01"
-                plan_end_date="2024-06-30"
-                create_time="createTime()"
-        />
-
-        <job_position
-                _name="招聘职位"
-                _module="招聘管理"
-                title="Java开发工程师"
-                department="department()"
-                job_grade="job_grade()"
-                merchant="merchant(context)"
-                required_education="education_level()"
-                work_location="北京"
-                create_time="createTime()"
-        />
-
-        <recruitment_request
-                _name="招聘需求"
-                _module="招聘管理"
-                request_number="RR2024001"
-                job_position="job_position()"
-                required_count="5"
-                urgency_level="HIGH"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <candidate
-                _name="候选人"
-                _module="招聘管理"
-                name="张三"
-                mobile_phone="13800138000"
-                email="zhangsan@email.com"
-                gender="gender_type()"
-                education="education_level()"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <resume
-                _name="简历"
-                _module="招聘管理"
-                candidate="candidate()"
-                file_name="zhangsan_resume.pdf"
-                file_size="1024"
-                merchant="merchant(context)"
-                upload_time="createTime()"
-        />
-
-        <interview
-                _name="面试安排"
-                _module="招聘管理"
-                candidate="candidate()"
-                interviewer="employee()"
-                interview_time="2024-04-15T14:00:00"
-                interview_location="公司会议室A"
-                status="interview_status()"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <interview_evaluation
-                _name="面试评价"
-                _module="招聘管理"
-                interview="interview()"
-                technical_score="85"
-                communication_score="90"
-                overall_score="87"
-                recommendation="RECOMMEND"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <offer
-                _name="录用通知"
-                _module="招聘管理"
-                candidate="candidate()"
-                job_position="job_position()"
-                base_salary="30000"
-                bonus="5000"
-                start_date="2024-05-01"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <!-- ========== 员工信息模块 ========== -->
-        <employee
-                _name="员工"
-                _module="员工管理"
-                employee_number="EMP10001"
-                name="李四"
-                gender="gender_type()"
-                birth_date="1990-05-15"
-                mobile_phone="13900139000"
-                email="lisi@company.com"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <employee_contract
-                _name="员工合同"
-                _module="员工管理"
-                employee="employee()"
-                contract_number="CT2024001"
-                contract_type="FULL_TIME"
-                start_date="2024-01-01"
-                end_date="2026-12-31"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <employee_position
-                _name="员工职位"
-                _module="员工管理"
-                employee="employee()"
-                position="position()"
-                department="department()"
-                start_date="2024-01-01"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <employee_salary
-                _name="员工薪资"
-                _module="薪酬管理"
-                employee="employee()"
-                base_salary="30000"
-                performance_bonus="5000"
-                allowance="2000"
-                merchant="merchant(context)"
-                effective_date="2024-01-01"
-                create_time="createTime()"
-        />
-
-        <emergency_contact
-                _name="紧急联系人"
-                _module="员工管理"
-                employee="employee()"
-                name="王五"
-                relationship="配偶"
-                mobile_phone="13900139111"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <!-- ========== 入职模块 ========== -->
-        <onboarding_process
-                _name="入职流程"
-                _module="入职管理"
-                employee="employee()"
-                status="onboarding_status()"
-                planned_start_date="2024-05-01"
-                actual_start_date="2024-05-01"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <onboarding_task
-                _name="入职任务"
-                _module="入职管理"
-                onboarding_process="onboarding_process()"
-                task_name="办理入职手续"
-                assigned_to="employee()"
-                due_date="2024-05-01"
-                completed_date="2024-05-01"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <onboarding_document
-                _name="入职文档"
-                _module="入职管理"
-                onboarding_process="onboarding_process()"
-                document_name="劳动合同"
-                document_type="CONTRACT"
-                file_name="contract_emp10001.pdf"
-                merchant="merchant(context)"
-                upload_time="createTime()"
-        />
-
-        <!-- ========== 培训模块 ========== -->
-        <training_course
-                _name="培训课程"
-                _module="培训发展"
-                course_name="新员工入职培训"
-                course_code="TRN001"
-                training_type="training_type()"
-                instructor="employee()"
-                duration="8"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <training_schedule
-                _name="培训安排"
-                _module="培训发展"
-                training_course="training_course()"
-                schedule_date="2024-05-10"
-                start_time="09:00"
-                end_time="17:00"
-                location="培训室A"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <training_enrollment
-                _name="培训报名"
-                _module="培训发展"
-                employee="employee()"
-                training_schedule="training_schedule()"
-                enrollment_status="CONFIRMED"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <training_evaluation
-                _name="培训评价"
-                _module="培训发展"
-                training_enrollment="training_enrollment()"
-                content_score="90"
-                instructor_score="95"
-                overall_score="92"
-                comments="培训内容很实用"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <!-- ========== 考勤模块 ========== -->
-        <attendance_record
-                _name="考勤记录"
-                _module="考勤管理"
-                employee="employee()"
-                record_date="2024-05-15"
-                check_in_time="08:55"
-                check_out_time="18:05"
-                work_hours="8.5"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <attendance_exception
-                _name="考勤异常"
-                _module="考勤管理"
-                employee="employee()"
-                exception_date="2024-05-16"
-                exception_type="LATE"
-                reason="交通拥堵"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <!-- ========== 请假模块 ========== -->
-        <leave_application
-                _name="请假申请"
-                _module="考勤管理"
-                employee="employee()"
-                leave_type="leave_type()"
-                start_date="2024-06-01"
-                end_date="2024-06-05"
-                duration="5"
-                reason="年度休假"
-                status="APPROVED"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <leave_balance
-                _name="请假余额"
-                _module="考勤管理"
-                employee="employee()"
-                leave_type="leave_type()"
-                total_days="15"
-                used_days="5"
-                remaining_days="10"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <leave_approval
-                _name="请假审批"
-                _module="考勤管理"
-                leave_application="leave_application()"
-                approver="employee()"
-                approval_status="APPROVED"
-                approval_time="2024-05-28T10:30:00"
-                comments="同意休假"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <!-- ========== 绩效模块 ========== -->
-        <performance_cycle
-                _name="绩效周期"
-                _module="绩效管理"
-                cycle_name="2024年第一季度绩效考核"
-                cycle_code="PC2024Q1"
-                start_date="2024-01-01"
-                end_date="2024-03-31"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <performance_goal
-                _name="绩效目标"
-                _module="绩效管理"
-                employee="employee()"
-                performance_cycle="performance_cycle()"
-                goal_name="完成项目A开发"
-                weight="30"
-                target_value="100"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <performance_review
-                _name="绩效评估"
-                _module="绩效管理"
-                employee="employee()"
-                performance_cycle="performance_cycle()"
-                reviewer="employee()"
-                overall_score="85"
-                performance_level="performance_level()"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <performance_feedback
-                _name="绩效反馈"
-                _module="绩效管理"
-                performance_review="performance_review()"
-                feedback_provider="employee()"
-                feedback_content="工作认真负责，技术能力突出"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <!-- ========== 薪酬福利模块 ========== -->
-        <salary_adjustment
-                _name="薪资调整"
-                _module="薪酬管理"
-                employee="employee()"
-                adjustment_type="PROMOTION"
-                old_salary="25000"
-                new_salary="30000"
-                effective_date="2024-04-01"
-                reason="晋升调薪"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <bonus_calculation
-                _name="奖金计算"
-                _module="薪酬管理"
-                employee="employee()"
-                bonus_period="2024Q1"
-                base_amount="30000"
-                performance_multiplier="1.2"
-                final_amount="36000"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <social_insurance
-                _name="社会保险"
-                _module="薪酬管理"
-                employee="employee()"
-                insurance_type="PENSION"
-                base_amount="30000"
-                employee_contribution="2400"
-                employer_contribution="6000"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <!-- ========== 离职退休模块 ========== -->
-        <termination_application
-                _name="离职申请"
-                _module="离职管理"
-                employee="employee()"
-                termination_type="termination_type()"
-                proposed_last_date="2024-06-30"
-                reason="个人发展"
-                status="PENDING_APPROVAL"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <exit_interview
-                _name="离职面谈"
-                _module="离职管理"
-                employee="employee()"
-                interviewer="employee()"
-                interview_date="2024-06-25"
-                overall_satisfaction="4"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <retirement_application
-                _name="退休申请"
-                _module="离职管理"
-                employee="employee()"
-                retirement_date="2024-12-31"
-                pension_amount="8000"
-                status="APPROVED"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <!-- ========== 系统管理模块 ========== -->
-        <system_user
-                _name="系统用户"
-                _module="系统管理"
-                username="lisi"
-                employee="employee()"
-                email="lisi@company.com"
-                status="ACTIVE"
-                merchant="merchant(context)"
-                create_time="createTime()"
-                last_login="updateTime()"
-        />
-
-        <user_role
-                _name="用户角色"
-                _module="系统管理"
-                system_user="system_user()"
-                role_name="HR_ADMIN"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <access_permission
-                _name="访问权限"
-                _module="系统管理"
-                user_role="user_role()"
-                permission_code="EMPLOYEE_READ"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <audit_log
-                _name="审计日志"
-                _module="系统管理"
-                system_user="system_user()"
-                action_type="CREATE"
-                action_target="EMPLOYEE"
-                target_id="EMP10001"
-                ip_address="remoteIp()"
-                action_time="createTime()"
-                merchant="merchant(context)"
-        />
-
-        <!-- ========== 文档管理模块 ========== -->
-        <document_template
-                _name="文档模板"
-                _module="文档管理"
-                template_name="劳动合同模板"
-                template_type="CONTRACT"
-                version="V2.0"
-                file_name="contract_template_v2.docx"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <employee_document
-                _name="员工文档"
-                _module="文档管理"
-                employee="employee()"
-                document_type="ID_CARD"
-                file_name="id_card_emp10001.jpg"
-                expiry_date="2030-12-31"
-                merchant="merchant(context)"
-                upload_time="createTime()"
-        />
-
-        <!-- ========== 报表分析模块 ========== -->
-        <hr_report
-                _name="人力资源报表"
-                _module="报表分析"
-                report_name="员工离职率分析"
-                report_period="2024Q1"
-                generation_date="2024-04-01"
-                file_name="turnover_report_2024q1.pdf"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <report_parameter
-                _name="报表参数"
-                _module="报表分析"
-                hr_report="hr_report()"
-                parameter_name="department"
-                parameter_value="ALL"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <!-- ========== 通知消息模块 ========== -->
-        <system_notification
-                _name="系统通知"
-                _module="通知消息"
-                notification_title="绩效考核通知"
-                notification_content="2024年第一季度绩效考核即将开始"
-                notification_type="REMINDER"
-                target_audience="ALL_EMPLOYEES"
-                merchant="merchant(context)"
-                create_time="createTime()"
-                send_time="updateTime()"
-        />
-
-        <notification_recipient
-                _name="通知接收人"
-                _module="通知消息"
-                system_notification="system_notification()"
-                employee="employee()"
-                read_status="UNREAD"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <!-- ========== 工作流模块 ========== -->
-        <workflow_definition
-                _name="工作流定义"
-                _module="工作流"
-                workflow_name="请假审批流程"
-                workflow_version="1.0"
-                is_active="true"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <workflow_step
-                _name="工作流步骤"
-                _module="工作流"
-                workflow_definition="workflow_definition()"
-                step_name="部门经理审批"
-                step_order="1"
-                approver_role="DEPARTMENT_MANAGER"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <workflow_instance
-                _name="工作流实例"
-                _module="工作流"
-                workflow_definition="workflow_definition()"
-                current_step="workflow_step()"
-                status="IN_PROGRESS"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <!-- ========== 其他辅助对象 ========== -->
-        <company_policy
-                _name="公司政策"
-                _module="基础数据"
-                policy_name="考勤管理制度"
-                policy_version="V3.0"
-                effective_date="2024-01-01"
-                file_name="attendance_policy_v3.pdf"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <equipment_allocation
-                _name="设备分配"
-                _module="资产管理"
-                employee="employee()"
-                equipment_type="LAPTOP"
-                equipment_model="ThinkPad X1"
-                serial_number="SN123456789"
-                allocation_date="2024-01-01"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <award_recognition
-                _name="奖励表彰"
-                _module="员工关系"
-                employee="employee()"
-                award_type="PERFORMANCE"
-                award_name="季度优秀员工"
-                award_date="2024-04-01"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <skill_assessment
-                _name="技能评估"
-                _module="培训发展"
-                employee="employee()"
-                skill_name="Java编程"
-                skill_level="ADVANCED"
-                assessment_date="2024-03-15"
-                assessor="employee()"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <project_assignment
-                _name="项目分配"
-                _module="项目管理"
-                employee="employee()"
-                project_name="电商平台重构"
-                role="技术负责人"
-                start_date="2024-02-01"
-                end_date="2024-08-31"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <work_experience
-                _name="工作经历"
-                _module="员工管理"
-                employee="employee()"
-                company_name="前公司"
-                position="软件工程师"
-                start_date="2020-01-01"
-                end_date="2023-12-31"
-                description="负责系统开发"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <education_history
-                _name="教育经历"
-                _module="员工管理"
-                employee="employee()"
-                school_name="清华大学"
-                major="计算机科学"
-                degree="education_level()"
-                graduation_date="2019-06-30"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <certification
-                _name="职业认证"
-                _module="培训发展"
-                employee="employee()"
-                certificate_name="PMP认证"
-                issuing_authority="PMI"
-                issue_date="2023-03-15"
-                expiry_date="2026-03-15"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <employee_survey
-                _name="员工调研"
-                _module="员工关系"
-                survey_name="员工满意度调研"
-                survey_date="2024-03-01"
-                participant="employee()"
-                overall_score="4.2"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
-        <budget_allocation
-                _name="预算分配"
-                _module="财务管理"
-                department="department()"
-                budget_year="2024"
-                budget_amount="500000"
-                budget_type="OPERATIONAL"
-                merchant="merchant(context)"
-                create_time="createTime()"
-        />
-
+    />
+
+
+    <merchant
+            _module_key="organizational structure"
+            _name="公司"
+            _module="组织架构"
+            name="科技集团有限公司"
+            tax_number="91370100MA3C6B4A1X"
+            address="北京市海淀区科技园区88号"
+            external_id="91370100MA3C6B4A1X"
+            platform="platform()"
+            create_time="createTime()"
+            update_time="updateTime()"
+    />
+
+    <gender_type
+            _module_key="basic data"
+            _name="性别类型"
+            _module="基础数据"
+            id="id()"
+            name="string()"
+            code="string()"
+            merchant="merchant(context)"
+            _constant="true"
+            _identifier="code"
+    >
+        <_value id="1" name="男" code="MALE"/>
+        <_value id="2" name="女" code="FEMALE"/>
+        <_value id="3" name="其他" code="OTHER"/>
+    </gender_type>
+
+    <marital_status
+            _module_key="basic data"
+            _name="婚姻状况"
+            _module="基础数据"
+            id="id()"
+            name="string()"
+            code="string()"
+            merchant="merchant(context)"
+            _constant="true"
+            _identifier="code"
+    >
+        <_value id="1" name="未婚" code="SINGLE"/>
+        <_value id="2" name="已婚" code="MARRIED"/>
+        <_value id="3" name="离异" code="DIVORCED"/>
+        <_value id="4" name="丧偶" code="WIDOWED"/>
+    </marital_status>
+
+    <education_level
+            _module_key="basic data"
+            _name="学历层次"
+            _module="基础数据"
+            id="id()"
+            name="string()"
+            code="string()"
+            merchant="merchant(context)"
+            _constant="true"
+            _identifier="code"
+    >
+        <_value id="1" name="高中及以下" code="HIGH_SCHOOL"/>
+        <_value id="2" name="大专" code="COLLEGE"/>
+        <_value id="3" name="本科" code="BACHELOR"/>
+        <_value id="4" name="硕士" code="MASTER"/>
+        <_value id="5" name="博士" code="DOCTOR"/>
+    </education_level>
+
+    <recruitment_status
+            _module_key="recruitment management"
+            _name="招聘状态"
+            _module="招聘管理"
+            id="id()"
+            name="string()"
+            code="string()"
+            merchant="merchant(context)"
+            _constant="true"
+            _identifier="code"
+    >
+        <_value id="1" name="待审核" code="PENDING"/>
+        <_value id="2" name="已发布" code="PUBLISHED"/>
+        <_value id="3" name="已结束" code="CLOSED"/>
+        <_value id="4" name="已取消" code="CANCELLED"/>
+    </recruitment_status>
+
+    <interview_status
+            _module_key="recruitment management"
+            _name="面试状态"
+            _module="招聘管理"
+            id="id()"
+            name="string()"
+            code="string()"
+            merchant="merchant(context)"
+            _constant="true"
+            _identifier="code"
+    >
+        <_value id="1" name="待安排" code="PENDING"/>
+        <_value id="2" name="已安排" code="SCHEDULED"/>
+        <_value id="3" name="已完成" code="COMPLETED"/>
+        <_value id="4" name="已取消" code="CANCELLED"/>
+    </interview_status>
+
+    <onboarding_status
+            _module_key="onboarding management"
+            _name="入职状态"
+            _module="入职管理"
+            id="id()"
+            name="string()"
+            code="string()"
+            merchant="merchant(context)"
+            _constant="true"
+            _identifier="code"
+    >
+        <_value id="1" name="待入职" code="PENDING"/>
+        <_value id="2" name="已入职" code="ONBOARDED"/>
+        <_value id="3" name="入职失败" code="FAILED"/>
+    </onboarding_status>
+
+    <leave_type
+            _module_key="attendance management"
+            _name="请假类型"
+            _module="考勤管理"
+            id="id()"
+            name="string()"
+            code="string()"
+            merchant="merchant(context)"
+            _constant="true"
+            _identifier="code"
+    >
+        <_value id="1" name="年假" code="ANNUAL"/>
+        <_value id="2" name="病假" code="SICK"/>
+        <_value id="3" name="事假" code="PERSONAL"/>
+        <_value id="4" name="婚假" code="MARRIAGE"/>
+        <_value id="5" name="产假" code="MATERNITY"/>
+        <_value id="6" name="陪产假" code="PATERNITY"/>
+    </leave_type>
+
+    <performance_level
+            _module_key="performance management"
+            _name="绩效等级"
+            _module="绩效管理"
+            id="id()"
+            name="string()"
+            code="string()"
+            merchant="merchant(context)"
+            _constant="true"
+            _identifier="code"
+    >
+        <_value id="1" name="优秀" code="EXCELLENT"/>
+        <_value id="2" name="良好" code="GOOD"/>
+        <_value id="3" name="合格" code="SATISFACTORY"/>
+        <_value id="4" name="待改进" code="NEEDS_IMPROVEMENT"/>
+        <_value id="5" name="不合格" code="UNSATISFACTORY"/>
+    </performance_level>
+
+    <termination_type
+            _module_key="resignation management"
+            _name="离职类型"
+            _module="离职管理"
+            id="id()"
+            name="string()"
+            code="string()"
+            merchant="merchant(context)"
+            _constant="true"
+            _identifier="code"
+    >
+        <_value id="1" name="辞职" code="RESIGNATION"/>
+        <_value id="2" name="辞退" code="DISMISSAL"/>
+        <_value id="3" name="合同到期" code="CONTRACT_END"/>
+        <_value id="4" name="退休" code="RETIREMENT"/>
+    </termination_type>
+
+    <training_type
+            _module_key="training and development"
+            _name="培训类型"
+            _module="培训发展"
+            id="id()"
+            name="string()"
+            code="string()"
+            merchant="merchant(context)"
+            _constant="true"
+            _identifier="code"
+    >
+        <_value id="1" name="入职培训" code="ONBOARDING"/>
+        <_value id="2" name="技能培训" code="SKILL"/>
+        <_value id="3" name="管理培训" code="MANAGEMENT"/>
+        <_value id="4" name="安全培训" code="SAFETY"/>
+    </training_type>
+
+    <department
+            _module_key="organizational structure"
+            _name="部门"
+            _module="组织架构"
+            name="人力资源部"
+            code="HR"
+            description="负责公司人力资源管理工作"
+            merchant="merchant(context)"
+            create_time="createTime()"
+            update_time="updateTime()"
+    />
+
+    <position
+            _module_key="organizational structure"
+            _name="职位"
+            _module="组织架构"
+            name="人力资源经理"
+            code="HR_MANAGER"
+            department="department()"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <job_grade
+            _module_key="organizational structure"
+            _name="职级"
+            _module="组织架构"
+            name="P7技术专家"
+            code="P7"
+            min_salary="25000"
+            max_salary="40000"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <recruitment_plan
+            _module_key="recruitment management"
+            _name="招聘计划"
+            _module="招聘管理"
+            title="2024年Q2技术岗位招聘计划"
+            plan_number="RP2024Q2001"
+            department="department()"
+            merchant="merchant(context)"
+            plan_start_date="2024-04-01"
+            plan_end_date="2024-06-30"
+            create_time="createTime()"
+    />
+
+    <job_position
+            _module_key="recruitment management"
+            _name="招聘职位"
+            _module="招聘管理"
+            title="Java开发工程师"
+            department="department()"
+            job_grade="job_grade()"
+            merchant="merchant(context)"
+            required_education="education_level()"
+            work_location="北京"
+            create_time="createTime()"
+    />
+
+    <recruitment_request
+            _module_key="recruitment management"
+            _name="招聘需求"
+            _module="招聘管理"
+            request_number="RR2024001"
+            job_position="job_position()"
+            required_count="5"
+            urgency_level="HIGH"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <candidate
+            _module_key="recruitment management"
+            _name="候选人"
+            _module="招聘管理"
+            name="张三"
+            mobile_phone="13800138000"
+            email="zhangsan@email.com"
+            gender="gender_type()"
+            education="education_level()"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <resume
+            _module_key="recruitment management"
+            _name="简历"
+            _module="招聘管理"
+            candidate="candidate()"
+            file_name="zhangsan_resume.pdf"
+            file_size="1024"
+            merchant="merchant(context)"
+            upload_time="createTime()"
+    />
+
+    <interview
+            _module_key="recruitment management"
+            _name="面试安排"
+            _module="招聘管理"
+            candidate="candidate()"
+            interviewer="employee()"
+            interview_time="2024-04-15T14:00:00"
+            interview_location="公司会议室A"
+            status="interview_status()"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <interview_evaluation
+            _module_key="recruitment management"
+            _name="面试评价"
+            _module="招聘管理"
+            interview="interview()"
+            technical_score="85"
+            communication_score="90"
+            overall_score="87"
+            recommendation="RECOMMEND"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <offer
+            _module_key="recruitment management"
+            _name="录用通知"
+            _module="招聘管理"
+            candidate="candidate()"
+            job_position="job_position()"
+            base_salary="30000"
+            bonus="5000"
+            start_date="2024-05-01"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <employee
+            _module_key="employee management"
+            _name="员工"
+            _module="员工管理"
+            employee_number="EMP10001"
+            name="李四"
+            gender="gender_type()"
+            external_id="EMP10001"
+            birth_date="1990-05-15"
+            mobile_phone="13900139000"
+            email="lisi@company.com"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <employee_contract
+            _module_key="employee management"
+            _name="员工合同"
+            _module="员工管理"
+            employee="employee()"
+            contract_number="CT2024001"
+            contract_type="FULL_TIME"
+            start_date="2024-01-01"
+            end_date="2026-12-31"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <employee_position
+            _module_key="employee management"
+            _name="员工职位"
+            _module="员工管理"
+            employee="employee()"
+            position="position()"
+            department="department()"
+            start_date="2024-01-01"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <employee_salary
+            _module_key="compensation management"
+            _name="员工薪资"
+            _module="薪酬管理"
+            employee="employee()"
+            base_salary="30000"
+            performance_bonus="5000"
+            allowance="2000"
+            merchant="merchant(context)"
+            effective_date="2024-01-01"
+            create_time="createTime()"
+    />
+
+    <emergency_contact
+            _module_key="employee management"
+            _name="紧急联系人"
+            _module="员工管理"
+            employee="employee()"
+            name="王五"
+            relationship="配偶"
+            mobile_phone="13900139111"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <onboarding_process
+            _module_key="onboarding management"
+            _name="入职流程"
+            _module="入职管理"
+            employee="employee()"
+            status="onboarding_status()"
+            planned_start_date="2024-05-01"
+            actual_start_date="2024-05-01"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <onboarding_task
+            _module_key="onboarding management"
+            _name="入职任务"
+            _module="入职管理"
+            onboarding_process="onboarding_process()"
+            task_name="办理入职手续"
+            assigned_to="employee()"
+            due_date="2024-05-01"
+            completed_date="2024-05-01"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <onboarding_document
+            _module_key="onboarding management"
+            _name="入职文档"
+            _module="入职管理"
+            onboarding_process="onboarding_process()"
+            document_name="劳动合同"
+            document_type="CONTRACT"
+            file_name="contract_emp10001.pdf"
+            merchant="merchant(context)"
+            upload_time="createTime()"
+    />
+
+    <training_course
+            _module_key="training and development"
+            _name="培训课程"
+            _module="培训发展"
+            course_name="新员工入职培训"
+            course_code="TRN001"
+            training_type="training_type()"
+            instructor="employee()"
+            duration="8"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <training_schedule
+            _module_key="training and development"
+            _name="培训安排"
+            _module="培训发展"
+            training_course="training_course()"
+            schedule_date="2024-05-10"
+            start_time="09:00"
+            end_time="17:00"
+            location="培训室A"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <training_enrollment
+            _module_key="training and development"
+            _name="培训报名"
+            _module="培训发展"
+            employee="employee()"
+            training_schedule="training_schedule()"
+            enrollment_status="CONFIRMED"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <training_evaluation
+            _module_key="training and development"
+            _name="培训评价"
+            _module="培训发展"
+            training_enrollment="training_enrollment()"
+            content_score="90"
+            instructor_score="95"
+            overall_score="92"
+            comments="培训内容很实用"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <attendance_record
+            _module_key="attendance management"
+            _name="考勤记录"
+            _module="考勤管理"
+            employee="employee()"
+            record_date="2024-05-15"
+            check_in_time="08:55"
+            check_out_time="18:05"
+            work_hours="8.5"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <attendance_exception
+            _module_key="attendance management"
+            _name="考勤异常"
+            _module="考勤管理"
+            employee="employee()"
+            exception_date="2024-05-16"
+            exception_type="LATE"
+            reason="交通拥堵"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <leave_application
+            _module_key="attendance management"
+            _name="请假申请"
+            _module="考勤管理"
+            employee="employee()"
+            leave_type="leave_type()"
+            start_date="2024-06-01"
+            end_date="2024-06-05"
+            duration="5"
+            reason="年度休假"
+            status="APPROVED"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <leave_balance
+            _module_key="attendance management"
+            _name="请假余额"
+            _module="考勤管理"
+            employee="employee()"
+            leave_type="leave_type()"
+            total_days="15"
+            used_days="5"
+            remaining_days="10"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <leave_approval
+            _module_key="attendance management"
+            _name="请假审批"
+            _module="考勤管理"
+            leave_application="leave_application()"
+            approver="employee()"
+            approval_status="APPROVED"
+            approval_time="2024-05-28T10:30:00"
+            comments="同意休假"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <performance_cycle
+            _module_key="performance management"
+            _name="绩效周期"
+            _module="绩效管理"
+            cycle_name="2024年第一季度绩效考核"
+            cycle_code="PC2024Q1"
+            start_date="2024-01-01"
+            end_date="2024-03-31"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <performance_goal
+            _module_key="performance management"
+            _name="绩效目标"
+            _module="绩效管理"
+            employee="employee()"
+            performance_cycle="performance_cycle()"
+            goal_name="完成项目A开发"
+            weight="30"
+            target_value="100"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <performance_review
+            _module_key="performance management"
+            _name="绩效评估"
+            _module="绩效管理"
+            employee="employee()"
+            performance_cycle="performance_cycle()"
+            reviewer="employee()"
+            overall_score="85"
+            performance_level="performance_level()"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <performance_feedback
+            _module_key="performance management"
+            _name="绩效反馈"
+            _module="绩效管理"
+            performance_review="performance_review()"
+            feedback_provider="employee()"
+            feedback_content="工作认真负责，技术能力突出"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <salary_adjustment
+            _module_key="compensation management"
+            _name="薪资调整"
+            _module="薪酬管理"
+            employee="employee()"
+            adjustment_type="PROMOTION"
+            old_salary="25000"
+            new_salary="30000"
+            effective_date="2024-04-01"
+            reason="晋升调薪"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <bonus_calculation
+            _module_key="compensation management"
+            _name="奖金计算"
+            _module="薪酬管理"
+            employee="employee()"
+            bonus_period="2024Q1"
+            base_amount="30000"
+            performance_multiplier="1.2"
+            final_amount="36000"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <social_insurance
+            _module_key="compensation management"
+            _name="社会保险"
+            _module="薪酬管理"
+            employee="employee()"
+            insurance_type="PENSION"
+            base_amount="30000"
+            employee_contribution="2400"
+            employer_contribution="6000"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <termination_application
+            _module_key="resignation management"
+            _name="离职申请"
+            _module="离职管理"
+            employee="employee()"
+            termination_type="termination_type()"
+            proposed_last_date="2024-06-30"
+            reason="个人发展"
+            status="PENDING_APPROVAL"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <exit_interview
+            _module_key="resignation management"
+            _name="离职面谈"
+            _module="离职管理"
+            employee="employee()"
+            interviewer="employee()"
+            interview_date="2024-06-25"
+            overall_satisfaction="4"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <retirement_application
+            _module_key="resignation management"
+            _name="退休申请"
+            _module="离职管理"
+            employee="employee()"
+            retirement_date="2024-12-31"
+            pension_amount="8000"
+            status="APPROVED"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <system_user
+            _module_key="system management"
+            _name="系统用户"
+            _module="系统管理"
+            username="lisi"
+            employee="employee()"
+            email="lisi@company.com"
+            status="ACTIVE"
+            merchant="merchant(context)"
+            create_time="createTime()"
+            last_login="updateTime()"
+    />
+
+    <user_role
+            _module_key="system management"
+            _name="用户角色"
+            _module="系统管理"
+            system_user="system_user()"
+            role_name="HR_ADMIN"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <access_permission
+            _module_key="system management"
+            _name="访问权限"
+            _module="系统管理"
+            user_role="user_role()"
+            permission_code="EMPLOYEE_READ"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <audit_log
+            _module_key="system management"
+            _name="审计日志"
+            _module="系统管理"
+            system_user="system_user()"
+            action_type="CREATE"
+            action_target="EMPLOYEE"
+            target_id="EMP10001"
+            ip_address="remoteIp()"
+            action_time="createTime()"
+            merchant="merchant(context)"
+    />
+
+    <document_template
+            _module_key="document management"
+            _name="文档模板"
+            _module="文档管理"
+            template_name="劳动合同模板"
+            template_type="CONTRACT"
+            template_version="V2.0"
+            file_name="contract_template_v2.docx"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <employee_document
+            _module_key="document management"
+            _name="员工文档"
+            _module="文档管理"
+            employee="employee()"
+            document_type="ID_CARD"
+            file_name="id_card_emp10001.jpg"
+            expiry_date="2030-12-31"
+            merchant="merchant(context)"
+            upload_time="createTime()"
+    />
+
+    <hr_report
+            _module_key="report analysis"
+            _name="人力资源报表"
+            _module="报表分析"
+            report_name="员工离职率分析"
+            report_period="2024Q1"
+            generation_date="2024-04-01"
+            file_name="turnover_report_2024q1.pdf"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <report_parameter
+            _module_key="report analysis"
+            _name="报表参数"
+            _module="报表分析"
+            hr_report="hr_report()"
+            parameter_name="department"
+            parameter_value="ALL"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <system_notification
+            _module_key="notification message"
+            _name="系统通知"
+            _module="通知消息"
+            notification_title="绩效考核通知"
+            notification_content="2024年第一季度绩效考核即将开始"
+            notification_type="REMINDER"
+            target_audience="ALL_EMPLOYEES"
+            merchant="merchant(context)"
+            create_time="createTime()"
+            send_time="updateTime()"
+    />
+
+    <notification_recipient
+            _module_key="notification message"
+            _name="通知接收人"
+            _module="通知消息"
+            system_notification="system_notification()"
+            employee="employee()"
+            read_status="UNREAD"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <workflow_definition
+            _module_key="workflow"
+            _name="工作流定义"
+            _module="工作流"
+            workflow_name="请假审批流程"
+            workflow_version="1.0"
+            is_active="true"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <workflow_step
+            _module_key="workflow"
+            _name="工作流步骤"
+            _module="工作流"
+            workflow_definition="workflow_definition()"
+            step_name="部门经理审批"
+            step_order="1"
+            approver_role="DEPARTMENT_MANAGER"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <workflow_instance
+            _module_key="workflow"
+            _name="工作流实例"
+            _module="工作流"
+            workflow_definition="workflow_definition()"
+            current_step="workflow_step()"
+            status="IN_PROGRESS"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <company_policy
+            _module_key="basic data"
+            _name="公司政策"
+            _module="基础数据"
+            policy_name="考勤管理制度"
+            policy_version="V3.0"
+            effective_date="2024-01-01"
+            file_name="attendance_policy_v3.pdf"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <equipment_allocation
+            _module_key="asset management"
+            _name="设备分配"
+            _module="资产管理"
+            employee="employee()"
+            equipment_type="LAPTOP"
+            equipment_model="ThinkPad X1"
+            serial_number="SN123456789"
+            allocation_date="2024-01-01"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <award_recognition
+            _module_key="employee relations"
+            _name="奖励表彰"
+            _module="员工关系"
+            employee="employee()"
+            award_type="PERFORMANCE"
+            award_name="季度优秀员工"
+            award_date="2024-04-01"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <skill_assessment
+            _module_key="training and development"
+            _name="技能评估"
+            _module="培训发展"
+            employee="employee()"
+            skill_name="Java编程"
+            skill_level="ADVANCED"
+            assessment_date="2024-03-15"
+            assessor="employee()"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <project_assignment
+            _module_key="project management"
+            _name="项目分配"
+            _module="项目管理"
+            employee="employee()"
+            project_name="电商平台重构"
+            role="技术负责人"
+            start_date="2024-02-01"
+            end_date="2024-08-31"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <work_experience
+            _module_key="employee management"
+            _name="工作经历"
+            _module="员工管理"
+            employee="employee()"
+            company_name="前公司"
+            position="软件工程师"
+            start_date="2020-01-01"
+            end_date="2023-12-31"
+            description="负责系统开发"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <education_history
+            _module_key="employee management"
+            _name="教育经历"
+            _module="员工管理"
+            employee="employee()"
+            school_name="清华大学"
+            major="计算机科学"
+            degree="education_level()"
+            graduation_date="2019-06-30"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <certification
+            _module_key="training and development"
+            _name="职业认证"
+            _module="培训发展"
+            employee="employee()"
+            certificate_name="PMP认证"
+            issuing_authority="PMI"
+            issue_date="2023-03-15"
+            expiry_date="2026-03-15"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <employee_survey
+            _module_key="employee relations"
+            _name="员工调研"
+            _module="员工关系"
+            survey_name="员工满意度调研"
+            survey_date="2024-03-01"
+            participant="employee()"
+            overall_score="4.2"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
+
+    <budget_allocation
+            _module_key="financial management"
+            _name="预算分配"
+            _module="财务管理"
+            department="department()"
+            budget_year="2024"
+            budget_amount="500000"
+            budget_type="OPERATIONAL"
+            merchant="merchant(context)"
+            create_time="createTime()"
+    />
 
 
 </root>

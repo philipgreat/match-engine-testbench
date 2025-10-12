@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>testbench-service</title>
+    <title>employee-service</title>
     <style>
 
         /* panel layout mechanics */
@@ -77,7 +77,7 @@
     <button onclick="setWidth('1600px')">1600px</button>
     <button onclick="setWidth('2400px')">2400px</button>
     <button onclick="setWidth('3600px')">3600px</button>
-    testbench-service
+    employee-service
 </div>
 <div id="left" style="position: absolute;top: 20px;bottom: 0px;width:75%;overflow:auto">
     <!-- Prepare a Dom with size (width and height) for ECharts -->
@@ -149,31 +149,6 @@
 ,
 {
   "count": 2,
-  "depth": 2,
-  "meta": [
-{
-      "type": "String",
-      "required": "true",
-      "name": "name",
-      "localeName": "name"
-    },{
-      "type": "RequestType",
-      "required": "true",
-      "name": "actionType",
-      "localeName": "actionType"
-    },{
-      "type": "String",
-      "required": "true",
-      "name": "snapshot",
-      "localeName": "snapshot"
-    }
-  ],
-  "name": "ServiceRequest",
-  "id": "ServiceRequest"
-}
-,
-{
-  "count": 2,
   "depth": 1,
   "meta": [
 {
@@ -184,93 +159,28 @@
     },{
       "type": "String",
       "required": "true",
-      "name": "code",
-      "localeName": "code"
+      "name": "taxNumber",
+      "localeName": "taxNumber"
     },{
       "type": "String",
       "required": "true",
-      "name": "entranceView",
-      "localeName": "entranceView"
-    },{
-      "type": "Platform",
-      "required": "true",
-      "name": "platform",
-      "localeName": "platform"
-    }
-  ],
-  "name": "RequestType",
-  "id": "RequestType"
-}
-,
-{
-  "count": 2,
-  "depth": 1,
-  "meta": [
-{
-      "type": "String",
-      "required": "true",
-      "name": "name",
-      "localeName": "name"
-    },{
-      "type": "String",
-      "required": "true",
-      "name": "code",
-      "localeName": "code"
-    },{
-      "type": "Platform",
-      "required": "true",
-      "name": "platform",
-      "localeName": "platform"
-    }
-  ],
-  "name": "PermissionType",
-  "id": "PermissionType"
-}
-,
-{
-  "count": 2,
-  "depth": 3,
-  "meta": [
-{
-      "type": "String",
-      "required": "true",
-      "name": "batchNumber",
-      "localeName": "batchNumber"
-    },{
-      "type": "ServiceRequest",
-      "required": "true",
-      "name": "serviceRequest",
-      "localeName": "serviceRequest"
-    }
-  ],
-  "name": "CreateTask",
-  "id": "CreateTask"
-}
-,
-{
-  "count": 2,
-  "depth": 1,
-  "meta": [
-{
-      "type": "String",
-      "required": "true",
-      "name": "name",
-      "localeName": "name"
+      "name": "address",
+      "localeName": "address"
     },{
       "type": "String",
       "required": "true",
       "name": "externalId",
       "localeName": "externalId"
     },{
-      "type": "LocalDateTime",
-      "required": "true",
-      "name": "found",
-      "localeName": "found"
-    },{
       "type": "Platform",
       "required": "true",
       "name": "platform",
       "localeName": "platform"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
     },{
       "type": "LocalDateTime",
       "required": "true",
@@ -294,8 +204,8 @@
     },{
       "type": "String",
       "required": "true",
-      "name": "remark",
-      "localeName": "remark"
+      "name": "code",
+      "localeName": "code"
     },{
       "type": "Merchant",
       "required": "true",
@@ -303,68 +213,8 @@
       "localeName": "merchant"
     }
   ],
-  "name": "JobType",
-  "id": "JobType"
-}
-,
-{
-  "count": 2,
-  "depth": 3,
-  "meta": [
-{
-      "type": "FeedbackMainType",
-      "required": "true",
-      "name": "mainType",
-      "localeName": "mainType"
-    },{
-      "type": "JobType",
-      "required": "true",
-      "name": "jobType",
-      "localeName": "jobType"
-    },{
-      "type": "PermissionType",
-      "required": "true",
-      "name": "permissionType",
-      "localeName": "permissionType"
-    },{
-      "type": "LocalDateTime",
-      "required": "true",
-      "name": "createTime",
-      "localeName": "createTime"
-    }
-  ],
-  "name": "JobTypeWithMainType",
-  "id": "JobTypeWithMainType"
-}
-,
-{
-  "count": 2,
-  "depth": 3,
-  "meta": [
-{
-      "type": "String",
-      "required": "true",
-      "name": "name",
-      "localeName": "name"
-    },{
-      "type": "String",
-      "required": "true",
-      "name": "externalId",
-      "localeName": "externalId"
-    },{
-      "type": "JobType",
-      "required": "true",
-      "name": "jobType",
-      "localeName": "jobType"
-    },{
-      "type": "Merchant",
-      "required": "true",
-      "name": "merchant",
-      "localeName": "merchant"
-    }
-  ],
-  "name": "Employee",
-  "id": "Employee"
+  "name": "GenderType",
+  "id": "GenderType"
 }
 ,
 {
@@ -377,7 +227,7 @@
       "name": "name",
       "localeName": "name"
     },{
-      "type": "Long",
+      "type": "String",
       "required": "true",
       "name": "code",
       "localeName": "code"
@@ -386,6 +236,246 @@
       "required": "true",
       "name": "merchant",
       "localeName": "merchant"
+    }
+  ],
+  "name": "MaritalStatus",
+  "id": "MaritalStatus"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "EducationLevel",
+  "id": "EducationLevel"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "RecruitmentStatus",
+  "id": "RecruitmentStatus"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "InterviewStatus",
+  "id": "InterviewStatus"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "OnboardingStatus",
+  "id": "OnboardingStatus"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "LeaveType",
+  "id": "LeaveType"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "PerformanceLevel",
+  "id": "PerformanceLevel"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "TerminationType",
+  "id": "TerminationType"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    }
+  ],
+  "name": "TrainingType",
+  "id": "TrainingType"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "code",
+      "localeName": "code"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "description",
+      "localeName": "description"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "updateTime",
+      "localeName": "updateTime"
     }
   ],
   "name": "Department",
@@ -394,7 +484,7 @@
 ,
 {
   "count": 2,
-  "depth": 2,
+  "depth": 3,
   "meta": [
 {
       "type": "String",
@@ -402,19 +492,29 @@
       "name": "name",
       "localeName": "name"
     },{
-      "type": "Long",
+      "type": "String",
       "required": "true",
       "name": "code",
       "localeName": "code"
+    },{
+      "type": "Department",
+      "required": "true",
+      "name": "department",
+      "localeName": "department"
     },{
       "type": "Merchant",
       "required": "true",
       "name": "merchant",
       "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
     }
   ],
-  "name": "FeedbackMainType",
-  "id": "FeedbackMainType"
+  "name": "Position",
+  "id": "Position"
 }
 ,
 {
@@ -427,19 +527,34 @@
       "name": "name",
       "localeName": "name"
     },{
-      "type": "Long",
+      "type": "String",
       "required": "true",
       "name": "code",
       "localeName": "code"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "minSalary",
+      "localeName": "minSalary"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "maxSalary",
+      "localeName": "maxSalary"
     },{
       "type": "Merchant",
       "required": "true",
       "name": "merchant",
       "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
     }
   ],
-  "name": "RoleType",
-  "id": "RoleType"
+  "name": "JobGrade",
+  "id": "JobGrade"
 }
 ,
 {
@@ -449,122 +564,87 @@
 {
       "type": "String",
       "required": "true",
-      "name": "name",
-      "localeName": "name"
-    },{
-      "type": "Long",
-      "required": "true",
-      "name": "code",
-      "localeName": "code"
-    },{
-      "type": "FeedbackMainType",
-      "required": "true",
-      "name": "mainType",
-      "localeName": "mainType"
-    }
-  ],
-  "name": "FeedbackSubType",
-  "id": "FeedbackSubType"
-}
-,
-{
-  "count": 2,
-  "depth": 2,
-  "meta": [
-{
-      "type": "String",
-      "required": "true",
-      "name": "name",
-      "localeName": "name"
-    },{
-      "type": "Long",
-      "required": "true",
-      "name": "code",
-      "localeName": "code"
-    },{
-      "type": "Merchant",
-      "required": "true",
-      "name": "merchant",
-      "localeName": "merchant"
-    }
-  ],
-  "name": "FeedbackResultStatus",
-  "id": "FeedbackResultStatus"
-}
-,
-{
-  "count": 2,
-  "depth": 2,
-  "meta": [
-{
-      "type": "String",
-      "required": "true",
-      "name": "name",
-      "localeName": "name"
-    },{
-      "type": "Long",
-      "required": "true",
-      "name": "code",
-      "localeName": "code"
-    },{
-      "type": "String",
-      "required": "true",
-      "name": "color",
-      "localeName": "color"
-    },{
-      "type": "Integer",
-      "required": "true",
-      "name": "stepIndex",
-      "localeName": "stepIndex"
-    },{
-      "type": "Integer",
-      "required": "true",
-      "name": "progress",
-      "localeName": "progress"
-    },{
-      "type": "Merchant",
-      "required": "true",
-      "name": "merchant",
-      "localeName": "merchant"
-    }
-  ],
-  "name": "FeedbackResolveStatus",
-  "id": "FeedbackResolveStatus"
-}
-,
-{
-  "count": 2,
-  "depth": 2,
-  "meta": [
-{
-      "type": "LocalDateTime",
-      "required": "true",
-      "name": "createTime",
-      "localeName": "createTime"
-    },{
-      "type": "String",
-      "required": "true",
       "name": "title",
       "localeName": "title"
     },{
       "type": "String",
       "required": "true",
-      "name": "type",
-      "localeName": "type"
+      "name": "planNumber",
+      "localeName": "planNumber"
     },{
-      "type": "String",
+      "type": "Department",
       "required": "true",
-      "name": "content",
-      "localeName": "content"
+      "name": "department",
+      "localeName": "department"
     },{
       "type": "Merchant",
       "required": "true",
       "name": "merchant",
       "localeName": "merchant"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "planStartDate",
+      "localeName": "planStartDate"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "planEndDate",
+      "localeName": "planEndDate"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
     }
   ],
-  "name": "MerchantBackendLog",
-  "id": "MerchantBackendLog"
+  "name": "RecruitmentPlan",
+  "id": "RecruitmentPlan"
+}
+,
+{
+  "count": 2,
+  "depth": 3,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "title",
+      "localeName": "title"
+    },{
+      "type": "Department",
+      "required": "true",
+      "name": "department",
+      "localeName": "department"
+    },{
+      "type": "JobGrade",
+      "required": "true",
+      "name": "jobGrade",
+      "localeName": "jobGrade"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "EducationLevel",
+      "required": "true",
+      "name": "requiredEducation",
+      "localeName": "requiredEducation"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "workLocation",
+      "localeName": "workLocation"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "JobPosition",
+  "id": "JobPosition"
 }
 ,
 {
@@ -574,88 +654,1573 @@
 {
       "type": "String",
       "required": "true",
-      "name": "feedbackNumber",
-      "localeName": "feedbackNumber"
+      "name": "requestNumber",
+      "localeName": "requestNumber"
+    },{
+      "type": "JobPosition",
+      "required": "true",
+      "name": "jobPosition",
+      "localeName": "jobPosition"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "requiredCount",
+      "localeName": "requiredCount"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "urgencyLevel",
+      "localeName": "urgencyLevel"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "RecruitmentRequest",
+  "id": "RecruitmentRequest"
+}
+,
+{
+  "count": 2,
+  "depth": 3,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "name",
+      "localeName": "name"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "mobilePhone",
+      "localeName": "mobilePhone"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "email",
+      "localeName": "email"
+    },{
+      "type": "GenderType",
+      "required": "true",
+      "name": "gender",
+      "localeName": "gender"
+    },{
+      "type": "EducationLevel",
+      "required": "true",
+      "name": "education",
+      "localeName": "education"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "Candidate",
+  "id": "Candidate"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Candidate",
+      "required": "true",
+      "name": "candidate",
+      "localeName": "candidate"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "fileName",
+      "localeName": "fileName"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "fileSize",
+      "localeName": "fileSize"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "uploadTime",
+      "localeName": "uploadTime"
+    }
+  ],
+  "name": "Resume",
+  "id": "Resume"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Candidate",
+      "required": "true",
+      "name": "candidate",
+      "localeName": "candidate"
+    },{
+      "type": "Employee",
+      "required": "true",
+      "name": "interviewer",
+      "localeName": "interviewer"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "interviewTime",
+      "localeName": "interviewTime"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "interviewLocation",
+      "localeName": "interviewLocation"
+    },{
+      "type": "InterviewStatus",
+      "required": "true",
+      "name": "status",
+      "localeName": "status"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "Interview",
+  "id": "Interview"
+}
+,
+{
+  "count": 2,
+  "depth": 5,
+  "meta": [
+{
+      "type": "Interview",
+      "required": "true",
+      "name": "interview",
+      "localeName": "interview"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "technicalScore",
+      "localeName": "technicalScore"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "communicationScore",
+      "localeName": "communicationScore"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "overallScore",
+      "localeName": "overallScore"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "recommendation",
+      "localeName": "recommendation"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "InterviewEvaluation",
+  "id": "InterviewEvaluation"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Candidate",
+      "required": "true",
+      "name": "candidate",
+      "localeName": "candidate"
+    },{
+      "type": "JobPosition",
+      "required": "true",
+      "name": "jobPosition",
+      "localeName": "jobPosition"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "baseSalary",
+      "localeName": "baseSalary"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "bonus",
+      "localeName": "bonus"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "startDate",
+      "localeName": "startDate"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "Offer",
+  "id": "Offer"
+}
+,
+{
+  "count": 2,
+  "depth": 3,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "employeeNumber",
+      "localeName": "employeeNumber"
     },{
       "type": "String",
       "required": "true",
       "name": "name",
       "localeName": "name"
     },{
-      "type": "Boolean",
+      "type": "GenderType",
       "required": "true",
-      "name": "realname",
-      "localeName": "realname"
-    },{
-      "type": "RoleType",
-      "required": "true",
-      "name": "roleType",
-      "localeName": "roleType"
+      "name": "gender",
+      "localeName": "gender"
     },{
       "type": "String",
+      "required": "true",
+      "name": "externalId",
+      "localeName": "externalId"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "birthDate",
+      "localeName": "birthDate"
+    },{
+      "type": "Integer",
       "required": "true",
       "name": "mobilePhone",
       "localeName": "mobilePhone"
     },{
+      "type": "String",
+      "required": "true",
+      "name": "email",
+      "localeName": "email"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "Employee",
+  "id": "Employee"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "contractNumber",
+      "localeName": "contractNumber"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "contractType",
+      "localeName": "contractType"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "startDate",
+      "localeName": "startDate"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "endDate",
+      "localeName": "endDate"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "EmployeeContract",
+  "id": "EmployeeContract"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "Position",
+      "required": "true",
+      "name": "position",
+      "localeName": "position"
+    },{
       "type": "Department",
       "required": "true",
-      "name": "targetDepartment",
-      "localeName": "targetDepartment"
+      "name": "department",
+      "localeName": "department"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "startDate",
+      "localeName": "startDate"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "EmployeePosition",
+  "id": "EmployeePosition"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "baseSalary",
+      "localeName": "baseSalary"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "performanceBonus",
+      "localeName": "performanceBonus"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "allowance",
+      "localeName": "allowance"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "effectiveDate",
+      "localeName": "effectiveDate"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "EmployeeSalary",
+  "id": "EmployeeSalary"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
     },{
       "type": "String",
       "required": "true",
-      "name": "targetName",
-      "localeName": "targetName"
-    },{
-      "type": "FeedbackMainType",
-      "required": "true",
-      "name": "mainType",
-      "localeName": "mainType"
-    },{
-      "type": "FeedbackSubType",
-      "required": "true",
-      "name": "detailType",
-      "localeName": "detailType"
+      "name": "name",
+      "localeName": "name"
     },{
       "type": "String",
       "required": "true",
-      "name": "title",
-      "localeName": "title"
+      "name": "relationship",
+      "localeName": "relationship"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "mobilePhone",
+      "localeName": "mobilePhone"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "EmergencyContact",
+  "id": "EmergencyContact"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "OnboardingStatus",
+      "required": "true",
+      "name": "status",
+      "localeName": "status"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "plannedStartDate",
+      "localeName": "plannedStartDate"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "actualStartDate",
+      "localeName": "actualStartDate"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "OnboardingProcess",
+  "id": "OnboardingProcess"
+}
+,
+{
+  "count": 2,
+  "depth": 5,
+  "meta": [
+{
+      "type": "OnboardingProcess",
+      "required": "true",
+      "name": "onboardingProcess",
+      "localeName": "onboardingProcess"
     },{
       "type": "String",
       "required": "true",
-      "name": "content",
-      "localeName": "content"
+      "name": "taskName",
+      "localeName": "taskName"
     },{
-      "type": "FeedbackResultStatus",
+      "type": "Employee",
       "required": "true",
-      "name": "feedbackResultStatus",
-      "localeName": "feedbackResultStatus"
+      "name": "assignedTo",
+      "localeName": "assignedTo"
     },{
-      "type": "FeedbackResolveStatus",
+      "type": "LocalDate",
       "required": "true",
-      "name": "feedbackResolveStatus",
-      "localeName": "feedbackResolveStatus"
+      "name": "dueDate",
+      "localeName": "dueDate"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "completedDate",
+      "localeName": "completedDate"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "OnboardingTask",
+  "id": "OnboardingTask"
+}
+,
+{
+  "count": 2,
+  "depth": 5,
+  "meta": [
+{
+      "type": "OnboardingProcess",
+      "required": "true",
+      "name": "onboardingProcess",
+      "localeName": "onboardingProcess"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "documentName",
+      "localeName": "documentName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "documentType",
+      "localeName": "documentType"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "fileName",
+      "localeName": "fileName"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "uploadTime",
+      "localeName": "uploadTime"
+    }
+  ],
+  "name": "OnboardingDocument",
+  "id": "OnboardingDocument"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "courseName",
+      "localeName": "courseName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "courseCode",
+      "localeName": "courseCode"
+    },{
+      "type": "TrainingType",
+      "required": "true",
+      "name": "trainingType",
+      "localeName": "trainingType"
+    },{
+      "type": "Employee",
+      "required": "true",
+      "name": "instructor",
+      "localeName": "instructor"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "duration",
+      "localeName": "duration"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "TrainingCourse",
+  "id": "TrainingCourse"
+}
+,
+{
+  "count": 2,
+  "depth": 5,
+  "meta": [
+{
+      "type": "TrainingCourse",
+      "required": "true",
+      "name": "trainingCourse",
+      "localeName": "trainingCourse"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "scheduleDate",
+      "localeName": "scheduleDate"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "startTime",
+      "localeName": "startTime"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "endTime",
+      "localeName": "endTime"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "location",
+      "localeName": "location"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "TrainingSchedule",
+  "id": "TrainingSchedule"
+}
+,
+{
+  "count": 2,
+  "depth": 6,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "TrainingSchedule",
+      "required": "true",
+      "name": "trainingSchedule",
+      "localeName": "trainingSchedule"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "enrollmentStatus",
+      "localeName": "enrollmentStatus"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "TrainingEnrollment",
+  "id": "TrainingEnrollment"
+}
+,
+{
+  "count": 2,
+  "depth": 7,
+  "meta": [
+{
+      "type": "TrainingEnrollment",
+      "required": "true",
+      "name": "trainingEnrollment",
+      "localeName": "trainingEnrollment"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "contentScore",
+      "localeName": "contentScore"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "instructorScore",
+      "localeName": "instructorScore"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "overallScore",
+      "localeName": "overallScore"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "comments",
+      "localeName": "comments"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "TrainingEvaluation",
+  "id": "TrainingEvaluation"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "recordDate",
+      "localeName": "recordDate"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "checkInTime",
+      "localeName": "checkInTime"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "checkOutTime",
+      "localeName": "checkOutTime"
+    },{
+      "type": "BigDecimal",
+      "required": "true",
+      "name": "workHours",
+      "localeName": "workHours"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "AttendanceRecord",
+  "id": "AttendanceRecord"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "exceptionDate",
+      "localeName": "exceptionDate"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "exceptionType",
+      "localeName": "exceptionType"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "reason",
+      "localeName": "reason"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "AttendanceException",
+  "id": "AttendanceException"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "LeaveType",
+      "required": "true",
+      "name": "leaveType",
+      "localeName": "leaveType"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "startDate",
+      "localeName": "startDate"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "endDate",
+      "localeName": "endDate"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "duration",
+      "localeName": "duration"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "reason",
+      "localeName": "reason"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "status",
+      "localeName": "status"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "LeaveApplication",
+  "id": "LeaveApplication"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "LeaveType",
+      "required": "true",
+      "name": "leaveType",
+      "localeName": "leaveType"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "totalDays",
+      "localeName": "totalDays"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "usedDays",
+      "localeName": "usedDays"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "remainingDays",
+      "localeName": "remainingDays"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "LeaveBalance",
+  "id": "LeaveBalance"
+}
+,
+{
+  "count": 2,
+  "depth": 5,
+  "meta": [
+{
+      "type": "LeaveApplication",
+      "required": "true",
+      "name": "leaveApplication",
+      "localeName": "leaveApplication"
+    },{
+      "type": "Employee",
+      "required": "true",
+      "name": "approver",
+      "localeName": "approver"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "approvalStatus",
+      "localeName": "approvalStatus"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "approvalTime",
+      "localeName": "approvalTime"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "comments",
+      "localeName": "comments"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "LeaveApproval",
+  "id": "LeaveApproval"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "cycleName",
+      "localeName": "cycleName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "cycleCode",
+      "localeName": "cycleCode"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "startDate",
+      "localeName": "startDate"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "endDate",
+      "localeName": "endDate"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "PerformanceCycle",
+  "id": "PerformanceCycle"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "PerformanceCycle",
+      "required": "true",
+      "name": "performanceCycle",
+      "localeName": "performanceCycle"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "goalName",
+      "localeName": "goalName"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "weight",
+      "localeName": "weight"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "targetValue",
+      "localeName": "targetValue"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "PerformanceGoal",
+  "id": "PerformanceGoal"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "PerformanceCycle",
+      "required": "true",
+      "name": "performanceCycle",
+      "localeName": "performanceCycle"
+    },{
+      "type": "Employee",
+      "required": "true",
+      "name": "reviewer",
+      "localeName": "reviewer"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "overallScore",
+      "localeName": "overallScore"
+    },{
+      "type": "PerformanceLevel",
+      "required": "true",
+      "name": "performanceLevel",
+      "localeName": "performanceLevel"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "PerformanceReview",
+  "id": "PerformanceReview"
+}
+,
+{
+  "count": 2,
+  "depth": 5,
+  "meta": [
+{
+      "type": "PerformanceReview",
+      "required": "true",
+      "name": "performanceReview",
+      "localeName": "performanceReview"
+    },{
+      "type": "Employee",
+      "required": "true",
+      "name": "feedbackProvider",
+      "localeName": "feedbackProvider"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "feedbackContent",
+      "localeName": "feedbackContent"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "PerformanceFeedback",
+  "id": "PerformanceFeedback"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "adjustmentType",
+      "localeName": "adjustmentType"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "oldSalary",
+      "localeName": "oldSalary"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "newSalary",
+      "localeName": "newSalary"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "effectiveDate",
+      "localeName": "effectiveDate"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "reason",
+      "localeName": "reason"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "SalaryAdjustment",
+  "id": "SalaryAdjustment"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "bonusPeriod",
+      "localeName": "bonusPeriod"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "baseAmount",
+      "localeName": "baseAmount"
+    },{
+      "type": "BigDecimal",
+      "required": "true",
+      "name": "performanceMultiplier",
+      "localeName": "performanceMultiplier"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "finalAmount",
+      "localeName": "finalAmount"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "BonusCalculation",
+  "id": "BonusCalculation"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "insuranceType",
+      "localeName": "insuranceType"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "baseAmount",
+      "localeName": "baseAmount"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "employeeContribution",
+      "localeName": "employeeContribution"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "employerContribution",
+      "localeName": "employerContribution"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "SocialInsurance",
+  "id": "SocialInsurance"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "TerminationType",
+      "required": "true",
+      "name": "terminationType",
+      "localeName": "terminationType"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "proposedLastDate",
+      "localeName": "proposedLastDate"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "reason",
+      "localeName": "reason"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "status",
+      "localeName": "status"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "TerminationApplication",
+  "id": "TerminationApplication"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "Employee",
+      "required": "true",
+      "name": "interviewer",
+      "localeName": "interviewer"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "interviewDate",
+      "localeName": "interviewDate"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "overallSatisfaction",
+      "localeName": "overallSatisfaction"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "ExitInterview",
+  "id": "ExitInterview"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "retirementDate",
+      "localeName": "retirementDate"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "pensionAmount",
+      "localeName": "pensionAmount"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "status",
+      "localeName": "status"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "RetirementApplication",
+  "id": "RetirementApplication"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "username",
+      "localeName": "username"
+    },{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "email",
+      "localeName": "email"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "status",
+      "localeName": "status"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
     },{
       "type": "LocalDateTime",
       "required": "true",
       "name": "createTime",
       "localeName": "createTime"
     },{
-      "type": "String",
+      "type": "LocalDateTime",
       "required": "true",
-      "name": "remoteIp",
-      "localeName": "remoteIp"
+      "name": "lastLogin",
+      "localeName": "lastLogin"
+    }
+  ],
+  "name": "SystemUser",
+  "id": "SystemUser"
+}
+,
+{
+  "count": 2,
+  "depth": 5,
+  "meta": [
+{
+      "type": "SystemUser",
+      "required": "true",
+      "name": "systemUser",
+      "localeName": "systemUser"
     },{
       "type": "String",
       "required": "true",
-      "name": "device",
-      "localeName": "device"
+      "name": "roleName",
+      "localeName": "roleName"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "UserRole",
+  "id": "UserRole"
+}
+,
+{
+  "count": 2,
+  "depth": 6,
+  "meta": [
+{
+      "type": "UserRole",
+      "required": "true",
+      "name": "userRole",
+      "localeName": "userRole"
     },{
       "type": "String",
       "required": "true",
-      "name": "network",
-      "localeName": "network"
+      "name": "permissionCode",
+      "localeName": "permissionCode"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "AccessPermission",
+  "id": "AccessPermission"
+}
+,
+{
+  "count": 2,
+  "depth": 5,
+  "meta": [
+{
+      "type": "SystemUser",
+      "required": "true",
+      "name": "systemUser",
+      "localeName": "systemUser"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "actionType",
+      "localeName": "actionType"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "actionTarget",
+      "localeName": "actionTarget"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "targetId",
+      "localeName": "targetId"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "ipAddress",
+      "localeName": "ipAddress"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "actionTime",
+      "localeName": "actionTime"
     },{
       "type": "Merchant",
       "required": "true",
@@ -663,239 +2228,857 @@
       "localeName": "merchant"
     }
   ],
-  "name": "FeedbackItem",
-  "id": "FeedbackItem"
+  "name": "AuditLog",
+  "id": "AuditLog"
 }
 ,
 {
   "count": 2,
-  "depth": 5,
+  "depth": 2,
   "meta": [
 {
       "type": "String",
       "required": "true",
-      "name": "comment",
-      "localeName": "comment"
+      "name": "templateName",
+      "localeName": "templateName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "templateType",
+      "localeName": "templateType"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "templateVersion",
+      "localeName": "templateVersion"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "fileName",
+      "localeName": "fileName"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "DocumentTemplate",
+  "id": "DocumentTemplate"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "documentType",
+      "localeName": "documentType"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "fileName",
+      "localeName": "fileName"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "expiryDate",
+      "localeName": "expiryDate"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "uploadTime",
+      "localeName": "uploadTime"
+    }
+  ],
+  "name": "EmployeeDocument",
+  "id": "EmployeeDocument"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "reportName",
+      "localeName": "reportName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "reportPeriod",
+      "localeName": "reportPeriod"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "generationDate",
+      "localeName": "generationDate"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "fileName",
+      "localeName": "fileName"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "HrReport",
+  "id": "HrReport"
+}
+,
+{
+  "count": 2,
+  "depth": 3,
+  "meta": [
+{
+      "type": "HrReport",
+      "required": "true",
+      "name": "hrReport",
+      "localeName": "hrReport"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "parameterName",
+      "localeName": "parameterName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "parameterValue",
+      "localeName": "parameterValue"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "ReportParameter",
+  "id": "ReportParameter"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "notificationTitle",
+      "localeName": "notificationTitle"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "notificationContent",
+      "localeName": "notificationContent"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "notificationType",
+      "localeName": "notificationType"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "targetAudience",
+      "localeName": "targetAudience"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "sendTime",
+      "localeName": "sendTime"
+    }
+  ],
+  "name": "SystemNotification",
+  "id": "SystemNotification"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "SystemNotification",
+      "required": "true",
+      "name": "systemNotification",
+      "localeName": "systemNotification"
     },{
       "type": "Employee",
       "required": "true",
       "name": "employee",
       "localeName": "employee"
     },{
+      "type": "String",
+      "required": "true",
+      "name": "readStatus",
+      "localeName": "readStatus"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
       "type": "LocalDateTime",
       "required": "true",
       "name": "createTime",
       "localeName": "createTime"
-    },{
-      "type": "FeedbackItem",
-      "required": "true",
-      "name": "feedbackItem",
-      "localeName": "feedbackItem"
     }
   ],
-  "name": "ReadFlag",
-  "id": "ReadFlag"
+  "name": "NotificationRecipient",
+  "id": "NotificationRecipient"
 }
 ,
 {
   "count": 2,
-  "depth": 5,
+  "depth": 2,
   "meta": [
 {
+      "type": "String",
+      "required": "true",
+      "name": "workflowName",
+      "localeName": "workflowName"
+    },{
+      "type": "BigDecimal",
+      "required": "true",
+      "name": "workflowVersion",
+      "localeName": "workflowVersion"
+    },{
+      "type": "Boolean",
+      "required": "true",
+      "name": "isActive",
+      "localeName": "isActive"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
       "type": "LocalDateTime",
       "required": "true",
       "name": "createTime",
       "localeName": "createTime"
-    },{
-      "type": "String",
-      "required": "true",
-      "name": "title",
-      "localeName": "title"
-    },{
-      "type": "String",
-      "required": "true",
-      "name": "type",
-      "localeName": "type"
-    },{
-      "type": "String",
-      "required": "true",
-      "name": "content",
-      "localeName": "content"
-    },{
-      "type": "String",
-      "required": "true",
-      "name": "remoteIp",
-      "localeName": "remoteIp"
-    },{
-      "type": "String",
-      "required": "true",
-      "name": "device",
-      "localeName": "device"
-    },{
-      "type": "String",
-      "required": "true",
-      "name": "network",
-      "localeName": "network"
-    },{
-      "type": "FeedbackItem",
-      "required": "true",
-      "name": "feedbackItem",
-      "localeName": "feedbackItem"
     }
   ],
-  "name": "FeedbackItemLog",
-  "id": "FeedbackItemLog"
+  "name": "WorkflowDefinition",
+  "id": "WorkflowDefinition"
 }
 ,
 {
   "count": 2,
-  "depth": 5,
+  "depth": 3,
   "meta": [
 {
+      "type": "WorkflowDefinition",
+      "required": "true",
+      "name": "workflowDefinition",
+      "localeName": "workflowDefinition"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "stepName",
+      "localeName": "stepName"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "stepOrder",
+      "localeName": "stepOrder"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "approverRole",
+      "localeName": "approverRole"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "WorkflowStep",
+  "id": "WorkflowStep"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "WorkflowDefinition",
+      "required": "true",
+      "name": "workflowDefinition",
+      "localeName": "workflowDefinition"
+    },{
+      "type": "WorkflowStep",
+      "required": "true",
+      "name": "currentStep",
+      "localeName": "currentStep"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "status",
+      "localeName": "status"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "WorkflowInstance",
+  "id": "WorkflowInstance"
+}
+,
+{
+  "count": 2,
+  "depth": 2,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "policyName",
+      "localeName": "policyName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "policyVersion",
+      "localeName": "policyVersion"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "effectiveDate",
+      "localeName": "effectiveDate"
+    },{
       "type": "String",
       "required": "true",
       "name": "fileName",
       "localeName": "fileName"
     },{
-      "type": "String",
+      "type": "Merchant",
       "required": "true",
-      "name": "mimeType",
-      "localeName": "mimeType"
-    },{
-      "type": "Integer",
-      "required": "true",
-      "name": "fileSize",
-      "localeName": "fileSize"
-    },{
-      "type": "String",
-      "required": "true",
-      "name": "resourceKey",
-      "localeName": "resourceKey"
-    },{
-      "type": "String",
-      "required": "true",
-      "name": "resourceUrl",
-      "localeName": "resourceUrl"
+      "name": "merchant",
+      "localeName": "merchant"
     },{
       "type": "LocalDateTime",
       "required": "true",
       "name": "createTime",
       "localeName": "createTime"
-    },{
-      "type": "FeedbackItem",
-      "required": "true",
-      "name": "feedbackItem",
-      "localeName": "feedbackItem"
     }
   ],
-  "name": "FeedbackItemAttachment",
-  "id": "FeedbackItemAttachment"
+  "name": "CompanyPolicy",
+  "id": "CompanyPolicy"
 }
 ,
 {
   "count": 2,
-  "depth": 5,
+  "depth": 4,
   "meta": [
 {
-      "type": "String",
+      "type": "Employee",
       "required": "true",
-      "name": "submitContent",
-      "localeName": "submitContent"
+      "name": "employee",
+      "localeName": "employee"
     },{
       "type": "String",
       "required": "true",
-      "name": "responseContent",
-      "localeName": "responseContent"
+      "name": "equipmentType",
+      "localeName": "equipmentType"
     },{
       "type": "String",
       "required": "true",
-      "name": "internalRemark",
-      "localeName": "internalRemark"
+      "name": "equipmentModel",
+      "localeName": "equipmentModel"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "serialNumber",
+      "localeName": "serialNumber"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "allocationDate",
+      "localeName": "allocationDate"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
     },{
       "type": "LocalDateTime",
       "required": "true",
       "name": "createTime",
       "localeName": "createTime"
-    },{
-      "type": "FeedbackItem",
+    }
+  ],
+  "name": "EquipmentAllocation",
+  "id": "EquipmentAllocation"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
       "required": "true",
-      "name": "feedbackItem",
-      "localeName": "feedbackItem"
+      "name": "employee",
+      "localeName": "employee"
     },{
       "type": "String",
       "required": "true",
-      "name": "remoteIp",
-      "localeName": "remoteIp"
+      "name": "awardType",
+      "localeName": "awardType"
     },{
       "type": "String",
       "required": "true",
-      "name": "device",
-      "localeName": "device"
+      "name": "awardName",
+      "localeName": "awardName"
     },{
-      "type": "String",
+      "type": "LocalDate",
       "required": "true",
-      "name": "network",
-      "localeName": "network"
+      "name": "awardDate",
+      "localeName": "awardDate"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
     },{
       "type": "LocalDateTime",
       "required": "true",
-      "name": "updateTime",
-      "localeName": "updateTime"
+      "name": "createTime",
+      "localeName": "createTime"
     }
   ],
-  "name": "SupplementContent",
-  "id": "SupplementContent"
+  "name": "AwardRecognition",
+  "id": "AwardRecognition"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "skillName",
+      "localeName": "skillName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "skillLevel",
+      "localeName": "skillLevel"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "assessmentDate",
+      "localeName": "assessmentDate"
+    },{
+      "type": "Employee",
+      "required": "true",
+      "name": "assessor",
+      "localeName": "assessor"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "SkillAssessment",
+  "id": "SkillAssessment"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "projectName",
+      "localeName": "projectName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "role",
+      "localeName": "role"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "startDate",
+      "localeName": "startDate"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "endDate",
+      "localeName": "endDate"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "ProjectAssignment",
+  "id": "ProjectAssignment"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "companyName",
+      "localeName": "companyName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "position",
+      "localeName": "position"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "startDate",
+      "localeName": "startDate"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "endDate",
+      "localeName": "endDate"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "description",
+      "localeName": "description"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "WorkExperience",
+  "id": "WorkExperience"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "schoolName",
+      "localeName": "schoolName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "major",
+      "localeName": "major"
+    },{
+      "type": "EducationLevel",
+      "required": "true",
+      "name": "degree",
+      "localeName": "degree"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "graduationDate",
+      "localeName": "graduationDate"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "EducationHistory",
+  "id": "EducationHistory"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "Employee",
+      "required": "true",
+      "name": "employee",
+      "localeName": "employee"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "certificateName",
+      "localeName": "certificateName"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "issuingAuthority",
+      "localeName": "issuingAuthority"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "issueDate",
+      "localeName": "issueDate"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "expiryDate",
+      "localeName": "expiryDate"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "Certification",
+  "id": "Certification"
+}
+,
+{
+  "count": 2,
+  "depth": 4,
+  "meta": [
+{
+      "type": "String",
+      "required": "true",
+      "name": "surveyName",
+      "localeName": "surveyName"
+    },{
+      "type": "LocalDate",
+      "required": "true",
+      "name": "surveyDate",
+      "localeName": "surveyDate"
+    },{
+      "type": "Employee",
+      "required": "true",
+      "name": "participant",
+      "localeName": "participant"
+    },{
+      "type": "BigDecimal",
+      "required": "true",
+      "name": "overallScore",
+      "localeName": "overallScore"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "EmployeeSurvey",
+  "id": "EmployeeSurvey"
+}
+,
+{
+  "count": 2,
+  "depth": 3,
+  "meta": [
+{
+      "type": "Department",
+      "required": "true",
+      "name": "department",
+      "localeName": "department"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "budgetYear",
+      "localeName": "budgetYear"
+    },{
+      "type": "Integer",
+      "required": "true",
+      "name": "budgetAmount",
+      "localeName": "budgetAmount"
+    },{
+      "type": "String",
+      "required": "true",
+      "name": "budgetType",
+      "localeName": "budgetType"
+    },{
+      "type": "Merchant",
+      "required": "true",
+      "name": "merchant",
+      "localeName": "merchant"
+    },{
+      "type": "LocalDateTime",
+      "required": "true",
+      "name": "createTime",
+      "localeName": "createTime"
+    }
+  ],
+  "name": "BudgetAllocation",
+  "id": "BudgetAllocation"
 }
 ],
 
         "links": [{
-       "source": "Platform",
-       "type": "RequestType",
-       "target": "RequestType",
-       "value": 1,
-       "refBy": "requestTypeList"
- },{
-       "source": "Platform",
-       "type": "PermissionType",
-       "target": "PermissionType",
-       "value": 1,
-       "refBy": "permissionTypeList"
- },{
        "source": "Platform",
        "type": "Merchant",
        "target": "Merchant",
        "value": 1,
        "refBy": "merchantList"
  } ,{
-       "source": "ServiceRequest",
-       "type": "CreateTask",
-       "target": "CreateTask",
-       "value": 1,
-       "refBy": "createTaskList"
- } ,{
-       "source": "RequestType",
-       "type": "ServiceRequest",
-       "target": "ServiceRequest",
-       "value": 1,
-       "refBy": "serviceRequestList"
- } ,{
-       "source": "PermissionType",
-       "type": "JobTypeWithMainType",
-       "target": "JobTypeWithMainType",
-       "value": 1,
-       "refBy": "jobTypeWithMainTypeList"
- } ,{
        "source": "Merchant",
-       "type": "JobType",
-       "target": "JobType",
+       "type": "GenderType",
+       "target": "GenderType",
        "value": 1,
-       "refBy": "jobTypeList"
+       "refBy": "genderTypeList"
  },{
        "source": "Merchant",
-       "type": "Employee",
-       "target": "Employee",
+       "type": "MaritalStatus",
+       "target": "MaritalStatus",
        "value": 1,
-       "refBy": "employeeList"
+       "refBy": "maritalStatusList"
+ },{
+       "source": "Merchant",
+       "type": "EducationLevel",
+       "target": "EducationLevel",
+       "value": 1,
+       "refBy": "educationLevelList"
+ },{
+       "source": "Merchant",
+       "type": "RecruitmentStatus",
+       "target": "RecruitmentStatus",
+       "value": 1,
+       "refBy": "recruitmentStatusList"
+ },{
+       "source": "Merchant",
+       "type": "InterviewStatus",
+       "target": "InterviewStatus",
+       "value": 1,
+       "refBy": "interviewStatusList"
+ },{
+       "source": "Merchant",
+       "type": "OnboardingStatus",
+       "target": "OnboardingStatus",
+       "value": 1,
+       "refBy": "onboardingStatusList"
+ },{
+       "source": "Merchant",
+       "type": "LeaveType",
+       "target": "LeaveType",
+       "value": 1,
+       "refBy": "leaveTypeList"
+ },{
+       "source": "Merchant",
+       "type": "PerformanceLevel",
+       "target": "PerformanceLevel",
+       "value": 1,
+       "refBy": "performanceLevelList"
+ },{
+       "source": "Merchant",
+       "type": "TerminationType",
+       "target": "TerminationType",
+       "value": 1,
+       "refBy": "terminationTypeList"
+ },{
+       "source": "Merchant",
+       "type": "TrainingType",
+       "target": "TrainingType",
+       "value": 1,
+       "refBy": "trainingTypeList"
  },{
        "source": "Merchant",
        "type": "Department",
@@ -904,130 +3087,838 @@
        "refBy": "departmentList"
  },{
        "source": "Merchant",
-       "type": "FeedbackMainType",
-       "target": "FeedbackMainType",
+       "type": "Position",
+       "target": "Position",
        "value": 1,
-       "refBy": "feedbackMainTypeList"
+       "refBy": "positionList"
  },{
        "source": "Merchant",
-       "type": "RoleType",
-       "target": "RoleType",
+       "type": "JobGrade",
+       "target": "JobGrade",
        "value": 1,
-       "refBy": "roleTypeList"
+       "refBy": "jobGradeList"
  },{
        "source": "Merchant",
-       "type": "FeedbackResultStatus",
-       "target": "FeedbackResultStatus",
+       "type": "RecruitmentPlan",
+       "target": "RecruitmentPlan",
        "value": 1,
-       "refBy": "feedbackResultStatusList"
+       "refBy": "recruitmentPlanList"
  },{
        "source": "Merchant",
-       "type": "FeedbackResolveStatus",
-       "target": "FeedbackResolveStatus",
+       "type": "JobPosition",
+       "target": "JobPosition",
        "value": 1,
-       "refBy": "feedbackResolveStatusList"
+       "refBy": "jobPositionList"
  },{
        "source": "Merchant",
-       "type": "MerchantBackendLog",
-       "target": "MerchantBackendLog",
+       "type": "RecruitmentRequest",
+       "target": "RecruitmentRequest",
        "value": 1,
-       "refBy": "merchantBackendLogList"
+       "refBy": "recruitmentRequestList"
  },{
        "source": "Merchant",
-       "type": "FeedbackItem",
-       "target": "FeedbackItem",
+       "type": "Candidate",
+       "target": "Candidate",
        "value": 1,
-       "refBy": "feedbackItemList"
+       "refBy": "candidateList"
+ },{
+       "source": "Merchant",
+       "type": "Resume",
+       "target": "Resume",
+       "value": 1,
+       "refBy": "resumeList"
+ },{
+       "source": "Merchant",
+       "type": "Interview",
+       "target": "Interview",
+       "value": 1,
+       "refBy": "interviewList"
+ },{
+       "source": "Merchant",
+       "type": "InterviewEvaluation",
+       "target": "InterviewEvaluation",
+       "value": 1,
+       "refBy": "interviewEvaluationList"
+ },{
+       "source": "Merchant",
+       "type": "Offer",
+       "target": "Offer",
+       "value": 1,
+       "refBy": "offerList"
+ },{
+       "source": "Merchant",
+       "type": "Employee",
+       "target": "Employee",
+       "value": 1,
+       "refBy": "employeeList"
+ },{
+       "source": "Merchant",
+       "type": "EmployeeContract",
+       "target": "EmployeeContract",
+       "value": 1,
+       "refBy": "employeeContractList"
+ },{
+       "source": "Merchant",
+       "type": "EmployeePosition",
+       "target": "EmployeePosition",
+       "value": 1,
+       "refBy": "employeePositionList"
+ },{
+       "source": "Merchant",
+       "type": "EmployeeSalary",
+       "target": "EmployeeSalary",
+       "value": 1,
+       "refBy": "employeeSalaryList"
+ },{
+       "source": "Merchant",
+       "type": "EmergencyContact",
+       "target": "EmergencyContact",
+       "value": 1,
+       "refBy": "emergencyContactList"
+ },{
+       "source": "Merchant",
+       "type": "OnboardingProcess",
+       "target": "OnboardingProcess",
+       "value": 1,
+       "refBy": "onboardingProcessList"
+ },{
+       "source": "Merchant",
+       "type": "OnboardingTask",
+       "target": "OnboardingTask",
+       "value": 1,
+       "refBy": "onboardingTaskList"
+ },{
+       "source": "Merchant",
+       "type": "OnboardingDocument",
+       "target": "OnboardingDocument",
+       "value": 1,
+       "refBy": "onboardingDocumentList"
+ },{
+       "source": "Merchant",
+       "type": "TrainingCourse",
+       "target": "TrainingCourse",
+       "value": 1,
+       "refBy": "trainingCourseList"
+ },{
+       "source": "Merchant",
+       "type": "TrainingSchedule",
+       "target": "TrainingSchedule",
+       "value": 1,
+       "refBy": "trainingScheduleList"
+ },{
+       "source": "Merchant",
+       "type": "TrainingEnrollment",
+       "target": "TrainingEnrollment",
+       "value": 1,
+       "refBy": "trainingEnrollmentList"
+ },{
+       "source": "Merchant",
+       "type": "TrainingEvaluation",
+       "target": "TrainingEvaluation",
+       "value": 1,
+       "refBy": "trainingEvaluationList"
+ },{
+       "source": "Merchant",
+       "type": "AttendanceRecord",
+       "target": "AttendanceRecord",
+       "value": 1,
+       "refBy": "attendanceRecordList"
+ },{
+       "source": "Merchant",
+       "type": "AttendanceException",
+       "target": "AttendanceException",
+       "value": 1,
+       "refBy": "attendanceExceptionList"
+ },{
+       "source": "Merchant",
+       "type": "LeaveApplication",
+       "target": "LeaveApplication",
+       "value": 1,
+       "refBy": "leaveApplicationList"
+ },{
+       "source": "Merchant",
+       "type": "LeaveBalance",
+       "target": "LeaveBalance",
+       "value": 1,
+       "refBy": "leaveBalanceList"
+ },{
+       "source": "Merchant",
+       "type": "LeaveApproval",
+       "target": "LeaveApproval",
+       "value": 1,
+       "refBy": "leaveApprovalList"
+ },{
+       "source": "Merchant",
+       "type": "PerformanceCycle",
+       "target": "PerformanceCycle",
+       "value": 1,
+       "refBy": "performanceCycleList"
+ },{
+       "source": "Merchant",
+       "type": "PerformanceGoal",
+       "target": "PerformanceGoal",
+       "value": 1,
+       "refBy": "performanceGoalList"
+ },{
+       "source": "Merchant",
+       "type": "PerformanceReview",
+       "target": "PerformanceReview",
+       "value": 1,
+       "refBy": "performanceReviewList"
+ },{
+       "source": "Merchant",
+       "type": "PerformanceFeedback",
+       "target": "PerformanceFeedback",
+       "value": 1,
+       "refBy": "performanceFeedbackList"
+ },{
+       "source": "Merchant",
+       "type": "SalaryAdjustment",
+       "target": "SalaryAdjustment",
+       "value": 1,
+       "refBy": "salaryAdjustmentList"
+ },{
+       "source": "Merchant",
+       "type": "BonusCalculation",
+       "target": "BonusCalculation",
+       "value": 1,
+       "refBy": "bonusCalculationList"
+ },{
+       "source": "Merchant",
+       "type": "SocialInsurance",
+       "target": "SocialInsurance",
+       "value": 1,
+       "refBy": "socialInsuranceList"
+ },{
+       "source": "Merchant",
+       "type": "TerminationApplication",
+       "target": "TerminationApplication",
+       "value": 1,
+       "refBy": "terminationApplicationList"
+ },{
+       "source": "Merchant",
+       "type": "ExitInterview",
+       "target": "ExitInterview",
+       "value": 1,
+       "refBy": "exitInterviewList"
+ },{
+       "source": "Merchant",
+       "type": "RetirementApplication",
+       "target": "RetirementApplication",
+       "value": 1,
+       "refBy": "retirementApplicationList"
+ },{
+       "source": "Merchant",
+       "type": "SystemUser",
+       "target": "SystemUser",
+       "value": 1,
+       "refBy": "systemUserList"
+ },{
+       "source": "Merchant",
+       "type": "UserRole",
+       "target": "UserRole",
+       "value": 1,
+       "refBy": "userRoleList"
+ },{
+       "source": "Merchant",
+       "type": "AccessPermission",
+       "target": "AccessPermission",
+       "value": 1,
+       "refBy": "accessPermissionList"
+ },{
+       "source": "Merchant",
+       "type": "AuditLog",
+       "target": "AuditLog",
+       "value": 1,
+       "refBy": "auditLogList"
+ },{
+       "source": "Merchant",
+       "type": "DocumentTemplate",
+       "target": "DocumentTemplate",
+       "value": 1,
+       "refBy": "documentTemplateList"
+ },{
+       "source": "Merchant",
+       "type": "EmployeeDocument",
+       "target": "EmployeeDocument",
+       "value": 1,
+       "refBy": "employeeDocumentList"
+ },{
+       "source": "Merchant",
+       "type": "HrReport",
+       "target": "HrReport",
+       "value": 1,
+       "refBy": "hrReportList"
+ },{
+       "source": "Merchant",
+       "type": "ReportParameter",
+       "target": "ReportParameter",
+       "value": 1,
+       "refBy": "reportParameterList"
+ },{
+       "source": "Merchant",
+       "type": "SystemNotification",
+       "target": "SystemNotification",
+       "value": 1,
+       "refBy": "systemNotificationList"
+ },{
+       "source": "Merchant",
+       "type": "NotificationRecipient",
+       "target": "NotificationRecipient",
+       "value": 1,
+       "refBy": "notificationRecipientList"
+ },{
+       "source": "Merchant",
+       "type": "WorkflowDefinition",
+       "target": "WorkflowDefinition",
+       "value": 1,
+       "refBy": "workflowDefinitionList"
+ },{
+       "source": "Merchant",
+       "type": "WorkflowStep",
+       "target": "WorkflowStep",
+       "value": 1,
+       "refBy": "workflowStepList"
+ },{
+       "source": "Merchant",
+       "type": "WorkflowInstance",
+       "target": "WorkflowInstance",
+       "value": 1,
+       "refBy": "workflowInstanceList"
+ },{
+       "source": "Merchant",
+       "type": "CompanyPolicy",
+       "target": "CompanyPolicy",
+       "value": 1,
+       "refBy": "companyPolicyList"
+ },{
+       "source": "Merchant",
+       "type": "EquipmentAllocation",
+       "target": "EquipmentAllocation",
+       "value": 1,
+       "refBy": "equipmentAllocationList"
+ },{
+       "source": "Merchant",
+       "type": "AwardRecognition",
+       "target": "AwardRecognition",
+       "value": 1,
+       "refBy": "awardRecognitionList"
+ },{
+       "source": "Merchant",
+       "type": "SkillAssessment",
+       "target": "SkillAssessment",
+       "value": 1,
+       "refBy": "skillAssessmentList"
+ },{
+       "source": "Merchant",
+       "type": "ProjectAssignment",
+       "target": "ProjectAssignment",
+       "value": 1,
+       "refBy": "projectAssignmentList"
+ },{
+       "source": "Merchant",
+       "type": "WorkExperience",
+       "target": "WorkExperience",
+       "value": 1,
+       "refBy": "workExperienceList"
+ },{
+       "source": "Merchant",
+       "type": "EducationHistory",
+       "target": "EducationHistory",
+       "value": 1,
+       "refBy": "educationHistoryList"
+ },{
+       "source": "Merchant",
+       "type": "Certification",
+       "target": "Certification",
+       "value": 1,
+       "refBy": "certificationList"
+ },{
+       "source": "Merchant",
+       "type": "EmployeeSurvey",
+       "target": "EmployeeSurvey",
+       "value": 1,
+       "refBy": "employeeSurveyList"
+ },{
+       "source": "Merchant",
+       "type": "BudgetAllocation",
+       "target": "BudgetAllocation",
+       "value": 1,
+       "refBy": "budgetAllocationList"
  } ,{
-       "source": "JobType",
-       "type": "JobTypeWithMainType",
-       "target": "JobTypeWithMainType",
+       "source": "GenderType",
+       "type": "Candidate",
+       "target": "Candidate",
        "value": 1,
-       "refBy": "jobTypeWithMainTypeList"
+       "refBy": "candidateList"
  },{
-       "source": "JobType",
+       "source": "GenderType",
        "type": "Employee",
        "target": "Employee",
        "value": 1,
        "refBy": "employeeList"
  } ,{
-       "source": "Employee",
-       "type": "ReadFlag",
-       "target": "ReadFlag",
+       "source": "EducationLevel",
+       "type": "JobPosition",
+       "target": "JobPosition",
        "value": 1,
-       "refBy": "readFlagList"
+       "refBy": "jobPositionList"
+ },{
+       "source": "EducationLevel",
+       "type": "Candidate",
+       "target": "Candidate",
+       "value": 1,
+       "refBy": "candidateList"
+ },{
+       "source": "EducationLevel",
+       "type": "EducationHistory",
+       "target": "EducationHistory",
+       "value": 1,
+       "refBy": "educationHistoryList"
+ } ,{
+       "source": "InterviewStatus",
+       "type": "Interview",
+       "target": "Interview",
+       "value": 1,
+       "refBy": "interviewList"
+ } ,{
+       "source": "OnboardingStatus",
+       "type": "OnboardingProcess",
+       "target": "OnboardingProcess",
+       "value": 1,
+       "refBy": "onboardingProcessList"
+ } ,{
+       "source": "LeaveType",
+       "type": "LeaveApplication",
+       "target": "LeaveApplication",
+       "value": 1,
+       "refBy": "leaveApplicationList"
+ },{
+       "source": "LeaveType",
+       "type": "LeaveBalance",
+       "target": "LeaveBalance",
+       "value": 1,
+       "refBy": "leaveBalanceList"
+ } ,{
+       "source": "PerformanceLevel",
+       "type": "PerformanceReview",
+       "target": "PerformanceReview",
+       "value": 1,
+       "refBy": "performanceReviewList"
+ } ,{
+       "source": "TerminationType",
+       "type": "TerminationApplication",
+       "target": "TerminationApplication",
+       "value": 1,
+       "refBy": "terminationApplicationList"
+ } ,{
+       "source": "TrainingType",
+       "type": "TrainingCourse",
+       "target": "TrainingCourse",
+       "value": 1,
+       "refBy": "trainingCourseList"
  } ,{
        "source": "Department",
-       "type": "FeedbackItem",
-       "target": "FeedbackItem",
+       "type": "Position",
+       "target": "Position",
        "value": 1,
-       "refBy": "feedbackItemList"
- } ,{
-       "source": "FeedbackMainType",
-       "type": "JobTypeWithMainType",
-       "target": "JobTypeWithMainType",
-       "value": 1,
-       "refBy": "jobTypeWithMainTypeList"
+       "refBy": "positionList"
  },{
-       "source": "FeedbackMainType",
-       "type": "FeedbackSubType",
-       "target": "FeedbackSubType",
+       "source": "Department",
+       "type": "RecruitmentPlan",
+       "target": "RecruitmentPlan",
        "value": 1,
-       "refBy": "feedbackSubTypeList"
+       "refBy": "recruitmentPlanList"
  },{
-       "source": "FeedbackMainType",
-       "type": "FeedbackItem",
-       "target": "FeedbackItem",
+       "source": "Department",
+       "type": "JobPosition",
+       "target": "JobPosition",
        "value": 1,
-       "refBy": "feedbackItemList"
- } ,{
-       "source": "RoleType",
-       "type": "FeedbackItem",
-       "target": "FeedbackItem",
-       "value": 1,
-       "refBy": "feedbackItemList"
- } ,{
-       "source": "FeedbackSubType",
-       "type": "FeedbackItem",
-       "target": "FeedbackItem",
-       "value": 1,
-       "refBy": "feedbackItemList"
- } ,{
-       "source": "FeedbackResultStatus",
-       "type": "FeedbackItem",
-       "target": "FeedbackItem",
-       "value": 1,
-       "refBy": "feedbackItemList"
- } ,{
-       "source": "FeedbackResolveStatus",
-       "type": "FeedbackItem",
-       "target": "FeedbackItem",
-       "value": 1,
-       "refBy": "feedbackItemList"
- } ,{
-       "source": "FeedbackItem",
-       "type": "ReadFlag",
-       "target": "ReadFlag",
-       "value": 1,
-       "refBy": "readFlagList"
+       "refBy": "jobPositionList"
  },{
-       "source": "FeedbackItem",
-       "type": "FeedbackItemLog",
-       "target": "FeedbackItemLog",
+       "source": "Department",
+       "type": "EmployeePosition",
+       "target": "EmployeePosition",
        "value": 1,
-       "refBy": "feedbackItemLogList"
+       "refBy": "employeePositionList"
  },{
-       "source": "FeedbackItem",
-       "type": "FeedbackItemAttachment",
-       "target": "FeedbackItemAttachment",
+       "source": "Department",
+       "type": "BudgetAllocation",
+       "target": "BudgetAllocation",
        "value": 1,
-       "refBy": "feedbackItemAttachmentList"
+       "refBy": "budgetAllocationList"
+ } ,{
+       "source": "Position",
+       "type": "EmployeePosition",
+       "target": "EmployeePosition",
+       "value": 1,
+       "refBy": "employeePositionList"
+ } ,{
+       "source": "JobGrade",
+       "type": "JobPosition",
+       "target": "JobPosition",
+       "value": 1,
+       "refBy": "jobPositionList"
+ } ,{
+       "source": "JobPosition",
+       "type": "RecruitmentRequest",
+       "target": "RecruitmentRequest",
+       "value": 1,
+       "refBy": "recruitmentRequestList"
  },{
-       "source": "FeedbackItem",
-       "type": "SupplementContent",
-       "target": "SupplementContent",
+       "source": "JobPosition",
+       "type": "Offer",
+       "target": "Offer",
        "value": 1,
-       "refBy": "supplementContentList"
+       "refBy": "offerList"
+ } ,{
+       "source": "Candidate",
+       "type": "Resume",
+       "target": "Resume",
+       "value": 1,
+       "refBy": "resumeList"
+ },{
+       "source": "Candidate",
+       "type": "Interview",
+       "target": "Interview",
+       "value": 1,
+       "refBy": "interviewList"
+ },{
+       "source": "Candidate",
+       "type": "Offer",
+       "target": "Offer",
+       "value": 1,
+       "refBy": "offerList"
+ } ,{
+       "source": "Interview",
+       "type": "InterviewEvaluation",
+       "target": "InterviewEvaluation",
+       "value": 1,
+       "refBy": "interviewEvaluationList"
+ } ,{
+       "source": "Employee",
+       "type": "Interview",
+       "target": "Interview",
+       "value": 1,
+       "refBy": "interviewList"
+ },{
+       "source": "Employee",
+       "type": "EmployeeContract",
+       "target": "EmployeeContract",
+       "value": 1,
+       "refBy": "employeeContractList"
+ },{
+       "source": "Employee",
+       "type": "EmployeePosition",
+       "target": "EmployeePosition",
+       "value": 1,
+       "refBy": "employeePositionList"
+ },{
+       "source": "Employee",
+       "type": "EmployeeSalary",
+       "target": "EmployeeSalary",
+       "value": 1,
+       "refBy": "employeeSalaryList"
+ },{
+       "source": "Employee",
+       "type": "EmergencyContact",
+       "target": "EmergencyContact",
+       "value": 1,
+       "refBy": "emergencyContactList"
+ },{
+       "source": "Employee",
+       "type": "OnboardingProcess",
+       "target": "OnboardingProcess",
+       "value": 1,
+       "refBy": "onboardingProcessList"
+ },{
+       "source": "Employee",
+       "type": "OnboardingTask",
+       "target": "OnboardingTask",
+       "value": 1,
+       "refBy": "onboardingTaskList"
+ },{
+       "source": "Employee",
+       "type": "TrainingCourse",
+       "target": "TrainingCourse",
+       "value": 1,
+       "refBy": "trainingCourseList"
+ },{
+       "source": "Employee",
+       "type": "TrainingEnrollment",
+       "target": "TrainingEnrollment",
+       "value": 1,
+       "refBy": "trainingEnrollmentList"
+ },{
+       "source": "Employee",
+       "type": "AttendanceRecord",
+       "target": "AttendanceRecord",
+       "value": 1,
+       "refBy": "attendanceRecordList"
+ },{
+       "source": "Employee",
+       "type": "AttendanceException",
+       "target": "AttendanceException",
+       "value": 1,
+       "refBy": "attendanceExceptionList"
+ },{
+       "source": "Employee",
+       "type": "LeaveApplication",
+       "target": "LeaveApplication",
+       "value": 1,
+       "refBy": "leaveApplicationList"
+ },{
+       "source": "Employee",
+       "type": "LeaveBalance",
+       "target": "LeaveBalance",
+       "value": 1,
+       "refBy": "leaveBalanceList"
+ },{
+       "source": "Employee",
+       "type": "LeaveApproval",
+       "target": "LeaveApproval",
+       "value": 1,
+       "refBy": "leaveApprovalList"
+ },{
+       "source": "Employee",
+       "type": "PerformanceGoal",
+       "target": "PerformanceGoal",
+       "value": 1,
+       "refBy": "performanceGoalList"
+ },{
+       "source": "Employee",
+       "type": "PerformanceReview",
+       "target": "PerformanceReview",
+       "value": 1,
+       "refBy": "performanceReviewListAsEmployee"
+ },{
+       "source": "Employee",
+       "type": "PerformanceReview",
+       "target": "PerformanceReview",
+       "value": 1,
+       "refBy": "performanceReviewListAsReviewer"
+ },{
+       "source": "Employee",
+       "type": "PerformanceFeedback",
+       "target": "PerformanceFeedback",
+       "value": 1,
+       "refBy": "performanceFeedbackList"
+ },{
+       "source": "Employee",
+       "type": "SalaryAdjustment",
+       "target": "SalaryAdjustment",
+       "value": 1,
+       "refBy": "salaryAdjustmentList"
+ },{
+       "source": "Employee",
+       "type": "BonusCalculation",
+       "target": "BonusCalculation",
+       "value": 1,
+       "refBy": "bonusCalculationList"
+ },{
+       "source": "Employee",
+       "type": "SocialInsurance",
+       "target": "SocialInsurance",
+       "value": 1,
+       "refBy": "socialInsuranceList"
+ },{
+       "source": "Employee",
+       "type": "TerminationApplication",
+       "target": "TerminationApplication",
+       "value": 1,
+       "refBy": "terminationApplicationList"
+ },{
+       "source": "Employee",
+       "type": "ExitInterview",
+       "target": "ExitInterview",
+       "value": 1,
+       "refBy": "exitInterviewListAsEmployee"
+ },{
+       "source": "Employee",
+       "type": "ExitInterview",
+       "target": "ExitInterview",
+       "value": 1,
+       "refBy": "exitInterviewListAsInterviewer"
+ },{
+       "source": "Employee",
+       "type": "RetirementApplication",
+       "target": "RetirementApplication",
+       "value": 1,
+       "refBy": "retirementApplicationList"
+ },{
+       "source": "Employee",
+       "type": "SystemUser",
+       "target": "SystemUser",
+       "value": 1,
+       "refBy": "systemUserList"
+ },{
+       "source": "Employee",
+       "type": "EmployeeDocument",
+       "target": "EmployeeDocument",
+       "value": 1,
+       "refBy": "employeeDocumentList"
+ },{
+       "source": "Employee",
+       "type": "NotificationRecipient",
+       "target": "NotificationRecipient",
+       "value": 1,
+       "refBy": "notificationRecipientList"
+ },{
+       "source": "Employee",
+       "type": "EquipmentAllocation",
+       "target": "EquipmentAllocation",
+       "value": 1,
+       "refBy": "equipmentAllocationList"
+ },{
+       "source": "Employee",
+       "type": "AwardRecognition",
+       "target": "AwardRecognition",
+       "value": 1,
+       "refBy": "awardRecognitionList"
+ },{
+       "source": "Employee",
+       "type": "SkillAssessment",
+       "target": "SkillAssessment",
+       "value": 1,
+       "refBy": "skillAssessmentListAsEmployee"
+ },{
+       "source": "Employee",
+       "type": "SkillAssessment",
+       "target": "SkillAssessment",
+       "value": 1,
+       "refBy": "skillAssessmentListAsAssessor"
+ },{
+       "source": "Employee",
+       "type": "ProjectAssignment",
+       "target": "ProjectAssignment",
+       "value": 1,
+       "refBy": "projectAssignmentList"
+ },{
+       "source": "Employee",
+       "type": "WorkExperience",
+       "target": "WorkExperience",
+       "value": 1,
+       "refBy": "workExperienceList"
+ },{
+       "source": "Employee",
+       "type": "EducationHistory",
+       "target": "EducationHistory",
+       "value": 1,
+       "refBy": "educationHistoryList"
+ },{
+       "source": "Employee",
+       "type": "Certification",
+       "target": "Certification",
+       "value": 1,
+       "refBy": "certificationList"
+ },{
+       "source": "Employee",
+       "type": "EmployeeSurvey",
+       "target": "EmployeeSurvey",
+       "value": 1,
+       "refBy": "employeeSurveyList"
+ } ,{
+       "source": "OnboardingProcess",
+       "type": "OnboardingTask",
+       "target": "OnboardingTask",
+       "value": 1,
+       "refBy": "onboardingTaskList"
+ },{
+       "source": "OnboardingProcess",
+       "type": "OnboardingDocument",
+       "target": "OnboardingDocument",
+       "value": 1,
+       "refBy": "onboardingDocumentList"
+ } ,{
+       "source": "TrainingCourse",
+       "type": "TrainingSchedule",
+       "target": "TrainingSchedule",
+       "value": 1,
+       "refBy": "trainingScheduleList"
+ } ,{
+       "source": "TrainingSchedule",
+       "type": "TrainingEnrollment",
+       "target": "TrainingEnrollment",
+       "value": 1,
+       "refBy": "trainingEnrollmentList"
+ } ,{
+       "source": "TrainingEnrollment",
+       "type": "TrainingEvaluation",
+       "target": "TrainingEvaluation",
+       "value": 1,
+       "refBy": "trainingEvaluationList"
+ } ,{
+       "source": "LeaveApplication",
+       "type": "LeaveApproval",
+       "target": "LeaveApproval",
+       "value": 1,
+       "refBy": "leaveApprovalList"
+ } ,{
+       "source": "PerformanceCycle",
+       "type": "PerformanceGoal",
+       "target": "PerformanceGoal",
+       "value": 1,
+       "refBy": "performanceGoalList"
+ },{
+       "source": "PerformanceCycle",
+       "type": "PerformanceReview",
+       "target": "PerformanceReview",
+       "value": 1,
+       "refBy": "performanceReviewList"
+ } ,{
+       "source": "PerformanceReview",
+       "type": "PerformanceFeedback",
+       "target": "PerformanceFeedback",
+       "value": 1,
+       "refBy": "performanceFeedbackList"
+ } ,{
+       "source": "SystemUser",
+       "type": "UserRole",
+       "target": "UserRole",
+       "value": 1,
+       "refBy": "userRoleList"
+ },{
+       "source": "SystemUser",
+       "type": "AuditLog",
+       "target": "AuditLog",
+       "value": 1,
+       "refBy": "auditLogList"
+ } ,{
+       "source": "UserRole",
+       "type": "AccessPermission",
+       "target": "AccessPermission",
+       "value": 1,
+       "refBy": "accessPermissionList"
+ } ,{
+       "source": "HrReport",
+       "type": "ReportParameter",
+       "target": "ReportParameter",
+       "value": 1,
+       "refBy": "reportParameterList"
+ } ,{
+       "source": "SystemNotification",
+       "type": "NotificationRecipient",
+       "target": "NotificationRecipient",
+       "value": 1,
+       "refBy": "notificationRecipientList"
+ } ,{
+       "source": "WorkflowDefinition",
+       "type": "WorkflowStep",
+       "target": "WorkflowStep",
+       "value": 1,
+       "refBy": "workflowStepList"
+ },{
+       "source": "WorkflowDefinition",
+       "type": "WorkflowInstance",
+       "target": "WorkflowInstance",
+       "value": 1,
+       "refBy": "workflowInstanceList"
+ } ,{
+       "source": "WorkflowStep",
+       "type": "WorkflowInstance",
+       "target": "WorkflowInstance",
+       "value": 1,
+       "refBy": "workflowInstanceList"
  } ]
     }
     var modelChart = echarts.init(document.getElementById('main'));
