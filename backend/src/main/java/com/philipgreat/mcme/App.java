@@ -25,13 +25,30 @@ public class App {
             for (TranslationRecord record : records) {
                 String key = record.getKey();
                 if (key.equals("web.action.delete")) {
-                    record.setValue("Delete");
+                    record.setValue("删除");
                 } else if (key.equals("web.action.update")) {
-                    record.setValue("Update");
+                    record.setValue("更新");
                 }
 
             }
             return translationResponse;
         };
     }
+//    @Bean
+//    public Translator translator() {
+//        return req -> {
+//            TranslationResponse translationResponse = new TranslationResponse(req);
+//            Set<TranslationRecord> records = req.getRecords();
+//            for (TranslationRecord record : records) {
+//                String key = record.getKey();
+//                if (key.equals("web.action.delete")) {
+//                    record.setValue("Delete");
+//                } else if (key.equals("web.action.update")) {
+//                    record.setValue("Update");
+//                }
+//
+//            }
+//            return translationResponse;
+//        };
+//    }
 }

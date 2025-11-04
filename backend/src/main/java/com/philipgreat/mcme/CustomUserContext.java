@@ -25,6 +25,7 @@ import com.doublechaintech.employeeservice.merchant.Merchant;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.codec.Base64;
+import cn.hutool.core.util.BooleanUtil;
 import cn.hutool.core.util.NumberUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
@@ -32,12 +33,26 @@ import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.json.JSONUtil;
 
 import io.teaql.data.DataConfigProperties;
+import io.teaql.data.Entity;
+import io.teaql.data.NaturalLanguageTranslator;
 import io.teaql.data.Repository;
+import io.teaql.data.SimpleChineseViewTranslator;
 import io.teaql.data.TQLAutoConfiguration;
 import io.teaql.data.TQLResolver;
+import io.teaql.data.language.ArabicTranslator;
+import io.teaql.data.language.EnglishTranslator;
+import io.teaql.data.language.GermanTranslator;
+import io.teaql.data.language.TraditionalChineseTranslator;
+import io.teaql.data.language.UkrainianTranslator;
 import io.teaql.data.lock.LockService;
+import io.teaql.data.meta.EntityDescriptor;
+import io.teaql.data.meta.EntityMetaFactory;
 
 public class CustomUserContext extends EmployeeServiceUserContext {
+
+
+
+
 
 
 //    private static Map<String, Repository> repositoryMap;
@@ -211,7 +226,7 @@ public class CustomUserContext extends EmployeeServiceUserContext {
             dbJob = new Employee()
                     .updateEmployeeNumber(employeeId)
                     .updateGender(GenderType.refer(Constants.GENDER_TYPE_FEMALE_ID))
-                    .updateBirthDate(LocalDate.now())
+                    //.updateBirthDate(LocalDate.now())
                     .updateMobilePhone(13800000)
                     .updateEmail(employeeId+"@qq.com")
                     .updateExternalId(employeeId).updateMerchant(dbMerchant);
@@ -225,6 +240,14 @@ public class CustomUserContext extends EmployeeServiceUserContext {
 
         MDC.put(MERCHANT, dbMerchant.getName());
         MDC.put(JOB, dbJob.getName());
+    }
+
+    @Override
+    public NaturalLanguageTranslator getNaturalLanguageTranslator(Entity entity) {
+        //return new ArabicTranslator();
+        //return new UkrainianTranslator();
+        //return new GermanTranslator();
+        return new TraditionalChineseTranslator();
     }
 
     private Employee employee;

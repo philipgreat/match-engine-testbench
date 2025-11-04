@@ -2,6 +2,7 @@ package com.philipgreat.mcme;
 
 import cn.hutool.core.map.MapUtil;
 
+import io.teaql.data.Entity;
 import io.teaql.data.TQLContext;
 import io.teaql.data.UserContext;
 import io.teaql.data.meta.EntityMetaFactory;
@@ -12,6 +13,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.doublechaintech.employeeservice.Q;
+import com.doublechaintech.employeeservice.merchant.Merchant;
+import com.doublechaintech.employeeservice.quotation.Quotation;
 
 @RestController
 public class EnsureModelController {
@@ -28,22 +33,42 @@ public class EnsureModelController {
 
     @GetMapping(value = "/contextInfo/", produces = MediaType.TEXT_PLAIN_VALUE)
 
-    public String contextInfo(@TQLContext UserContext ctx){
+    public String contextInfo(@TQLContext CustomUserContext ctx){
 
 //        new Merchant().updateName("测试租户")
 //                .updateCredential("YcvcuofutNR+iTVB9MUeM2TDAPh6ypZ7")
 //                .updatePlatform(Platform.refer(1l))
 //                .save(ctx);
+        try{
+            Merchant merchant = new Merchant();
+
+            merchant.addQuotation(new Quotation());
+
+            ctx.checkAndFix(merchant);
+
+            return "your ip: "+ ctx.getClientIp() +"\n" +
+                    ctx.getEmployee().getName()+"@"+
+                    ctx.getMerchant().getName()+
+                    " from local: " + ctx.isFromLocalhost() ;
+        }catch (Exception e){
+            ctx.info("message {}",e.getMessage());
+            return e.getMessage();
+        }
 
 
-        return "your ip: "+ ctx.getClientIp() +"\n" +
-                "from local: " + ctx.isFromLocalhost() ;
+
+
+
     }
 
 
     @GetMapping("/ensureTables")
 
     public Object ensureTable(@TQLContext UserContext context) {
+        context.info("the factory class {}", factory.getClass());
+//        factory.allEntityDescriptors().forEach(entityDescriptor -> {
+//            context.info("the entityDescriptor class {}", entityDescriptor.getClass());
+//        });
         if(!context.isFromLocalhost()){
             return "ONLY allowed from localhost to protect the import assets!";
         }
