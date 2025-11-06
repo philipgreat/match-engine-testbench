@@ -42,6 +42,7 @@ import io.teaql.data.TQLResolver;
 import io.teaql.data.language.ArabicTranslator;
 import io.teaql.data.language.EnglishTranslator;
 import io.teaql.data.language.GermanTranslator;
+import io.teaql.data.language.PortugueseTranslator;
 import io.teaql.data.language.TraditionalChineseTranslator;
 import io.teaql.data.language.UkrainianTranslator;
 import io.teaql.data.lock.LockService;
@@ -50,38 +51,21 @@ import io.teaql.data.meta.EntityMetaFactory;
 
 public class CustomUserContext extends EmployeeServiceUserContext {
 
+    @Override
+    public NaturalLanguageTranslator getNaturalLanguageTranslator(Entity entity) {
+        //return new ArabicTranslator();
+        //return new UkrainianTranslator();
+        //return new GermanTranslator();
+        return new PortugueseTranslator();
+    }
 
 
 
 
 
-//    private static Map<String, Repository> repositoryMap;
-//    private static Object lock=new Object();
-//    public void initRepositoryMap(){
-//
-//        synchronized(lock){
-//            if(repositoryMap==null){
-//                return;
-//            }
-//            repositoryMap=new ConcurrentHashMap<>();
-//
-//        }
-//
-//    }
-//    public Repository resolveRepository(String type) {
-//
-//        if(repositoryMap==null){
-//            initRepositoryMap();
-//        }
-//        Repository repository=repositoryMap.get(type);
-//        if(repository!=null){
-//            return repository;
-//        }
-//
-//
-//        return super.resolveRepository(type);
-//
-//    }
+
+
+
 
     static  AnnotationConfigApplicationContext context;
 
@@ -242,13 +226,7 @@ public class CustomUserContext extends EmployeeServiceUserContext {
         MDC.put(JOB, dbJob.getName());
     }
 
-    @Override
-    public NaturalLanguageTranslator getNaturalLanguageTranslator(Entity entity) {
-        //return new ArabicTranslator();
-        //return new UkrainianTranslator();
-        //return new GermanTranslator();
-        return new TraditionalChineseTranslator();
-    }
+
 
     private Employee employee;
 
