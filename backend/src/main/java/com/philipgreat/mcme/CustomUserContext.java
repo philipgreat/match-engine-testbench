@@ -13,14 +13,14 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.doublechaintech.employeeservice.Constants;
-import com.doublechaintech.employeeservice.EmployeeServiceUserContext;
-import com.doublechaintech.employeeservice.EntityMetaRegistry;
-import com.doublechaintech.employeeservice.Q;
-import com.doublechaintech.employeeservice.Repositories;
-import com.doublechaintech.employeeservice.employee.Employee;
-import com.doublechaintech.employeeservice.gendertype.GenderType;
-import com.doublechaintech.employeeservice.merchant.Merchant;
+import com.doublechaintech.buyingevent.BuyingEventUserContext;
+import com.doublechaintech.buyingevent.Constants;
+import com.doublechaintech.buyingevent.BuyingEventUserContext;
+import com.doublechaintech.buyingevent.EntityMetaRegistry;
+import com.doublechaintech.buyingevent.Q;
+import com.doublechaintech.buyingevent.Repositories;
+import com.doublechaintech.buyingevent.employee.Employee;
+import com.doublechaintech.buyingevent.merchant.Merchant;
 
 
 import cn.hutool.core.bean.BeanUtil;
@@ -48,7 +48,7 @@ import io.teaql.data.lock.LockService;
 import io.teaql.data.meta.EntityDescriptor;
 import io.teaql.data.meta.EntityMetaFactory;
 
-public class CustomUserContext extends EmployeeServiceUserContext {
+public class CustomUserContext extends BuyingEventUserContext {
 
 
 
@@ -207,7 +207,7 @@ public class CustomUserContext extends EmployeeServiceUserContext {
         if (dbMerchant == null) {
             dbMerchant = new Merchant()
                     .updateTaxNumber("TX0001")
-                    .updateAddress("北京海淀区")
+                    .updateAddress("No Address")
                     .updateExternalId(merchantId)
                     .updatePlatform(Constants.PLATFORM);
         }
@@ -225,7 +225,7 @@ public class CustomUserContext extends EmployeeServiceUserContext {
             //The employee number is required;The gender is required;The birth date is required;The mobile phone is required;The email is required
             dbJob = new Employee()
                     .updateEmployeeNumber(employeeId)
-                    .updateGender(GenderType.refer(Constants.GENDER_TYPE_FEMALE_ID))
+                    //.updateGender(GenderType.refer(Constants.GENDER_TYPE_FEMALE_ID))
                     //.updateBirthDate(LocalDate.now())
                     .updateMobilePhone(13800000)
                     .updateEmail(employeeId+"@qq.com")
@@ -244,10 +244,10 @@ public class CustomUserContext extends EmployeeServiceUserContext {
 
     @Override
     public NaturalLanguageTranslator getNaturalLanguageTranslator(Entity entity) {
-        //return new ArabicTranslator();
+        return new EnglishTranslator();
         //return new UkrainianTranslator();
         //return new GermanTranslator();
-        return new TraditionalChineseTranslator();
+        //return new TraditionalChineseTranslator();
     }
 
     private Employee employee;

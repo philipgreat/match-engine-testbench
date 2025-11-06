@@ -25,9 +25,9 @@ public class App {
             for (TranslationRecord record : records) {
                 String key = record.getKey();
                 if (key.equals("web.action.delete")) {
-                    record.setValue("删除");
+                    record.setValue("Delete");
                 } else if (key.equals("web.action.update")) {
-                    record.setValue("更新");
+                    record.setValue("Update");
                 }
 
             }

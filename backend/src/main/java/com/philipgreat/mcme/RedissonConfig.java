@@ -47,7 +47,7 @@ public class RedissonConfig {
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
 
         dataSource.setDriverClass(org.sqlite.JDBC.class);
-        dataSource.setUrl("jdbc:sqlite:./employe-service-001.db");
+        dataSource.setUrl("jdbc:sqlite:./buying-event-001.db");
         dataSource.setUsername("");
         dataSource.setPassword("");
 

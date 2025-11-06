@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.doublechaintech.employeeservice.Q;
-import com.doublechaintech.employeeservice.merchant.Merchant;
-import com.doublechaintech.employeeservice.quotation.Quotation;
+import com.doublechaintech.buyingevent.Q;
+import com.doublechaintech.buyingevent.merchant.Merchant;
+
 
 @RestController
 public class EnsureModelController {
@@ -35,27 +35,8 @@ public class EnsureModelController {
 
     public String contextInfo(@TQLContext CustomUserContext ctx){
 
-//        new Merchant().updateName("测试租户")
-//                .updateCredential("YcvcuofutNR+iTVB9MUeM2TDAPh6ypZ7")
-//                .updatePlatform(Platform.refer(1l))
-//                .save(ctx);
-        try{
-            Merchant merchant = new Merchant();
 
-            merchant.addQuotation(new Quotation());
-
-            ctx.checkAndFix(merchant);
-
-            return "your ip: "+ ctx.getClientIp() +"\n" +
-                    ctx.getEmployee().getName()+"@"+
-                    ctx.getMerchant().getName()+
-                    " from local: " + ctx.isFromLocalhost() ;
-        }catch (Exception e){
-            ctx.info("message {}",e.getMessage());
-            return e.getMessage();
-        }
-
-
+        return "fine";
 
 
 

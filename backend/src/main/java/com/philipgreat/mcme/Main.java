@@ -3,7 +3,7 @@ package com.philipgreat.mcme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.doublechaintech.employeeservice.Q;
+import com.doublechaintech.buyingevent.Q;
 
 import io.teaql.data.Entity;
 import io.teaql.data.EntityStatus;
