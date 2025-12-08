@@ -6,21 +6,21 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import javax.sql.DataSource;
 
-import org.redisson.api.RedissonClient;
+//import org.redisson.api.RedissonClient;
 import org.slf4j.MDC;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.doublechaintech.employeeservice.Constants;
-import com.doublechaintech.employeeservice.EmployeeServiceUserContext;
-import com.doublechaintech.employeeservice.EntityMetaRegistry;
-import com.doublechaintech.employeeservice.Q;
-import com.doublechaintech.employeeservice.Repositories;
-import com.doublechaintech.employeeservice.employee.Employee;
-import com.doublechaintech.employeeservice.gendertype.GenderType;
-import com.doublechaintech.employeeservice.merchant.Merchant;
+import com.doublechaintech.supplierrelationservice.Constants;
+import com.doublechaintech.supplierrelationservice.SupplierRelationServiceUserContext;
+import com.doublechaintech.supplierrelationservice.EntityMetaRegistry;
+import com.doublechaintech.supplierrelationservice.Q;
+import com.doublechaintech.supplierrelationservice.Repositories;
+import com.doublechaintech.supplierrelationservice.employee.Employee;
+import com.doublechaintech.supplierrelationservice.gendertype.GenderType;
+import com.doublechaintech.supplierrelationservice.merchant.Merchant;
 
 
 import cn.hutool.core.bean.BeanUtil;
@@ -49,7 +49,7 @@ import io.teaql.data.lock.LockService;
 import io.teaql.data.meta.EntityDescriptor;
 import io.teaql.data.meta.EntityMetaFactory;
 
-public class CustomUserContext extends EmployeeServiceUserContext {
+public class CustomUserContext extends SupplierRelationServiceUserContext {
 
     @Override
     public NaturalLanguageTranslator getNaturalLanguageTranslator(Entity entity) {
@@ -71,8 +71,8 @@ public class CustomUserContext extends EmployeeServiceUserContext {
 
     public static void shutdown(){
         //context.close();
-        RedissonClient client = context.getBean(RedissonClient.class);
-        client.shutdown();
+//        RedissonClient client = context.getBean(RedissonClient.class);
+//        client.shutdown();
 
         SpringApplication.exit(context, () -> 0);
     }
@@ -176,6 +176,8 @@ public class CustomUserContext extends EmployeeServiceUserContext {
         synchronized (employeeId.intern()) {
             ensureContextValues(data, idSpace, employeeId);
         }
+
+        this.putInStore("a","c",10);
 
     }
 

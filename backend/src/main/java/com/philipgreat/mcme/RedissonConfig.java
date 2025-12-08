@@ -4,10 +4,10 @@ import java.sql.Driver;
 
 import javax.sql.DataSource;
 
-import org.redisson.Redisson;
-import org.redisson.api.RedissonClient;
-
-import org.redisson.config.Config;
+//import org.redisson.Redisson;
+//import org.redisson.api.RedissonClient;
+//
+//import org.redisson.config.Config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
@@ -16,13 +16,13 @@ import jakarta.annotation.PreDestroy;
 
 @Configuration
 public class RedissonConfig {
-    private RedissonClient redissonClient;
+//    private RedissonClient redissonClient;
     @PreDestroy
     public void shutdownRedisson() {
-        if (redissonClient != null) {
-            redissonClient.shutdown();
-            System.out.println("Redisson client shutdown.");
-        }
+//        if (redissonClient != null) {
+//            redissonClient.shutdown();
+//            System.out.println("Redisson client shutdown.");
+//        }
     }
 //    @Bean
 //    public RedissonClient redissonClient() {

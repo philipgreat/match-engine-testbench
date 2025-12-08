@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.doublechaintech.employeeservice.Q;
-import com.doublechaintech.employeeservice.merchant.Merchant;
-import com.doublechaintech.employeeservice.quotation.Quotation;
+import com.doublechaintech.supplierrelationservice.Q;
+import com.doublechaintech.supplierrelationservice.merchant.Merchant;
+import com.doublechaintech.supplierrelationservice.quotation.Quotation;
 
 @RestController
 public class EnsureModelController {

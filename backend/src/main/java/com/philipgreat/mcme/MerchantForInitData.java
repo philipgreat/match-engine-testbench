@@ -1,9 +1,9 @@
 package com.philipgreat.mcme;
 
-import com.doublechaintech.employeeservice.Q;
-import com.doublechaintech.employeeservice.account.Account;
-import com.doublechaintech.employeeservice.merchant.Merchant;
-import com.doublechaintech.employeeservice.merchant.MerchantRequest;
+import com.doublechaintech.supplierrelationservice.Q;
+import com.doublechaintech.supplierrelationservice.account.Account;
+import com.doublechaintech.supplierrelationservice.merchant.Merchant;
+import com.doublechaintech.supplierrelationservice.merchant.MerchantRequest;
 
 class TestDataCreationInputParam{
 
